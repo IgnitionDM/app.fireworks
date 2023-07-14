@@ -634,7 +634,6 @@
           denyButtonText: `取消`,
         }).then((result) => {
           if (result.isConfirmed) {
-            Swal.fire("Install in progess...", "", "success");
             installPWA();
           }
         });
