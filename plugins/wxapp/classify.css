@@ -1,0 +1,218 @@
+/* pages/enterprise/enterprise_classify/enterprise_classify.wxss */
+
+#enterprise_classify #header .header_title {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  padding-top: 17px;
+  box-sizing: border-box;
+}
+
+#enterprise_classify #header .header_title .title {
+  width: 130px;
+  height: 27px;
+  margin: 0 auto;
+  display: block;
+}
+
+#enterprise_classify #header .header_title .goback {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 0;
+  left: 0;
+}
+
+#enterprise_classify #header .header_title .goback img {
+  position: absolute;
+  width: 32px;
+  height: 13px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+#enterprise_classify #header .header_title .share {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 0;
+  right: 0;
+}
+
+#enterprise_classify #header .header_title .share img {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+#enterprise_classify .enterprise_classify_banner {
+  position: relative;
+  width: 100%;
+}
+
+#enterprise_classify .enterprise_classify_banner .swiper {
+  width: 100%;
+  height: 100%;
+      
+}
+
+#enterprise_classify .enterprise_classify_banner .swiper-slide {
+  box-sizing: border-box;
+}
+
+#enterprise_classify .enterprise_classify_banner .swiper img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+
+}
+
+#enterprise_classify .enterprise_classify_banner .dots {
+  position: absolute;
+  right: 25px;
+  bottom: 10px;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+}
+
+#enterprise_classify .enterprise_classify_banner .dots .dot {
+  margin: 0 3px;
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+#enterprise_classify .enterprise_classify_banner .dots .dot.active {
+  width: 25px;
+  background: #fff;
+}
+
+#enterprise_classify .enterprise_classify_ipt {
+  position: absolute;
+  background-color: #fff;
+  bottom: -30px;
+  width: 300px;
+  height: 60px;
+  border-radius: 40px;
+  left: 50%;
+  margin-left: -150px;
+  z-index:9;
+}
+
+#enterprise_classify .enterprise_classify_ipt input {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding-right: 55px;
+  padding-left: 20px;
+  box-sizing: border-box;
+  border-radius:30px;
+  border:none;
+  box-shadow:0 0 8px #ccc;
+}
+
+#enterprise_classify .enterprise_classify_ipt .search {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 55px;
+}
+
+#enterprise_classify .enterprise_classify_ipt .search img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 25px;
+  height: 25px;
+}
+
+#enterprise_classify .enterprise_classify_list {
+  padding: 18px 0;
+}
+
+#enterprise_classify .enterprise_classify_list .enterprise_classify_listli {
+  background-color: #fff;
+  width: 90%;
+  height: 70px;
+  border-radius: 40px;
+  margin: 12px auto 0;
+  box-shadow: 0 0 8px #e2e2e2;
+  position: relative;
+  padding: 0 65px;
+  box-sizing: border-box;
+}
+
+#enterprise_classify .enterprise_classify_listli .picture {
+  width: 65px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#enterprise_classify .enterprise_classify_list .youbian{position:absolute; left:30px; bottom:12px; color:#FFFFFF;  font-size:40px;}
+
+#enterprise_classify .enterprise_classify_listli .picture img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 40px;
+  height: 40px;
+}
+
+#enterprise_classify .enterprise_classify_listli .txt {
+  padding-left: 2px;
+}
+
+#enterprise_classify .enterprise_classify_listli .title {
+  display: block;
+  font-size: 16px;
+  line-height: 16px;
+  color: #fff;
+  padding-top: 16px;
+}
+
+#enterprise_classify .enterprise_classify_listli .introduce {
+  display: block;
+  font-size: 12px;
+  line-height: 12px;
+  color: #aaaaaa;
+  padding-top: 8px;
+}
+
+#enterprise_classify .enterprise_classify_listli .goto {
+  width: 65px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#enterprise_classify .enterprise_classify_listli .goto img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 18px;
+  height: 15px;
+}

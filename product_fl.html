@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" href="plugins/wxapp/app.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="plugins/wxapp/animate.min.css"
+      type="text/css"
+    />
+    <title>产品分类-南凤烟花</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="images/yunshangtong2021412131628/2021420162731.png"
+    />
+    <meta
+      name="description"
+      content="湖南省南凤出口花炮厂创建于2006年，坐落于醴陵市李畋镇106国道旁。是一 家集科、工、贸、燃放为一体的专业花炮生产厂家"
+    />
+    <script src="plugins/sdk/jquery.min.js"></script>
+    <script src="plugins/open/js/jweixin-1.0.0.js"></script>
+    <script src="plugins/sdk/main.js"></script>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      page {
+        display: block;
+      }
+      .fast {
+        -webkit-animation-duration: 0.2s;
+        animation-duration: 0.2s;
+      }
+    </style>
+    <style type="text/css">
+      #scrollBg {
+        width: 100%;
+        height: 55px;
+        line-height: 55px;
+        background: rgba(255, 255, 255, 0.8);
+        display: none;
+        z-index: -1;
+        position: fixed;
+        left: 0;
+        top: 0;
+        text-align: center;
+        font-size: 20px;
+        color: #fff;
+      }
+    </style>
+    <script type="text/javascript" src="plugins/jquery/jquery.js"></script>
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="plugins/layer/layer.js"></script>
+    <link rel="stylesheet" type="text/css" href="plugins/themes/css/core.css" />
+    <link rel="stylesheet" type="text/css" href="plugins/themes/css/icon.css" />
+    <link rel="stylesheet" type="text/css" href="plugins/themes/css/home.css" />
+  </head>
+  <body>
+    <page>
+      <link
+        rel="stylesheet"
+        href="plugins/wxapp/classify.css"
+        type="text/css"
+      />
+
+      <script
+        type="text/javascript"
+        src="plugins/jquery/jquery-1.10.2.mins.js"
+      ></script>
+      <style>
+        .swiper {
+          overflow: hidden;
+        }
+        .enterprise_classify_list {
+          margin-top: -26px;
+          position: absolute;
+          z-index: 99999;
+          width: 100%;
+        }
+      </style>
+      <style>
+        #enterprise_index .enterprise_index_intro {
+          margin: 2px 6px 0;
+          background-color: #fff;
+          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+          border-radius: 8px;
+          padding: 0 20px;
+        }
+        #enterprise_index .enterprise_index_intro .title::after {
+          background: 0abaec;
+        }
+        #enterprise_index .show_img .title .txt_pc {
+          color: #7c00e6;
+        }
+        .br-circle-timer,
+        .br-previous,
+        .br-next {
+          display: none;
+        }
+      </style>
+      <style>
+        .xindaoh {
+          margin-left: 9%;
+          margin-right: 9%;
+        }
+        .xindaoh img {
+          width: 100%;
+          height: auto;
+          margin-top: 0.52rem;
+        }
+      </style>
+      <script language="javascript">
+        function searchs() {
+          var keys = $("#sousuojieg").val();
+          var serl = "product.html?k=" + keys;
+          location.href = serl;
+        }
+      </script>
+      <div id="enterprise_classify">
+        <!-- 商家-分类页面-头部 -->
+        <link
+          rel="stylesheet"
+          href="plugins/wxapp/enterprise-header.css"
+          type="text/css"
+        />
+        <header class="aui-header-default aui-header-fixed aui-header-clear-bg">
+          <!-- aui-header-clear-bg 清除背景色 -->
+          <a
+            href="javascript:history.back(-1)"
+            class="aui-header-item"
+            style="position: absolute"
+          >
+            <i class="aui-icon aui-icon-code" style="width: 20px"></i>
+          </a>
+          <div
+            class="aui-header-center aui-header-center-clear"
+            style="margin-left: 2.5%"
+          >
+            <div class="aui-header-search-box" style="width: 80%">
+              <i class="aui-icon aui-icon-small-search"></i>
+              <i class="aui-icon nyuyin"></i>
+              <blockquote>
+                <p>
+                  <input
+                    id="sousuojieg"
+                    type="text"
+                    placeholder=" 搜索您要查找的产品"
+                    class="aui-header-search"
+                    onchange="javascript:searchs();"
+                    style="width: 67%"
+                  />
+                </p>
+              </blockquote>
+            </div>
+          </div>
+
+          <div id="scrollBg" style="display: none"></div>
+          <a
+            href="#"
+            id="scanQRCode"
+            class="aui-header-item-icon"
+            style="position: absolute; right: 1%; top: 0"
+          >
+            <img src="images/saoma.png" style="width: 26px"
+          /></a>
+        </header>
+        <div
+          class="aui-banner-content"
+          data-aui-slider=""
+          style="transform: translate3d(0, 0, 0)"
+        >
+          <div class="aui-banner-wrapper">
+            <div
+              class="aui-banner-wrapper-item"
+              style="transform: translate3d(0, 0, 0)"
+            >
+              <a href=""
+                ><img src="images/yunshangtong2021412131628/20214198561.png"
+              /></a>
+            </div>
+
+            <div
+              class="aui-banner-wrapper-item"
+              style="transform: translate3d(0, 0, 0)"
+            >
+              <a href=""
+                ><img src="images/yunshangtong2021412131628/2021418171741.png"
+              /></a>
+            </div>
+          </div>
+        </div>
+        <!-- 商家-分类页面-banner轮播 -->
+        <!---分类页面-列表 -->
+        <div
+          class="enterprise_classify_list"
+          style="
+            background: #fff;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+            padding-bottom: 98px;
+            z-index: 1;
+          "
+        >
+          <div class="enterprise_classify_listli" onclick="aa('3')">
+            <div
+              class="youbian"
+              style="
+                background: linear-gradient(
+                  to right,
+                  rgba(250, 209, 5, 1) 0%,
+                  rgba(255, 5, 5, 1) 0%,
+                  rgba(250, 209, 5, 1) 100%
+                );
+                -webkit-background-clip: text;
+                color: transparent;
+              "
+            >
+              +
+            </div>
+            <div class="txt">
+              <text
+                class="dh_over title"
+                style="
+                  background: linear-gradient(
+                    to right,
+                    rgba(250, 209, 5, 1) 0%,
+                    rgba(255, 5, 5, 1) 0%,
+                    rgba(250, 209, 5, 1) 100%
+                  );
+                  -webkit-background-clip: text;
+                  color: transparent;
+                "
+                >日景烟花领舞者</text
+              >
+              <text class="dh_over introduce">RIJINGYANHUA</text>
+            </div>
+            <div
+              class="picture"
+              style="
+                width: 36%;
+                border-radius: 40px;
+                background: linear-gradient(
+                  to right,
+                  rgba(250, 209, 5, 1) 0%,
+                  rgba(255, 5, 5, 1) 0%,
+                  rgba(250, 209, 5, 1) 100%
+                );
+              "
+            >
+              <image
+                src="images/yunshangtong2021412131628/2021412143642.png"
+              ></image>
+            </div>
+          </div>
+
+          <div class="enterprise_classify_listli" onclick="aa('4')">
+            <div
+              class="youbian"
+              style="
+                background: linear-gradient(
+                  to right,
+                  rgba(3, 230, 215, 1) 0%,
+                  rgba(77, 14, 250, 1) 0%,
+                  rgba(3, 230, 215, 1) 100%
+                );
+                -webkit-background-clip: text;
+                color: transparent;
+              "
+            >
+              +
+            </div>
+            <div class="txt">
+              <text
+                class="dh_over title"
+                style="
+                  background: linear-gradient(
+                    to right,
+                    rgba(3, 230, 215, 1) 0%,
+                    rgba(77, 14, 250, 1) 0%,
+                    rgba(3, 230, 215, 1) 100%
+                  );
+                  -webkit-background-clip: text;
+                  color: transparent;
+                "
+                >夜景烟花狂欢者</text
+              >
+              <text class="dh_over introduce">YEJINGYANHUA</text>
+            </div>
+            <div
+              class="picture"
+              style="
+                width: 36%;
+                border-radius: 40px;
+                background: linear-gradient(
+                  to right,
+                  rgba(3, 230, 215, 1) 0%,
+                  rgba(77, 14, 250, 1) 0%,
+                  rgba(3, 230, 215, 1) 100%
+                );
+              "
+            >
+              <image
+                src="images/yunshangtong2021412131628/2021412143746.png"
+              ></image>
+            </div>
+          </div>
+
+          <div class="enterprise_classify_listli" onclick="aa('78')">
+            <div
+              class="youbian"
+              style="
+                background: linear-gradient(
+                  to right,
+                  rgba(160, 239, 35, 1) 0%,
+                  rgba(147, 239, 2, 1) 0%,
+                  rgba(160, 239, 35, 1) 100%
+                );
+                -webkit-background-clip: text;
+                color: transparent;
+              "
+            >
+              +
+            </div>
+            <div class="txt">
+              <text
+                class="dh_over title"
+                style="
+                  background: linear-gradient(
+                    to right,
+                    rgba(160, 239, 35, 1) 0%,
+                    rgba(147, 239, 2, 1) 0%,
+                    rgba(160, 239, 35, 1) 100%
+                  );
+                  -webkit-background-clip: text;
+                  color: transparent;
+                "
+                >模压类</text
+              >
+              <text class="dh_over introduce">MOYALEI</text>
+            </div>
+            <div
+              class="picture"
+              style="
+                width: 36%;
+                border-radius: 40px;
+                background: linear-gradient(
+                  to right,
+                  rgba(160, 239, 35, 1) 0%,
+                  rgba(147, 239, 2, 1) 0%,
+                  rgba(160, 239, 35, 1) 100%
+                );
+              "
+            >
+              <image
+                src="images/yunshangtong2021412131628/2021618173132.png"
+              ></image>
+            </div>
+          </div>
+
+          <div
+            class="enterprise_classify_listli"
+            onclick="window.location='product.html'"
+          >
+            <div
+              class="youbian"
+              style="
+                background: linear-gradient(
+                  to right,
+                  rgba(255, 3, 209, 1) 0%,
+                  rgba(250, 3, 32, 1) 0%,
+                  rgba(255, 3, 209, 1) 100%
+                );
+                -webkit-background-clip: text;
+                color: transparent;
+              "
+            >
+              +
+            </div>
+            <div class="txt">
+              <text
+                class="dh_over title"
+                style="
+                  background: linear-gradient(
+                    to right,
+                    rgba(255, 3, 209, 1) 0%,
+                    rgba(250, 3, 32, 1) 0%,
+                    rgba(255, 3, 209, 1) 100%
+                  );
+                  -webkit-background-clip: text;
+                  color: transparent;
+                "
+                >微焰火</text
+              >
+              <text class="dh_over introduce">WEIYANHUO</text>
+            </div>
+            <div
+              class="picture"
+              style="
+                width: 36%;
+                border-radius: 40px;
+                background: linear-gradient(
+                  to right,
+                  rgba(255, 3, 209, 1) 0%,
+                  rgba(250, 3, 32, 1) 0%,
+                  rgba(255, 3, 209, 1) 100%
+                );
+              "
+            >
+              <image
+                src="images/yunshangtong2021412131628/2021412143821.png"
+              ></image>
+            </div>
+          </div>
+
+          <div
+            class="enterprise_classify_listli"
+            onclick="window.location='product.html'"
+          >
+            <div
+              class="youbian"
+              style="
+                background: linear-gradient(
+                  to right,
+                  rgba(255, 79, 249, 1) 0%,
+                  rgba(109, 6, 161, 1) 0%,
+                  rgba(255, 79, 249, 1) 100%
+                );
+                -webkit-background-clip: text;
+                color: transparent;
+              "
+            >
+              +
+            </div>
+            <div class="txt">
+              <text
+                class="dh_over title"
+                style="
+                  background: linear-gradient(
+                    to right,
+                    rgba(255, 79, 249, 1) 0%,
+                    rgba(109, 6, 161, 1) 0%,
+                    rgba(255, 79, 249, 1) 100%
+                  );
+                  -webkit-background-clip: text;
+                  color: transparent;
+                "
+                >城市烟花类</text
+              >
+              <text class="dh_over introduce">CHEGNSHIYANHUA</text>
+            </div>
+            <div
+              class="picture"
+              style="
+                width: 36%;
+                border-radius: 40px;
+                background: linear-gradient(
+                  to right,
+                  rgba(255, 79, 249, 1) 0%,
+                  rgba(109, 6, 161, 1) 0%,
+                  rgba(255, 79, 249, 1) 100%
+                );
+              "
+            >
+              <image
+                src="images/yunshangtong2021412131628/202141214393.png"
+              ></image>
+            </div>
+          </div>
+
+          <div
+            class="enterprise_classify_listli"
+            onclick="window.location='product.html'"
+          >
+            <div
+              class="youbian"
+              onclick="aa('1')"
+              style="
+                background: linear-gradient(
+                  to right,
+                  rgba(255, 0, 62, 1) 0%,
+                  rgba(253, 15, 111, 1) 0%,
+                  rgba(255, 0, 62, 1) 100%
+                );
+                -webkit-background-clip: text;
+                color: transparent;
+              "
+            >
+              +
+            </div>
+            <div class="txt">
+              <text
+                class="dh_over title"
+                style="
+                  background: linear-gradient(
+                    to right,
+                    rgba(255, 0, 62, 1) 0%,
+                    rgba(253, 15, 111, 1) 0%,
+                    rgba(255, 0, 62, 1) 100%
+                  );
+                  -webkit-background-clip: text;
+                  color: transparent;
+                "
+                >全部产品</text
+              >
+              <text class="dh_over introduce">QUANBUCHANPIN</text>
+            </div>
+            <div
+              class="picture"
+              style="
+                width: 36%;
+                border-radius: 40px;
+                background: linear-gradient(
+                  to right,
+                  rgba(255, 0, 62, 1) 0%,
+                  rgba(253, 15, 111, 1) 0%,
+                  rgba(255, 0, 62, 1) 100%
+                );
+              "
+            >
+              <image src="images/all.png"></image>
+            </div>
+          </div>
+        </div>
+        <!-- component_nav  底部导航组件 -->
+        <div>
+          <style>
+            .footer {
+              width: 100%;
+              height: 64px;
+              padding-top: 10px;
+              position: fixed;
+              bottom: 0;
+              left: 0;
+              z-index: 1000;
+              background: url(images/foot_bg.png) center;
+              background-size: auto 74px;
+              box-sizing: content-box;
+            }
+            .myfoot {
+              width: 100%;
+              height: 64px;
+              position: relative;
+            }
+            .fcaidan {
+              width: 20%;
+              height: 64px;
+              float: left;
+              position: relative;
+            }
+            .fcaidan img {
+              display: block;
+              margin: auto;
+              left: 0;
+              right: 0;
+              top: 0;
+              bottom: 0;
+              position: absolute;
+              z-index: 999;
+              padding-bottom: 15px;
+              box-sizing: content-box;
+            }
+            .fcaidan p {
+              text-align: center;
+              font-size: 14px;
+              bottom: -8px;
+              margin: auto;
+              left: 0;
+              right: 0;
+              top: 0;
+              bottom: 0;
+              position: absolute;
+              z-index: 999;
+              margin-top: 39px;
+            }
+            .fcaidan span {
+              width: 16px;
+              height: 16px;
+              padding-left: 2px;
+              padding-right: 2px;
+              display: block;
+              background: #ff4361;
+              border-radius: 100%;
+              margin: auto;
+              left: 0;
+              right: 0;
+              top: 0;
+              bottom: 0;
+              position: absolute;
+              z-index: 99;
+              margin-bottom: 30px;
+              filter: alpha(opacity=70);
+              opacity: 0.7;
+            }
+          </style>
+          <div class="footer">
+            <div class="myfoot">
+              <div class="fcaidan">
+                <span></span
+                ><a href="product_fl.html?qyid=1"
+                  ><img src="images/foot_fl.png" style="height: 24px" />
+                  <p>分类</p></a
+                >
+              </div>
+              <div class="fcaidan">
+                <a href="video.html"
+                  ><img src="images/foot_fx.png" style="height: 23px" />
+                  <p>逛逛</p></a
+                >
+              </div>
+              <div class="fcaidan">
+                <a href="index.html?qyid=1"
+                  ><img
+                    src="images/yunshangtong2021412131628/2021424996.png"
+                    style="
+                      width: 50px;
+                      height: auto;
+                      display: block;
+                      margin-top: -24px;
+                      padding-right: 3px;
+                    "
+                  />
+                  <p>首页</p></a
+                >
+              </div>
+              <div class="fcaidan">
+                <a href="contact.html"
+                  ><img src="images/foot_lx.png" style="height: 26px" />
+                  <p>联系</p></a
+                >
+              </div>
+              <div class="fcaidan">
+                <a href="index.html"
+                  ><img src="images/foot_my.png" style="height: 26px" />
+                  <p>我的</p></a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- component_nav  底部导航组件 -- -->
+          <script>
+            function aa(id) {
+              layer.open({
+                type: 2,
+                title: "☰",
+                maxmin: true,
+                shadeClose: true, //点击遮罩关闭层
+                area: ["85%", "510px;"],
+                content: "fenlei.html?qyid=1&id=" + id,
+              });
+            }
+          </script>
+          <script
+            type="text/javascript"
+            src="plugins/themes/js/aui.js"
+          ></script>
+          <script type="text/javascript">
+            $(function () {
+              //绑定滚动条事件
+              //绑定滚动条事件
+              $(window).bind("scroll", function () {
+                var sTop = $(window).scrollTop();
+                var sTop = parseInt(sTop);
+                if (sTop >= 40) {
+                  if (!$("#scrollBg").is(":visible")) {
+                    try {
+                      $("#scrollBg").slideDown();
+                    } catch (e) {
+                      $("#scrollBg").show();
+                    }
+                  }
+                } else {
+                  if ($("#scrollBg").is(":visible")) {
+                    try {
+                      $("#scrollBg").slideUp();
+                    } catch (e) {
+                      $("#scrollBg").hide();
+                    }
+                  }
+                }
+              });
+            });
+          </script>
+          <div style="padding: 5px"></div>
+          <div style="height: 60px"></div>
+        </div>
+      </div>
+    </page>
+  </body>
+</html>

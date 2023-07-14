@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>66发富贵红系列-富贵红-南凤烟花</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="images/yunshangtong2021412131628/nf525a-%E5%AF%8C%E8%B4%B5%E7%BA%A2.png"
+    />
+    <meta name="description" content="点击播放实拍燃放效果" />
+
+    <link rel="stylesheet" href="styles/app.css" type="text/css" />
+    <link rel="stylesheet" href="plugins/wxapp/app.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="styles/font/iconfont.css" />
+    <link
+      rel="stylesheet"
+      href="plugins/wxapp/animate.min.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" type="text/css" href="plugins/themes/css/core.css" />
+    <link rel="stylesheet" type="text/css" href="plugins/themes/css/icon.css" />
+    <link rel="stylesheet" type="text/css" href="plugins/themes/css/home.css" />
+    <link rel="stylesheet" href="plugins/swiper4/css/swiper.min.css" />
+    <link rel="stylesheet" href="plugins/swiper4/css/animate.min.css" />
+    <style>
+      html,
+      body {
+        background: #f9f8f8;
+        margin: 0;
+        padding: 0;
+      }
+      page {
+        display: block;
+      }
+      .fast {
+        -webkit-animation-duration: 0.2s;
+        animation-duration: 0.2s;
+      }
+      .layer-content {
+        position: fixed;
+        z-index: 99999;
+        left: 50%;
+        bottom: 0px;
+        width: 100%;
+        max-width: 640px;
+        height: auto;
+        z-index: 12;
+        z-index: 999;
+        display: none;
+      }
+    </style>
+    <link rel="stylesheet" type="text/css" href="styles/yusat.css" />
+
+    <script src="plugins/sdk/jquery.min.js"></script>
+    <script src="plugins/open/js/jweixin-1.0.0.js"></script>
+    <script src="plugins/sdk/main.js"></script>
+    <script type="text/javascript" src="plugins/jquery/jquery.js"></script>
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="plugins/layer/layer.js"></script>
+    <script
+      type="text/javascript"
+      src="plugins/jquery/jquery.qrcode.min.js"
+    ></script>
+    <script type="text/javascript" src="scripts/cart.js"></script>
+    <script type="text/javascript" src="scripts/indexs.js"></script>
+  </head>
+  <body>
+    <page style="background: #f9f8f8">
+      <link rel="stylesheet" href="plugins/wxapp/product.css" type="text/css" />
+      <link
+        rel="stylesheet"
+        href="plugins/wxapp/animate.min.css"
+        type="text/css"
+      />
+      <link rel="stylesheet" href="styles/attr.css" type="text/css" />
+      <style>
+        #goods_details .gd_details,
+        #goods_details .gd_goods,
+        .product-params text::after,
+        #goods_details .gd_foot .right .gd_foot_btn {
+          background: 0abaec;
+        }
+
+        #goods_details .goods_details_swiper .switch text {
+          border: 1px solid #ff4361;
+          color: #ff4361;
+          line-height: 30px;
+          display: inline-block;
+        }
+        #goods_details .goods_details_swiper .switch .switch_active {
+          background: #ff4361;
+        }
+        .play,
+        .gd_video .play {
+          position: absolute;
+          width: 50px;
+          height: 50px;
+          top: 50%;
+          left: 50%;
+          margin-top: -25px;
+          margin-left: -25px;
+        }
+        .tu_jc {
+          position: absolute;
+          width: 120px;
+          top: 20px;
+          left: 20px;
+        }
+        .swiper video {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+        .section-title {
+          font-size: 14px;
+          line-height: 14px;
+          width: 96%;
+          margin: 10px auto;
+          margin-left: 2%;
+          margin-right: 2%;
+          border-radius: 20px;
+          padding: 10px;
+          background: #fff;
+          text-align: center;
+        }
+        .section-title .line {
+          display: inline-block;
+          width: 5px;
+          height: 14px;
+          background: 0abaec;
+        }
+        .body img {
+          max-width: 100%;
+        }
+        .product-params text::after {
+          background: #ff4361;
+        }
+        .iconfont {
+          color: #ff4361;
+        }
+        .ctn_introduce .title .iconfont {
+          position: absolute;
+          right: 0;
+          padding-right: 16px;
+          font-size: 30px;
+        }
+        .tu_you {
+          margin-top: 8px;
+          margin-left: 10px;
+        }
+        .tu_you p {
+          text-align: left;
+          font-size: 16px;
+        }
+        .tu_you span {
+          font-size: 13px;
+          color: #999999;
+        }
+      </style>
+      <script
+        type="text/javascript"
+        src="plugins/jquery/jquery-1.10.2.mins.js"
+      ></script>
+      <script type="text/javascript">
+        $(document).ready(function () {
+          $("#xx_sp").click(function () {
+            $("#sp_con").show();
+            $("#tu_con").hide();
+            $("#xx_sp").addClass("switch_active");
+            $("#xx_tu").removeClass("switch_active");
+          });
+
+          $("#xx_tu").click(function () {
+            $("#sp_con").hide();
+            $("#tu_con").show();
+            $("#xx_tu").addClass("switch_active");
+            $("#xx_sp").removeClass("switch_active");
+          });
+        });
+      </script>
+      <style>
+        .myimg {
+          overflow: hidden;
+          width: 100%;
+          height: auto;
+        }
+        .swiper-slide img {
+          width: 100%;
+          height: auto;
+        }
+        .shipai {
+          overflow: hidden;
+          width: 100%;
+          height: auto;
+        }
+        .shipai .tupian img {
+          width: 100%;
+          height: auto;
+        }
+        .swiper-pagination {
+          width: 100%;
+          bottom: 13px;
+        }
+        .swiper-pagination-bullets .swiper-pagination-bullet {
+          margin: 0 5px;
+          border: 3px solid #fff;
+          background-color: #d5d5d5;
+          width: 10px;
+          height: 10px;
+          opacity: 1;
+        }
+        .swiper-pagination-bullets .swiper-pagination-bullet-active {
+          border: 3px solid #ff4361;
+          background-color: #fff;
+        }
+      </style>
+      <div id="goods_details">
+        <!-- 商家-分类页面-头部 -->
+        <link
+          rel="stylesheet"
+          href="plugins/wxapp/enterprise-header.css"
+          type="text/css"
+        />
+        <!-- �̼�-����ҳ��-ͷ�� -->
+        <div class="enterprise-header" id="pgcontainer">
+          <div
+            class="header_title"
+            style="z-index: 9; height: 50px; padding-top: 6px"
+          >
+            <div id="navbar">
+              <div class="header-leftbtn">
+                <a
+                  href="javascript:history.back(-1)"
+                  class="aui-header-item"
+                  style="margin-top: 3px"
+                >
+                  <i class="aui-icon aui-icon-back"></i>
+                </a>
+              </div>
+            </div>
+            <div class="overlay"></div>
+            <img
+              class="title"
+              src="images/yunshangtong2021412131628/2021418171212.png"
+            />
+          </div>
+        </div>
+        <div style="height: 50px"></div>
+        <!-- 商家-商品页面-swiper -->
+        <div class="goods_details_swiper">
+          <!--div class='clearBoth upside'>
+      <img src='//static.901009.com/201811/25/merchants_page.png'/>
+    </div-->
+          <div class="myimg" id="sp_con">
+            <div
+              class="swiper-container"
+              style="transform: translate3d(0, 0, 0)"
+            >
+              <div class="swiper-wrapper">
+                <img
+                  src="images/play_cai.png"
+                  class="play"
+                  onclick="window.location='video.html'"
+                  id="bofang"
+                  style="z-index: 9999"
+                />
+
+                <div
+                  class="swiper-slide blue-slide"
+                  style="
+                    transform: translate3d(0, 0, 0);
+                    background: url('images/yunshangtong2021412131628/2022912134644.png')
+                      no-repeat;
+                    background-size: 100%;
+                  "
+                >
+                  <a>
+                    <img
+                      src="images/yunshangtong2021412131628/nf525a-%E5%AF%8C%E8%B4%B5%E7%BA%A2.png"
+                      id="banner-image1"
+                      data-bg_color="1"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+          <div class="shipai" style="display: none" id="tu_con">
+            <img src="images/tu_jc.png" class="tu_jc" />
+            <img
+              src="images/play_cai.png"
+              class="play"
+              onclick="javascript:showVideo('')"
+            />
+            <img
+              src="images/yunshangtong2021412131628/nf525a-%E5%AF%8C%E8%B4%B5%E7%BA%A2.png"
+              style="width: 100%; height: auto"
+            />
+          </div>
+          <div class="switch" style="z-index: 9">
+            <text class="switch_active" id="xx_sp">实拍</text>
+            <text id="xx_tu">教程</text>
+          </div>
+        </div>
+        <div>
+          <style>
+            .ck_jiage {
+              position: absolute;
+              right: 20px;
+              margin-top: 30px;
+              z-index: 99;
+            }
+            .ck_jiage p {
+              display: block;
+              font-size: 14px;
+              color: #828282;
+            }
+            .ck_jiage p span {
+              color: red;
+              font-size: 24px;
+              margin-right: 5px;
+            }
+            .ck_jiage .sq {
+              display: block;
+              width: 100px;
+              height: 30px;
+              line-height: 30px;
+              text-align: center;
+              background: linear-gradient(
+                to right,
+                rgba(251, 201, 67, 1) 0%,
+                rgba(253, 43, 122, 1) 100%
+              );
+              color: #fff;
+              border-radius: 20px;
+              margin-left: 10px;
+              margin-top: 6px;
+            }
+            .hit_xx {
+              line-height: 20px;
+              height: 20px;
+              margin-left: 25px;
+              margin-top: 10px;
+              float: left;
+            }
+            .hit_xx span {
+              margin-left: 24px;
+              font-size: 13px;
+              color: #999;
+            }
+            .hit_xx img {
+              height: 18px;
+              position: absolute;
+            }
+            .ctn_introduce {
+              margin-left: 2%;
+              margin-right: 2%;
+              background: #fff;
+              border-radius: 20px;
+              margin-top: 42px;
+            }
+          </style>
+
+          <!-- 商家-商品页面-内容介绍-ctn_introd -->
+          <div class="ctn_introduce" style="padding-top: 15px">
+            <div class="clearBoth title">
+              <div class="left">
+                <text class="txt1" style="margin-right: 55px"
+                  >66发富贵红系列-富贵红</text
+                >
+              </div>
+              <i
+                class="iconfont iconerweima2"
+                onclick="showQrcode()"
+                style="color: #ff4361; font-size: 40px"
+                ><img src="images/myewm.png"
+              /></i>
+              <!-- <span style="position:absolute; right:18px; margin-top:36px;color:#333; font-size:13px; ">+关注</span>-->
+            </div>
+            <div class="product-params">
+              <text>发数：66发</text>
+
+              <text>规格：603x328x293mm</text>
+              <text>含量：1/1</text>
+            </div>
+            <div class="hit_xx">
+              <img src="images/timg.jpg" /><span>953</span>
+            </div>
+            <div class="hit_xx" style="margin-left: 10px">
+              <img src="images/sc.jpg" /><span>6</span>
+            </div>
+
+            <div style="height: 15px; clear: both"></div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="section-title"
+        style="height: 110px; margin-bottom: 0px"
+        onclick="window.location=''"
+      >
+        <div class="tu_zuo" style="float: left">
+          <img
+            src="images/yunshangtong2021412131628/2021412144748.jpg"
+            style="height: 90px"
+          />
+        </div>
+        <div class="tu_you" style="float: left; margin-top: 23px">
+          <p>南凤烟花</p>
+          <span style="margin-top: 10px; display: block"
+            >关注公众号了解更多</span
+          >
+        </div>
+      </div>
+      <style>
+        .xx_title {
+          line-height: 20px;
+          color: #504d4d;
+          font-size: 14.5px;
+          text-align: center;
+          font-weight: bold;
+          letter-spacing: 3px;
+          margin-top: 10px;
+          width: 100%;
+          height: auto;
+          background: #fff;
+          padding-top: 20px;
+          border-top-left-radius: 20px;
+          border-top-right-radius: 20px;
+          clear: both;
+        }
+        .xx_title span {
+          display: block;
+          width: 20px;
+          height: 5px;
+          background: #ff4361;
+          margin: 0 auto;
+          margin-top: 5px;
+          border-radius: 10px;
+        }
+        .xx_content {
+          margin-top: 10px;
+        }
+        .xx_content img {
+          width: 100%;
+          height: auto;
+        }
+        .xx_content p {
+          font-size: 14px;
+          color: #616161;
+          line-height: 22px;
+          margin-left: 15px;
+          margin-right: 14px;
+        }
+
+        .section-title .tj_title {
+          display: block;
+          width: 20px;
+          height: 5px;
+          background: #ff4361;
+          margin: 0 auto;
+          margin-top: 5px;
+          border-radius: 10px;
+        }
+        .tj_wenzi {
+          line-height: 20px;
+          color: #504d4d;
+          font-size: 14.5px;
+          text-align: center;
+          font-weight: bold;
+          letter-spacing: 3px;
+          margin-top: 10px;
+          height: auto;
+          background: #fff;
+          border-top-left-radius: 20px;
+          border-top-right-radius: 20px;
+        }
+        .tj_list {
+          margin-top: 13px;
+          overflow: hidden;
+        }
+        .tj_list ul li {
+          float: left;
+          width: 30%;
+          margin-left: 2.5%;
+          height: auto;
+          margin-bottom: 8px;
+        }
+        .tj_list ul li img {
+          float: left;
+          width: 100%;
+          display: block;
+          border-radius: 10px;
+          margin-bottom: 8px;
+        }
+        .tj_list ul li p {
+          height: 32px;
+          display: inline-block;
+          line-height: 16px;
+          text-align: justify;
+          overflow: hidden;
+          margin: 0 auto;
+          width: 92%;
+          word-break: break-word;
+          white-space: normal;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+        }
+
+        .slider-pagination-item {
+          margin: 0 0.3rem;
+          width: 14px;
+          height: 3px;
+          display: inline-block;
+          background-color: #dbdbdb;
+        }
+
+        .slider-pagination-item.slider-pagination-item-active {
+          background: #ff4361;
+        }
+        .slider-pagination-item {
+          height: 4px;
+          border-radius: 2px;
+        }
+
+        .tj_list .swiper-pagination2 {
+          width: 100%;
+          bottom: 13px;
+        }
+        .tj_list .swiper-pagination-bullets .swiper-pagination-bullet {
+          margin: 0 0.3rem;
+          width: 16px;
+          height: 4px;
+          display: inline-block;
+          background-color: #dbdbdb;
+          border-radius: 2px;
+        }
+        .tj_list .swiper-pagination-bullets .swiper-pagination-bullet-active {
+          background-color: #ff4361;
+        }
+      </style>
+      <div
+        class="section-title"
+        style="min-height: 300px; padding: 0px; padding-top: 5px"
+      >
+        <div class="tj_wenzi">为您推荐</div>
+        <span class="tj_title"></span>
+        <div class="tj_list">
+          <div class="swiper-container2">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide blue-slide">
+                <ul>
+                  <li onclick="window.location='products_32166690.html?qyid=1'">
+                    <img
+                      src="images/yunshangtong2021412131628/20216191829.png"
+                      style="width: 100%"
+                    />
+                    <p>88发荣耀 富贵</p>
+                  </li>
+
+                  <li onclick="window.location='products_49729556.html?qyid=1'">
+                    <img
+                      src="images/yunshangtong2021412131628/202161918152.png"
+                      style="width: 100%"
+                    />
+                    <p>88发荣耀 富贵</p>
+                  </li>
+
+                  <li onclick="window.location='products_36272830.html?qyid=1'">
+                    <img
+                      src="images/yunshangtong2021412131628/202161716717.png"
+                      style="width: 100%"
+                    />
+                    <p>640发八件套-凤凰之夜</p>
+                  </li>
+
+                  <li onclick="window.location='products_58666629.html?qyid=1'">
+                    <img
+                      src="images/yunshangtong2021412131628/2021619134139.png"
+                      style="width: 100%"
+                    />
+                    <p>100发金典 盛典</p>
+                  </li>
+
+                  <li onclick="window.location='products_89455813.html?qyid=1'">
+                    <img
+                      src="images/yunshangtong2021412131628/2021612101910.png"
+                      style="width: 100%"
+                    />
+                    <p>66发烟花舞 烟花情 烟花绘 烟花说</p>
+                  </li>
+
+                  <li onclick="window.location='products_95599001.html?qyid=1'">
+                    <img
+                      src="images/yunshangtong2021412131628/2021619134236.png"
+                      style="width: 100%"
+                    />
+                    <p>16 25 30 36 49 100发魅力今宵系列</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="swiper-slide blue-slide">
+                <ul>
+                  <li onclick="window.location='products_31670863.html?qyid=1'">
+                    <img
+                      src="images/yunshangtong2021412131628/nf123-48%E5%8F%91%E5%BD%A9%E4%BA%91%E4%B9%8B%E5%8D%97.png"
+                      style="width: 100%"
+                    />
+                    <p>48发彩云之南</p>
+                  </li>
+
+                  <li onclick="window.location='products_1276625.html?qyid=1'">
+                    <img
+                      src="images/yunshangtong2021412131628/nf124-60%E5%8F%91%E5%BD%A9%E4%BA%91%E4%B9%8B%E5%8D%97.png"
+                      style="width: 100%"
+                    />
+                    <p>60发彩云之南</p>
+                  </li>
+
+                  <li onclick="window.location='products_26547808.html?qyid=1'">
+                    <img
+                      src="images/yunshangtong2021412131628/nf125-80%E5%8F%91%E5%BD%A9%E4%BA%91%E4%B9%8B%E5%8D%97.png"
+                      style="width: 100%"
+                    />
+                    <p>80发彩云之南</p>
+                  </li>
+
+                  <li onclick="window.location='products_82081103.html?qyid=1'">
+                    <img
+                      src="images/yunshangtong2021412131628/nf255-100%E5%8F%91%E5%86%B0%E9%9B%AA%E5%A5%87%E7%BC%98.png"
+                      style="width: 100%"
+                    />
+                    <p>100发冰雪奇缘</p>
+                  </li>
+
+                  <li onclick="window.location='products_31567282.html?qyid=1'">
+                    <img
+                      src="images/yunshangtong2021412131628/nf525a-%E5%AF%8C%E8%B4%B5%E7%BA%A2.png"
+                      style="width: 100%"
+                    />
+                    <p>66发富贵红系列-富贵红</p>
+                  </li>
+
+                  <li onclick="window.location='products_57888430.html?qyid=1'">
+                    <img
+                      src="images/yunshangtong2021412131628/2021612102330.png"
+                      style="width: 100%"
+                    />
+                    <p>80发烟花神韵 烟花风情 烟花如画 烟花之魁</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div style="height: 20px; clear: both">
+              <div
+                class="swiper-pagination2"
+                style="clear: both; text-align: center"
+              ></div>
+            </div>
+          </div>
+        </div>
+        <div style="clear: both; height: 10px"></div>
+      </div>
+
+      <div class="xx_title">
+        了解更多<span></span>
+        <div class="xx_content">
+          <img src="images/yunshangtong2021412131628/20214199290.png" alt="" />
+        </div>
+      </div>
+
+      <div style="height: 12px"></div>
+      <!-- Core CSS file -->
+      <style>
+        .qrcode {
+          display: none;
+          position: fixed;
+          z-index: 100;
+          top: 0;
+          left: 0;
+          display: flex;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+          align-items: center;
+          justify-content: center;
+        }
+        .qrcode .content {
+          padding: 15px;
+          width: 75%;
+          background: #fff;
+          position: relative;
+          border-radius: 10px;
+          overflow: hidden;
+        }
+        .qrcode .content img {
+          max-width: 100%;
+        }
+        .qrcode .info {
+          font-size: 20px;
+          padding: 10px;
+          padding-right: 90px;
+          position: relative;
+        }
+        .qrcode .info #qr {
+          position: absolute;
+          top: 50px;
+          right: 0px;
+          width: 80px;
+          font-size: 12px;
+          color: #333;
+          text-align: center;
+        }
+        .qrcode .info #qr canvas {
+          width: 80px;
+          height: 80px;
+        }
+        .qrcode .title {
+          height: 25px;
+          line-height: 25px;
+          font-size: 16px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+        }
+        .qrcode .tag {
+          font-size: 14px;
+          background: #f30;
+          color: #fff;
+          padding: 3px 10px;
+          border-radius: 20px;
+        }
+        .qrcode .tips {
+          position: absolute;
+          bottom: 60px;
+          left: 0;
+          width: 100%;
+          line-height: 40px;
+          color: #fff;
+          text-align: center;
+          font-size: 16px;
+        }
+        .qrcode .close {
+          display: none;
+          width: 40px;
+          height: 40px;
+          position: absolute;
+          top: 5px;
+          right: 5px;
+          font-size: 40px;
+        }
+        .qrcode .close img {
+          width: 100%;
+          height: 100%;
+          border-radius: 100%;
+        }
+      </style>
+      <div class="qrbox" style="display: none">
+        <div class="qrcode">
+          <div class="content">
+            <a href="javascript:$('.qrbox').hide();" class="close"> × </a>
+            <div id="qrcode-content">
+              <div style="padding: 10px">
+                <img
+                  src="images/yunshangtong2021412131628/2021418171212.png"
+                  style="height: 30px"
+                />
+              </div>
+              <div>
+                <img
+                  src="images/yunshangtong2021412131628/nf525a-%E5%AF%8C%E8%B4%B5%E7%BA%A2.png"
+                  style="width: 100%; margin-top: 30px"
+                />
+              </div>
+              <div class="info" style="padding-left: 0px">
+                <div class="title" style="color: #000; margin-top: 40px">
+                  66发富贵红系列-富贵红
+                </div>
+                <div
+                  class="product-params"
+                  style="padding-left: 0px; padding-top: 0px; margin-top: 5px"
+                >
+                  <text>发数：66发</text>
+
+                  <text>规格：603x328x293mm</text>
+                  <text>含量：1/1</text>
+                </div>
+                <span class="tag">内含视频效果</span>
+                <div id="qr">
+                  <div id="qrcanvas">
+                    <img
+                      src="../uploads/yunshangtong2021412131628/ewm/31567282-1%E5%AF%B866%E5%8F%91%E5%AF%8C%E8%B4%B5%E7%BA%A2.png"
+                      style="height: 90px"
+                    />
+                  </div>
+                  <div>扫码看效果</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tips">长按图片保存到手机</div>
+        </div>
+      </div>
+      <div>
+        <a href="tel:15874820666"
+          ><img
+            src="images/banq1.png"
+            style="width: 46%; height: auto; display: block; margin: 0 auto"
+        /></a>
+      </div>
+      <div style="height: 50px; clear: both; display: block"></div>
+      <link rel="stylesheet" href="plugins/photoswiper/photoswipe.css" />
+      <link
+        rel="stylesheet"
+        href="plugins/photoswiper/default-skin/default-skin.css"
+      />
+      <script src="plugins/photoswiper/photoswipe.min.js"></script>
+      <script src="plugins/photoswiper/photoswipe-ui-default.min.js"></script>
+      <script src="plugins/jquery/jquery.min.js"></script>
+      <script src="plugins/jquery/jquery.qrcode.min.js"></script>
+      <script src="plugins/html2canvas.min.js"></script>
+      <script src="plugins/doT.min.js"></script>
+      <!-- Root element of PhotoSwipe. Must have class pswp. -->
+      <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+        <div class="pswp__bg"></div>
+        <!-- Slides wrapper with overflow:hidden. -->
+        <div class="pswp__scroll-wrap">
+          <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+          <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+          </div>
+          <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+          <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+              <!--  Controls are self-explanatory. Order can be changed. -->
+              <div class="pswp__counter"></div>
+              <button
+                class="pswp__button pswp__button--close"
+                title="Close (Esc)"
+              ></button>
+              <button
+                class="pswp__button pswp__button--share"
+                title="Share"
+              ></button>
+              <button
+                class="pswp__button pswp__button--fs"
+                title="Toggle fullscreen"
+              ></button>
+              <button
+                class="pswp__button pswp__button--zoom"
+                title="Zoom in/out"
+              ></button>
+              <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+              <!-- element will get class pswp__preloader--active when preloader is running -->
+              <div class="pswp__preloader">
+                <div class="pswp__preloader__icn">
+                  <div class="pswp__preloader__cut">
+                    <div class="pswp__preloader__donut"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"
+            >
+              <div class="pswp__share-tooltip"></div>
+            </div>
+            <button
+              class="pswp__button pswp__button--arrow--left"
+              title="Previous (arrow left)"
+            ></button>
+            <button
+              class="pswp__button pswp__button--arrow--right"
+              title="Next (arrow right)"
+            ></button>
+            <div class="pswp__caption">
+              <div class="pswp__caption__center"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="aui-footer-product">
+        <div class="aui-footer-product-fixed">
+          <div class="aui-footer-product-concern-cart">
+            <a href="tel:手机|18473358357">
+              <span class="aui-f-p-icon"
+                ><img src="images/icon-kf.png" alt=""
+              /></span>
+              <span class="aui-f-p-focus-info">客服</span>
+            </a>
+            <a onclick="showQrcode()">
+              <span class="aui-f-p-icon"
+                ><img src="images/icon-sc.png" alt=""
+              /></span>
+              <span class="aui-f-p-focus-info">分享</span>
+            </a>
+            <a href="../index.html?qyid=1">
+              <span class="aui-f-p-icon"
+                ><img src="images/icon-kin.png" alt=""
+              /></span>
+              <span class="aui-f-p-focus-info">首页</span>
+            </a>
+          </div>
+
+          <div
+            class="aui-footer-product-action-list"
+            style="padding-bottom: 0px"
+          >
+            <a href="product_fl.html" class="yellow-color">产品中心</a>
+            <a href="index.html" class="red-color">个人中心</a>
+          </div>
+        </div>
+      </footer>
+      <div style="padding: 5px"></div>
+    </page>
+    <div
+      class="videoPlay"
+      style="display: none; z-index: 99999999999; background: rgba(0, 0, 0, 1)"
+    >
+      <video
+        src=""
+        id="videoPlay"
+        controls=""
+        x5-video-player-fullscreen2="true"
+        style="height: 100%"
+      ></video>
+      <img
+        src="images/close.png"
+        class="close"
+        onclick="closeVideo()"
+        style="left: 80%; top: 20px; margin-left: 0"
+      />
+    </div>
+    <div class="layer-content" style="z-index: 9999">
+      <div class="m-actionsheet actionsheet-toggle" id="actionSheet">
+        <div style="position: relative">
+          <div class="aui-spec-menu-top">
+            <div class="aui-spec-first-pic">
+              <img src="" alt="" id="simg" />
+            </div>
+            <div class="aui-spec-first-sif">
+              <h2><span id="jiage"></span>元/箱</h2>
+              <p>规格：<span id="sguige"></span></p>
+              <p>含量：<span id="shl"></span></p>
+            </div>
+          </div>
+          <a href="javascript:gb();">
+            <div id="gb">
+              <i class="iconfont icon-guanbi" style="font-size: 24px"></i>
+            </div>
+          </a>
+          <div class="aui-product-text-content">
+            <div class="aui-product-text-content-list">
+              <div class="aui-product-text-content-list-bd">
+                <span>已选</span>
+              </div>
+              <div class="aui-product-text-content-list-ft">
+                <div class="tj">
+                  <div class="tmt" id="pnamesa"></div>
+                </div>
+              </div>
+            </div>
+            <style>
+              .needsclick {
+                content: attr(placeholder);
+              }
+            </style>
+            <div class="aui-product-text-content-list">
+              <div class="aui-product-text-content-list-bd">
+                <span>数量</span>
+              </div>
+              <div class="aui-car-box-list-text-price">
+                <div
+                  class="aui-car-box-list-text-arithmetic tj"
+                  style="position: inherit; width: 65px; text-align: center"
+                >
+                  <div
+                    id="gwshu"
+                    class="num needsclick"
+                    contenteditable="plaintext-only"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="aui-product-function">
+            <a href="" id="qrtjs" class="yellow-color" style="width: 100%">
+              <div id="qrtj">确认加入购物车</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function showVideo(url) {
+        $(".videoPlay video").attr("src", url);
+        $(".videoPlay").show();
+        var el = $(".videoPlay video").get(0);
+        var rfs =
+          el.requestFullScreen ||
+          el.webkitRequestFullScreen ||
+          el.mozRequestFullScreen ||
+          el.msRequestFullScreen;
+        if (typeof rfs != "undefined" && rfs) {
+          // rfs.call(el);
+        }
+        el.addEventListener(
+          "ended",
+          function () {
+            //播放完毕，退出全屏
+            closeVideo();
+            el.webkitExitFullScreen()();
+            this.webkitExitFullScreen();
+            // alert(2);
+          },
+          false
+        );
+
+        el.play && el.play();
+        event.stopPropagation();
+        return false;
+      }
+
+      function closeVideo() {
+        var el = $(".videoPlay video").get(0);
+        el.pause && el.pause();
+        $(".videoPlay").attr("src", "").hide();
+      }
+    </script>
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="plugins/jquery/jquery.cookie.js"></script>
+    <script src="plugins/layer/layer.js"></script>
+    <script>
+      function json2query(json) {
+        if (!json) return "";
+        var queryArr = [];
+        for (var x in json) {
+          queryArr.push(x + "=" + json[x]);
+        }
+        return queryArr.join("&");
+      }
+
+      // 更改地址中的参数
+      function changeUrlArg(url, arg, val) {
+        var pattern = arg + "=([^&]*)";
+        var replaceText = arg + "=" + val;
+        return url.match(pattern)
+          ? url.replace(eval("/(" + arg + "=)([^&]*)/gi"), replaceText)
+          : url.match("[\?]")
+          ? url + "&" + replaceText
+          : url + "?" + replaceText;
+      }
+      window.readyCall && window.readyCall();
+    </script>
+    <script>
+      // 提前生成好二维码
+      $(".qrcode #qrcanvas").qrcode({ text: location.origin + "/?p59" });
+      function showQrcode() {
+        $(".qrbox").show();
+        // return false;
+
+        html2canvas(document.querySelector(".qrcode .content"), {
+          // allowTaint: true,
+          canvas: document.getElementById("img"),
+          useCORS: true,
+          scale: 3,
+        }).then(function (canvas) {
+          var img = $("<img style='display:block;'>");
+          img.attr("src", canvas.toDataURL());
+          $(".qrcode .info").hide();
+          $("#qrcode-content").html("").append(img);
+          $(".qrcode .content").css("padding", "0");
+          $(".qrbox").find("a.close").show();
+        });
+      }
+    </script>
+    <script type="text/javascript" src="scripts/index.js"></script>
+    <script
+      type="text/javascript"
+      src="plugins/themes/js/jquery.min.js"
+    ></script>
+    <script type="text/javascript" src="plugins/themes/js/aui2.js"></script>
+    <script src="plugins/swiper4/js/swiper.min.js"></script>
+    <script src="plugins/swiper4/js/swiper.animate.min.js"></script>
+    <script>
+      var mySwiper = new Swiper(".swiper-container", {
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+    </script>
+    <script>
+      var mySwiper = new Swiper(".swiper-container2", {
+        pagination: {
+          el: ".swiper-pagination2",
+        },
+      });
+    </script>
+    <script type="text/javascript">
+      var u = navigator.userAgent;
+      var isAndroid = u.indexOf("Android") > -1 || u.indexOf("Adr") > -1; //android终端
+      var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+      if (isiOS) {
+        $("#myideo").show();
+        $(".myideop").hide();
+      }
+      $(function () {
+        $(".form_edit .num").click(function () {
+          var oDiv = document.getElementById("gwshu");
+          oDiv.innerHTML += this.innerHTML;
+        });
+        $("#remove").click(function () {
+          var oDiv = document.getElementById("gwshu");
+          var oDivHtml = oDiv.innerHTML;
+          oDiv.innerHTML = oDivHtml.substring(0, oDivHtml.length - 1);
+        });
+      });
+    </script>
+
+    <script>
+      function v_bo(id) {
+        layer.open({
+          type: 2,
+          title: "",
+          maxmin: true,
+          shadeClose: true, //点击遮罩关闭层
+          area: ["100%", "100%"],
+          content: "bo/bo.html?qyid=1&id=" + id,
+        });
+      }
+
+      function aa(id) {
+        layer.open({
+          type: 2,
+          title: "申请认证会员",
+          maxmin: true,
+          shadeClose: true, //点击遮罩关闭层
+          area: ["85%", "260px;"],
+          content: "shouquan.html?qyid=1",
+        });
+      }
+
+      function cc(id) {
+        layer.open({
+          type: 2,
+          title: "关注微信公众平台",
+          maxmin: true,
+          shadeClose: true, //点击遮罩关闭层
+          area: ["75%", "360px;"],
+          content: "guanzhu.html?qyid=1",
+        });
+      }
+    </script>
+  </body>
+</html>

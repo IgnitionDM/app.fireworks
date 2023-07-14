@@ -1,0 +1,788 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" href="styles/app.css" type="text/css" />
+    <link rel="stylesheet" href="plugins/wxapp/app.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="plugins/wxapp/animate.min.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" type="text/css" href="styles/font/iconfont.css" />
+    <title>产品中心-南凤烟花</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="images/yunshangtong2021412131628/2021420162731.png"
+    />
+    <meta
+      name="description"
+      content="湖南省南凤出口花炮厂创建于2006年，坐落于醴陵市李畋镇106国道旁。是一 家集科、工、贸、燃放为一体的专业花炮生产厂家"
+    />
+
+    <style>
+      html,
+      body {
+        background: #f5f5f5;
+        margin: 0;
+        padding: 0;
+      }
+      page {
+        display: block;
+      }
+      .fast {
+        -webkit-animation-duration: 0.2s;
+        animation-duration: 0.2s;
+      }
+      .layer-content {
+        position: fixed;
+        z-index: 99999;
+        left: 50%;
+        bottom: 0px;
+        width: 100%;
+        max-width: 640px;
+        height: auto;
+        z-index: 12;
+        z-index: 999;
+        display: none;
+      }
+    </style>
+
+    <script src="plugins/sdk/jquery.min.js"></script>
+    <script src="plugins/open/js/jweixin-1.0.0.js"></script>
+    <script src="plugins/sdk/main.js"></script>
+    <script type="text/javascript" src="plugins/jquery/jquery.js"></script>
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="plugins/layer/layer.js"></script>
+    <link rel="stylesheet" type="text/css" href="plugins/themes/css/core.css" />
+    <link rel="stylesheet" type="text/css" href="plugins/themes/css/icon.css" />
+    <link rel="stylesheet" type="text/css" href="plugins/themes/css/home.css" />
+    <link rel="stylesheet" type="text/css" href="styles/yusat.css" />
+    <script
+      type="text/javascript"
+      src="plugins/jquery/jquery.qrcode.min.js"
+    ></script>
+    <script type="text/javascript" src="plugins/hhSwipe.js"></script>
+    <script type="text/javascript" src="plugins/iscroll.js"></script>
+    <script type="text/javascript" src="scripts/app.js">
+      if ("standalone" in window.navigator && window.navigator.standalone) {
+        var noddy,
+          remotes = false;
+        document.addEventListener(
+          "click",
+          function (event) {
+            noddy = event.target;
+            while (noddy.nodeName !== "A" && noddy.nodeName !== "HTML") {
+              noddy = noddy.parentNode;
+            }
+            if (
+              "href" in noddy &&
+              noddy.href.indexOf("http") !== -1 &&
+              (noddy.href.indexOf(document.location.host) !== -1 || remotes)
+            ) {
+              event.preventDefault();
+              document.location.href = noddy.href;
+            }
+          },
+          false
+        );
+      }
+    </script>
+  </head>
+  <body>
+    <div class="zhe" style="z-index: 999">
+      <div
+        style="
+          width: 80%;
+          margin: 0 auto;
+          height: 300px;
+          display: none;
+          border-radius: 10px;
+          position: absolute;
+          background: #fff;
+          top: 150px;
+          margin-left: 10%;
+        "
+        id="t_ok"
+      >
+        <img
+          src="images/ok.jpg"
+          style="
+            width: 90px;
+            margin: 0 auto;
+            display: block;
+            position: relative;
+            margin-top: 40px;
+          "
+        />
+        <span id="tshi" style="margin-top: 16px; margin-bottom: 60px"></span>
+        <a href="javascript:gb()">
+          <div id="jxm" style="display: none">继续购买</div>
+        </a>
+        <a href="car.html?qyid=1">
+          <div id="tij" style="display: none">查看购物车</div>
+        </a>
+      </div>
+    </div>
+    <page>
+      <style>
+        #enterprise_index .enterprise_index_intro .title::after {
+          background: 0abaec;
+        }
+        #enterprise_index .show_img .title .txt_pc {
+          color: #7c00e6;
+        }
+
+        .br-circle-timer,
+        .br-previous,
+        .br-next {
+          display: none;
+        }
+      </style>
+      <style type="text/css">
+        #scrollBg {
+          width: 100%;
+          height: 60px;
+          line-height: 60px;
+          background: rgba(255, 255, 255, 0.4);
+          display: none;
+          z-index: -1;
+          position: fixed;
+          left: 0;
+          top: 0;
+          text-align: center;
+          font-size: 20px;
+          color: #fff;
+        }
+      </style>
+      <link rel="stylesheet" href="styles/style.css" type="text/css" />
+      <link
+        rel="stylesheet"
+        href="plugins/wxapp/allgoods.css"
+        type="text/css"
+      />
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="plugins/wxapp/animate.min.css"
+      />
+      <link
+        rel="stylesheet"
+        href="plugins/wxapp/enterprise-header.css"
+        type="text/css"
+      />
+      <script language="javascript">
+        function searchs() {
+          var keys = $("#sousuojieg").val();
+          var serl = "product.html?k=" + keys;
+          location.href = serl;
+        }
+      </script>
+      <script type="text/javascript">
+        function sss() {
+          $("#sousuojieg").focus().select();
+        }
+      </script>
+      <header
+        class="aui-header-default aui-header-fixed aui-header-clear-bg"
+        style="
+          background: #fff;
+          margin-top: 0px;
+          height: 60px;
+          padding-top: 8px;
+        "
+      >
+        <!-- aui-header-clear-bg 清除背景色 -->
+        <a
+          href="javascript:history.back(-1)"
+          class="aui-header-item"
+          style="position: absolute"
+        >
+          <i
+            class="aui-icon aui-icon-code"
+            style="width: 20px; background-image: url(images/fanhui-h.png)"
+          ></i>
+        </a>
+        <div
+          class="aui-header-center aui-header-center-clear"
+          style="margin-left: 2.5%"
+          onclick="sss()"
+        >
+          <div
+            class="aui-header-search-box"
+            style="width: 80%; background-color: #eeecec"
+          >
+            <i class="aui-icon aui-icon-small-search"></i>
+            <i class="aui-icon nyuyin"></i>
+            <blockquote>
+              <p>
+                <input
+                  id="sousuojieg"
+                  type="text"
+                  placeholder=" 搜索您要查找的产品"
+                  class="aui-header-search"
+                  onchange="javascript:searchs();"
+                  style="width: 67%"
+                />
+              </p>
+            </blockquote>
+          </div>
+        </div>
+        <div id="scrollBg" style="display: none"></div>
+        <a
+          href="#"
+          id="scanQRCode"
+          class="aui-header-item-icon"
+          style="position: absolute; right: 1%; top: 0; margin-top: 8px"
+        >
+          <img src="images/saoma-h.png" style="width: 26px"
+        /></a>
+      </header>
+
+      <div id="enterprise_allgoods">
+        <div style="height: 60px"></div>
+        <style type="text/css">
+          #container {
+            height: auto;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: 0 4px 5px rgb(0 0 0 / 5%);
+          }
+          #container .menu1 {
+            white-space: nowrap;
+            overflow: scroll;
+            height: 46px;
+            border: none;
+          }
+          #container .menu1 ul {
+            margin: 0;
+            padding: 0;
+            padding-top: 5px;
+          }
+          #container .menu1 ul li {
+            display: inline-block;
+            padding-left: 10px;
+            height: 40px;
+            padding-right: 10px;
+            font-size: 16px;
+            line-height: 40px;
+            list-style: none;
+            text-align: center;
+            cursor: pointer;
+            color: #585858;
+          }
+          #container .menu2 {
+            white-space: nowrap;
+            overflow: scroll;
+            height: 40px;
+            border: none;
+            margin-top: 12px;
+          }
+          #container .menu2 ul {
+            margin: 0;
+            padding: 0;
+          }
+          #container .menu2 ul li {
+            list-style: none;
+            display: inline-block;
+          }
+          #container .menu2 ul li ul li {
+            padding: 3px 14px;
+            list-style: none;
+            border: 1px #808080 solid;
+            border-radius: 20px;
+            color: #808080;
+            margin-left: 8px;
+          }
+          .bg {
+            background: linear-gradient(
+              to right,
+              rgba(177, 34, 229, 1) 0%,
+              rgba(255, 99, 222, 1) 0%,
+              rgba(177, 34, 229, 1) 100%
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+          }
+          .hide {
+            display: none;
+          }
+        </style>
+        <div id="container">
+          <div class="menu1">
+            <a href="product-1.html?qyid=1&tuij=1">
+              <div style="float: left; margin-top: 13px; margin-left: 10px">
+                <img
+                  src="images/newpro.png"
+                  style="height: 20px; display: inline-block"
+                />
+              </div>
+            </a>
+            <ul>
+              <li
+                onclick="window.location='product_fl.html?qyid=1';"
+                style="
+                  background: linear-gradient(
+                    to right,
+                    rgba(255, 0, 62, 1) 0%,
+                    rgba(253, 15, 111, 1) 0%,
+                    rgba(255, 0, 62, 1) 100%
+                  );
+                  -webkit-background-clip: text;
+                  background-clip: text;
+                  color: transparent;
+                "
+              >
+                全部
+              </li>
+
+              <li onclick="aa('3')">日景烟花领舞者</li>
+
+              <li onclick="aa('4')">夜景烟花狂欢者</li>
+
+              <li onclick="aa('78')">模压类</li>
+
+              <li onclick="window.location='product.html'">微焰火</li>
+
+              <li onclick="window.location='product.html'">城市烟花类</li>
+            </ul>
+          </div>
+
+          <div style="clear: both; height: 5px"></div>
+        </div>
+        <style>
+          .goods_an {
+            margin-top: 5px;
+          }
+          .goods_anzuo {
+            width: 38%;
+            height: 28px;
+            line-height: 28px;
+            display: block;
+            float: left;
+            background: linear-gradient(
+              to right,
+              rgba(251, 201, 67, 1) 0%,
+              rgba(253, 43, 122, 1) 100%
+            );
+            margin-bottom: 15px;
+            border-radius: 30px;
+            color: #fff;
+            margin-left: 10%;
+            margin-top: 10px;
+            box-shadow: 0 3px 3px #eee;
+          }
+          .goods_anzuo img {
+            display: inline-block;
+            float: left;
+            height: 20px;
+            margin-top: 4px;
+            margin-left: 7px;
+            margin-right: 5px;
+          }
+
+          .goods_anyou {
+            width: 38%;
+            height: 28px;
+            line-height: 28px;
+            display: block;
+            float: right;
+            background: linear-gradient(
+              to right,
+              rgba(251, 201, 67, 1) 0%,
+              rgba(253, 43, 122, 1) 100%
+            );
+            margin-bottom: 15px;
+            border-radius: 30px;
+            color: #fff;
+            margin-right: 10%;
+            margin-top: 10px;
+            box-shadow: 0 3px 3px #eee;
+          }
+          .goods_anyou img {
+            display: inline-block;
+            float: left;
+            height: 20px;
+            margin-top: 4px;
+            margin-left: 7px;
+            margin-right: 5px;
+          }
+          .pro_bg {
+            display: block;
+            width: 100%;
+          }
+        </style>
+        <!--显示一个swiper的分类，显示一个隐藏的flex分类
+    -->
+        <!-- 商品列表 -->
+        <div
+          class="goods"
+          id="productHeader"
+          style="clear: both; padding-bottom: 60px"
+        >
+          <div class="ttitle_r">
+            共有<span id="productCount"></span>个相关产品
+          </div>
+
+          <div class="clearBoth gd_list" style="clear: both">
+            <link
+              rel="stylesheet"
+              href="plugins/wxapp/enterprise-products.css"
+              type="text/css"
+            />
+
+            <div id="productContainer"></div>
+
+            <!--播放视频-->
+            <div class="videoPlay" style="display: none">
+              <video
+                src=""
+                id="videoPlay"
+                controls=""
+                x5-video-player-fullscreen2="true"
+              ></video>
+              <img
+                src="images/close.png"
+                class="close"
+                onclick="closeVideo()"
+              />
+            </div>
+            <script>
+              function showVideo(url) {
+                $(".videoPlay video").attr("src", url);
+                $(".videoPlay").show();
+                var el = $(".videoPlay video").get(0);
+                var rfs =
+                  el.requestFullScreen ||
+                  el.webkitRequestFullScreen ||
+                  el.mozRequestFullScreen ||
+                  el.msRequestFullScreen;
+                if (typeof rfs != "undefined" && rfs) {
+                  // rfs.call(el);
+                }
+                el.addEventListener(
+                  "ended",
+                  function () {
+                    //播放完毕，退出全屏
+                    closeVideo();
+                    el.webkitExitFullScreen()();
+                    this.webkitExitFullScreen();
+                    // alert(2);
+                  },
+                  false
+                );
+
+                el.play && el.play();
+                event.stopPropagation();
+                return false;
+              }
+
+              function closeVideo() {
+                var el = $(".videoPlay video").get(0);
+                el.pause && el.pause();
+                $(".videoPlay").attr("src", "").hide();
+              }
+            </script>
+          </div>
+        </div>
+        <div
+          class="pagination-load-status"
+          style="text-align: center; color: #666; font-size: 14px"
+        >
+          <!--p class="infinite-scroll-error">No more pages to load</p-->
+        </div>
+
+        <style>
+          .footer {
+            width: 100%;
+            height: 64px;
+            padding-top: 10px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: 1000;
+            background: url(images/foot_bg.png) center;
+            background-size: auto 74px;
+            box-sizing: content-box;
+          }
+          .myfoot {
+            width: 100%;
+            height: 64px;
+            position: relative;
+          }
+          .fcaidan {
+            width: 20%;
+            height: 64px;
+            float: left;
+            position: relative;
+          }
+          .fcaidan img {
+            display: block;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            position: absolute;
+            z-index: 999;
+            padding-bottom: 15px;
+            box-sizing: content-box;
+          }
+          .fcaidan p {
+            text-align: center;
+            font-size: 14px;
+            bottom: -8px;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            position: absolute;
+            z-index: 999;
+            margin-top: 39px;
+          }
+          .fcaidan span {
+            width: 16px;
+            height: 16px;
+            padding-left: 2px;
+            padding-right: 2px;
+            display: block;
+            background: #ff4361;
+            border-radius: 100%;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            position: absolute;
+            z-index: 99;
+            margin-bottom: 30px;
+            filter: alpha(opacity=70);
+            opacity: 0.7;
+          }
+        </style>
+        <div class="footer">
+          <div class="myfoot">
+            <div class="fcaidan">
+              <span></span
+              ><a href="product_fl.html?qyid=1"
+                ><img src="images/foot_fl.png" style="height: 24px" />
+                <p>分类</p></a
+              >
+            </div>
+            <div class="fcaidan">
+              <a href="video.html"
+                ><img src="images/foot_fx.png" style="height: 23px" />
+                <p>逛逛</p></a
+              >
+            </div>
+            <div class="fcaidan">
+              <a href="index.html?qyid=1"
+                ><img
+                  src="images/yunshangtong2021412131628/2021424996.png"
+                  style="
+                    width: 50px;
+                    height: auto;
+                    display: block;
+                    margin-top: -24px;
+                    padding-right: 3px;
+                  "
+                />
+                <p>首页</p></a
+              >
+            </div>
+            <div class="fcaidan">
+              <a href="contact.html?qyid=1"
+                ><img src="images/foot_lx.png" style="height: 26px" />
+                <p>联系</p></a
+              >
+            </div>
+            <div class="fcaidan">
+              <a href="index.html"
+                ><img src="images/foot_my.png" style="height: 26px" />
+                <p>我的</p></a
+              >
+            </div>
+          </div>
+        </div>
+        <!--/div-->
+      </div>
+      <div class="layer-content" style="z-index: 9999">
+        <div class="m-actionsheet actionsheet-toggle" id="actionSheet">
+          <div style="position: relative">
+            <div class="aui-spec-menu-top">
+              <div class="aui-spec-first-pic">
+                <img src="" alt="" id="simg" />
+              </div>
+              <div class="aui-spec-first-sif">
+                <h2><span id="jiage"></span>元/箱</h2>
+
+                <p>规格：<span id="sguige"></span></p>
+                <p>含量：<span id="shl"></span></p>
+              </div>
+            </div>
+            <a href="javascript:gb();">
+              <div id="gb">
+                <i class="iconfont icon-guanbi" style="font-size: 24px"></i>
+              </div>
+            </a>
+            <div class="aui-product-text-content">
+              <div class="aui-product-text-content-list">
+                <div class="aui-product-text-content-list-bd">
+                  <span>已选</span>
+                </div>
+                <div class="aui-product-text-content-list-ft">
+                  <div class="tj">
+                    <div class="tmt" id="pnamesa"></div>
+                  </div>
+                </div>
+              </div>
+              <style>
+                .needsclick {
+                  content: attr(placeholder);
+                }
+              </style>
+              <div class="aui-product-text-content-list">
+                <div class="aui-product-text-content-list-bd">
+                  <span>数量</span>
+                </div>
+                <div class="aui-car-box-list-text-price">
+                  <div
+                    class="aui-car-box-list-text-arithmetic tj"
+                    style="position: inherit; width: 65px; text-align: center"
+                  >
+                    <div
+                      id="gwshu"
+                      class="num needsclick"
+                      contenteditable="plaintext-only"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="aui-product-function">
+              <a href="" id="qrtjs" class="yellow-color" style="width: 100%">
+                <div id="qrtj">确认加入购物车</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script type="text/javascript">
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf("Android") > -1 || u.indexOf("Adr") > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if (isiOS) {
+          $("#myideo").show();
+          $(".myideop").hide();
+        }
+        $(function () {
+          $(".form_edit .num").click(function () {
+            var oDiv = document.getElementById("gwshu");
+            oDiv.innerHTML += this.innerHTML;
+          });
+          $("#remove").click(function () {
+            var oDiv = document.getElementById("gwshu");
+            var oDivHtml = oDiv.innerHTML;
+            oDiv.innerHTML = oDivHtml.substring(0, oDivHtml.length - 1);
+          });
+        });
+      </script>
+    </page>
+    <script
+      type="text/javascript"
+      src="plugins/themes/js/jquery.min.js"
+    ></script>
+    <script type="text/javascript" src="plugins/themes/js/aui.js"></script>
+    <script type="text/javascript">
+      $(function () {
+        //绑定滚动条事件
+        //绑定滚动条事件
+        $(window).bind("scroll", function () {
+          var sTop = $(window).scrollTop();
+          var sTop = parseInt(sTop);
+          if (sTop >= 40) {
+            if (!$("#scrollBg").is(":visible")) {
+              try {
+                $("#scrollBg").slideDown();
+              } catch (e) {
+                $("#scrollBg").show();
+              }
+            }
+          } else {
+            if ($("#scrollBg").is(":visible")) {
+              try {
+                $("#scrollBg").slideUp();
+              } catch (e) {
+                $("#scrollBg").hide();
+              }
+            }
+          }
+        });
+      });
+    </script>
+    <script>
+      function aa(id) {
+        layer.open({
+          type: 2,
+          title: "☰",
+          maxmin: true,
+          shadeClose: true, //点击遮罩关闭层
+          area: ["85%", "510px;"],
+          content: "fenlei.html?qyid=1&id=" + id,
+        });
+      }
+
+      function v_bo(id) {
+        layer.open({
+          type: 2,
+          title: "",
+          maxmin: true,
+          shadeClose: true, //点击遮罩关闭层
+          area: ["100%", "100%"],
+          content: "bo/bo.html?qyid=1&id=" + id,
+        });
+      }
+      function aa2(id) {
+        layer.open({
+          type: 2,
+          title: "申请认证会员",
+          maxmin: true,
+          shadeClose: true, //点击遮罩关闭层
+          area: ["85%", "260px;"],
+          content: "shouquan.html?qyid=1",
+        });
+      }
+      function vv(id) {
+        layer.open({
+          type: 2,
+          title: "产品视频",
+          maxmin: true,
+          shadeClose: true, //点击遮罩关闭层
+          area: ["100%", "100%"],
+          content: "video.asp?qyid=1&pid=" + id,
+        });
+      }
+
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", "data/products.json", true);
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          var products = JSON.parse(xhr.responseText);
+          renderProductList(products);
+        }
+      };
+      xhr.send();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" href="styles/app.css" type="text/css" />
+    <link rel="stylesheet" href="plugins/wxapp/app.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="plugins/wxapp/animate.min.css"
+      type="text/css"
+    />
+    <title>南凤烟花</title>
+    <link rel="manifest" href="manifest.json" />
+    <meta name="keywords" content="" />
+    <meta
+      name="description"
+      content="湖南省南凤出口花炮厂创建于2006年，坐落于醴陵市李畋镇106国道旁。是一 家集科、工、贸、燃放为一体的专业花炮生产厂家"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="images/yunshangtong2021412131628/2021420162731.png"
+    />
+
+    <meta name="theme-color" content="#317EFB" />
+    <style>
+      html,
+      body {
+        background: #f9f8f8;
+        margin: 0;
+        padding: 0;
+      }
+      page {
+        display: block;
+      }
+      .fast {
+        -webkit-animation-duration: 0.2s;
+        animation-duration: 0.2s;
+      }
+    </style>
+
+    <script src="plugins/sdk/jquery.min.js"></script>
+    <script src="plugins/open/js/jweixin-1.0.0.js"></script>
+    <script src="plugins/sdk/main.js"></script>
+    <script
+      type="text/javascript"
+      src="plugins/themes/js/jquery.min.js"
+    ></script>
+    <script type="text/javascript" src="plugins/themes/js/aui2.js"></script>
+    <script src="plugins/swiper4/js/swiper.min.js"></script>
+    <script src="plugins/swiper4/js/swiper.animate.min.js"></script>
+    <script type="text/javascript" src="plugins/jquery/jquery.js"></script>
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="plugins/layer/layer.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="plugins/themes/css/core.css" />
+    <link rel="stylesheet" type="text/css" href="plugins/themes/css/icon.css" />
+    <link rel="stylesheet" type="text/css" href="plugins/themes/css/home.css" />
+    <link rel="stylesheet" href="plugins/swiper4/css/swiper.min.css" />
+    <link rel="stylesheet" href="plugins/swiper4/css/animate.min.css" />
+  </head>
+  <body>
+    <div id="install-popup" style="display: none">
+      <button id="install-btn">安装南凤烟花</button>
+    </div>
+    <page id="main-content">
+      <link rel="stylesheet" href="plugins/wxapp/index.css" type="text/css" />
+      <link
+        rel="stylesheet"
+        href="plugins/wxapp/enterprise-header.css"
+        type="text/css"
+      />
+      <style>
+        #enterprise_index .enterprise_index_intro {
+          background-color: #fff;
+          border-top-left-radius: 20px;
+          border-top-right-radius: 20px;
+          padding: 0 20px;
+        }
+        #enterprise_index .enterprise_index_intro .title::after {
+          background: 0abaec;
+        }
+        #enterprise_index .show_img .title .txt_pc {
+          color: #7c00e6;
+        }
+        .br-circle-timer,
+        .br-previous,
+        .br-next {
+          display: none;
+        }
+      </style>
+      <style>
+        .mid-navs {
+          padding-top: 20px;
+          padding-left: 10px;
+          padding-right: 10px;
+          padding-bottom: 20px;
+          display: flex;
+          background: #fff;
+          border-bottom-left-radius: 20px;
+          border-bottom-right-radius: 20px;
+        }
+        .mid-navs a {
+          flex: 1;
+          text-align: center;
+        }
+        .mid-navs a img {
+          width: 54px;
+        }
+      </style>
+      <script language="javascript">
+        function searchs() {
+          var keys = $("#sousuojieg").val();
+          var serl = "product.html?k=" + keys;
+          location.href = serl;
+        }
+      </script>
+      <style>
+        .nheader {
+          width: 100%;
+          height: auto;
+        }
+
+        .n_logo {
+          padding-top: 20px;
+          padding-bottom: 20px;
+        }
+
+        .n_logo img {
+          width: 135px;
+          display: block;
+          height: auto;
+          margin: 0 auto;
+        }
+
+        .n_banner img {
+          width: 100%;
+          display: block;
+          height: auto;
+          margin: 0 auto;
+        }
+
+        .n_banner {
+          padding-bottom: 20px;
+        }
+
+        .nsearch {
+          width: 100%;
+          height: auto;
+          background: #fff;
+        }
+      </style>
+
+      <div id="enterprise_index">
+        <div
+          class="nheader"
+          id="nheader"
+          style="background-size: 100%; transform: translate3d(0, 0, 0)"
+        >
+          <div class="n_logo">
+            <img
+              src="images/yunshangtong2021412131628/2021426115231.png"
+              id="logo"
+            />
+          </div>
+          <div class="n_banner">
+            <img
+              src="images/yunshangtong2021412131628/2021420142321.png"
+              style="position: absolute; top: -88888px"
+            />
+
+            <img
+              src="images/yunshangtong2021412131628/202142010734.png"
+              style="position: absolute; top: -88888px"
+            />
+
+            <!--<img src="images/banner.png" >-->
+            <div
+              class="swiper-container"
+              style="transform: translate3d(0, 0, 0)"
+            >
+              <div
+                class="swiper-wrapper"
+                style="transform: translate3d(0, 0, 0)"
+              >
+                <div
+                  class="swiper-slide blue-slide"
+                  style="transform: translate3d(0, 0, 0)"
+                >
+                  <a>
+                    <img
+                      src="images/yunshangtong2021412131628/202142010726.png"
+                      class="tup"
+                      data-bg_color="images/yunshangtong2021412131628/2021420142321.png"
+                    />
+                  </a>
+                </div>
+
+                <div
+                  class="swiper-slide blue-slide"
+                  style="transform: translate3d(0, 0, 0)"
+                >
+                  <a>
+                    <img
+                      src="images/yunshangtong2021412131628/202141993315.png"
+                      class="tup"
+                      data-bg_color="images/yunshangtong2021412131628/202142010734.png"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="xianshi"></div>
+        <script type="text/javascript">
+          function sss() {
+            $("#sousuojieg").focus().select();
+          }
+        </script>
+        <div class="nsearch" onclick="sss()">
+          <div class="aui-header-center aui-header-center-clear">
+            <div class="aui-header-search-box">
+              <i class="aui-icon aui-icon-small-search"></i>
+              <i class="aui-icon nyuyin"></i>
+              <blockquote>
+                <p>
+                  <input
+                    id="sousuojieg"
+                    type="text"
+                    placeholder=" 搜索您要查找的产品"
+                    class="aui-header-search"
+                    onchange="javascript:searchs();"
+                  />
+                </p>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+        <div class="mid-navs">
+          <a href="product_fl.html?qyid=1 ">
+            <div>
+              <img src="images/yunshangtong2021412131628/2021419143541.png" />
+            </div>
+            <div
+              style="
+                text-align: center;
+                font-size: 14px;
+                color: #3c3c3c;
+                line-height: 24px;
+              "
+            >
+              产品中心
+            </div>
+          </a>
+
+          <a href="product.html?tuij=1&qyid=1 ">
+            <div>
+              <img src="images/yunshangtong2021412131628/202141914361.png" />
+            </div>
+            <div
+              style="
+                text-align: center;
+                font-size: 14px;
+                color: #3c3c3c;
+                line-height: 24px;
+              "
+            >
+              上新精选
+            </div>
+          </a>
+
+          <a href="about.html?qyid=1 ">
+            <div>
+              <img src="images/yunshangtong2021412131628/2021419143619.png" />
+            </div>
+            <div
+              style="
+                text-align: center;
+                font-size: 14px;
+                color: #3c3c3c;
+                line-height: 24px;
+              "
+            >
+              关于我们
+            </div>
+          </a>
+
+          <a href="bo/qybo.html?qyid=1&bid=4 ">
+            <div>
+              <img src="images/yunshangtong2021412131628/2021419165045.png" />
+            </div>
+            <div
+              style="
+                text-align: center;
+                font-size: 14px;
+                color: #3c3c3c;
+                line-height: 24px;
+              "
+            >
+              燃放视频
+            </div>
+          </a>
+        </div>
+        <style>
+          .m_indexct {
+            background: #fff;
+            width: 100%;
+            height: auto;
+          }
+          .m_indexct img {
+            display: block;
+            width: 100%;
+            height: auto;
+          }
+        </style>
+
+        <div class="m_indexct">
+          <br />
+          <img
+            src="images/yunshangtong2021412131628/202141992739.gif"
+            style="width: 100%; height: auto"
+          />
+        </div>
+
+        <div>
+          <div style="padding-top: 10px; padding-bottom: 27px">
+            <a href="tel:15874820666"
+              ><img
+                src="images/banq1.png"
+                style="
+                  width: 46%;
+                  height: auto;
+                  display: block;
+                  margin: 0 auto;
+                "
+            /></a>
+          </div>
+          <div style="height: 60px; clear: both; display: block"></div>
+          <style>
+            .footer {
+              width: 100%;
+              height: 64px;
+              padding-top: 10px;
+              position: fixed;
+              bottom: 0;
+              left: 0;
+              z-index: 1000;
+              background: url(images/foot_bg.png) center;
+              background-size: auto 74px;
+              box-sizing: content-box;
+            }
+            .myfoot {
+              width: 100%;
+              height: 64px;
+              position: relative;
+            }
+            .fcaidan {
+              width: 20%;
+              height: 64px;
+              float: left;
+              position: relative;
+            }
+            .fcaidan img {
+              display: block;
+              margin: auto;
+              left: 0;
+              right: 0;
+              top: 0;
+              bottom: 0;
+              position: absolute;
+              z-index: 999;
+              padding-bottom: 15px;
+              box-sizing: content-box;
+            }
+            .fcaidan p {
+              text-align: center;
+              font-size: 14px;
+              bottom: -8px;
+              margin: auto;
+              left: 0;
+              right: 0;
+              top: 0;
+              bottom: 0;
+              position: absolute;
+              z-index: 999;
+              margin-top: 39px;
+            }
+            .fcaidan span {
+              width: 16px;
+              height: 16px;
+              padding-left: 2px;
+              padding-right: 2px;
+              display: block;
+              background: #ff4361;
+              border-radius: 100%;
+              margin: auto;
+              left: 0;
+              right: 0;
+              top: 0;
+              bottom: 0;
+              position: absolute;
+              z-index: 99;
+              margin-bottom: 30px;
+              filter: alpha(opacity=70);
+              opacity: 0.7;
+            }
+          </style>
+          <div class="footer">
+            <div class="myfoot">
+              <div class="fcaidan">
+                <a href="product_fl.html?qyid=1"
+                  ><img src="images/foot_fl.png" style="height: 24px" />
+                  <p>分类</p></a
+                >
+              </div>
+              <div class="fcaidan">
+                <a href="video.html"
+                  ><img src="images/foot_fx.png" style="height: 23px" />
+                  <p>逛逛</p></a
+                >
+              </div>
+              <div class="fcaidan">
+                <a href="index.html"
+                  ><img
+                    src="images/yunshangtong2021412131628/2021424996.png"
+                    style="
+                      width: 50px;
+                      height: auto;
+                      display: block;
+                      margin-top: -24px;
+                      padding-right: 3px;
+                    "
+                  />
+                  <p>首页</p></a
+                >
+              </div>
+              <div class="fcaidan">
+                <a href="contact.html"
+                  ><img src="images/foot_lx.png" style="height: 26px" />
+                  <p>联系</p></a
+                >
+              </div>
+              <div class="fcaidan">
+                <a href="index.html"
+                  ><img src="images/foot_my.png" style="height: 26px" />
+                  <p>我的</p></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </page>
+
+    <!-- <div class="videoPlay" style="display: none">
+      <video
+        src=""
+        id="videoPlay"
+        controls=""
+        x5-video-player-fullscreen2="true"
+      ></video>
+      <img src="images/close.png" class="close" onclick="closeVideo()" />
+    </div> -->
+    <!-- <script>
+      function showVideo(url) {
+        $(".videoPlay video").attr("src", url);
+        $(".videoPlay").show();
+        var el = $(".videoPlay video").get(0);
+        var rfs =
+          el.requestFullScreen ||
+          el.webkitRequestFullScreen ||
+          el.mozRequestFullScreen ||
+          el.msRequestFullScreen;
+        el.addEventListener(
+          "ended",
+          function () {
+            closeVideo();
+            el.webkitExitFullScreen()();
+            this.webkitExitFullScreen();
+          },
+          false
+        );
+
+        el.play && el.play();
+        event.stopPropagation();
+        return false;
+      }
+
+      function closeVideo() {
+        var el = $(".videoPlay video").get(0);
+        el.pause && el.pause();
+        $(".videoPlay").attr("src", "").hide();
+      }
+    </script> -->
+
+    <!-- Initialize Swiper -->
+    <script>
+      var mySwiper = new Swiper(".swiper-container", {
+        autoplay: true, //可选选项，自动滑动
+        speed: 800,
+        on: {
+          init: function () {
+            swiperAnimateCache(this); //隐藏动画元素
+            this.emit("slideChangeTransitionEnd"); //在初始化时触发一次slideChangeTransitionEnd事件
+          },
+          slideChangeTransitionEnd: function () {
+            swiperAnimate(this); //每个slide切换结束时运行当前slide动画
+            var cc = this.slides
+              .eq(this.activeIndex)
+              .find(".tup")
+              .attr("data-bg_color"); //动画只展示一次
+
+            $("#nheader").css("background", "url(" + cc + ") #FFF no-repeat");
+            $("#nheader").css("background-size", "100%");
+          },
+        },
+      });
+    </script>
+    <script type="text/javascript">
+      $(function () {
+        //绑定滚动条事件
+        $(window).bind("scroll", function () {
+          var sTop = $(window).scrollTop();
+          var sTop = parseInt(sTop);
+          if (sTop >= 40) {
+            if (!$("#scrollBg").is(":visible")) {
+              try {
+                $("#scrollBg").slideDown();
+              } catch (e) {
+                $("#scrollBg").show();
+              }
+            }
+          } else {
+            if ($("#scrollBg").is(":visible")) {
+              try {
+                $("#scrollBg").slideUp();
+              } catch (e) {
+                $("#scrollBg").hide();
+              }
+            }
+          }
+        });
+      });
+    </script>
+    <script>
+      function aa(id) {
+        layer.open({
+          type: 2,
+          title: "☰",
+          maxmin: true,
+          shadeClose: true, //点击遮罩关闭层
+          area: ["85%", "245px;"],
+          content: "fenlei.html?qyid=1&id=" + id,
+        });
+      }
+
+      function v_bo(id) {
+        layer.open({
+          type: 2,
+          title: "",
+          maxmin: true,
+          shadeClose: true, //点击遮罩关闭层
+          area: ["100%", "100%"],
+          content: "bo/bo.html?qyid=1&id=" + id,
+        });
+      }
+
+      // Register the Service Worker
+      async function registerSW() {
+        if ("serviceWorker" in navigator) {
+          try {
+            await navigator.serviceWorker.register("service-worker.js");
+          } catch (e) {
+            console.log("SW registration failed");
+          }
+        }
+      }
+
+      window.addEventListener("load", () => {
+        registerSW();
+      });
+
+      // PWA installation flow
+      let deferredPrompt;
+      let installSource;
+      const installPopup = document.getElementById("install-popup");
+      const installButton = document.getElementById("install-btn");
+      const mainContent = document.getElementById("main-content");
+      installButton.addEventListener("click", installPWA);
+
+      function showInstallPromo() {
+        installPopup.style.display = "flex";
+        installPopup.style.justifyContent = "center";
+        installPopup.style.alignItems = "center";
+        installPopup.style.height = "100vh";
+        installPopup.style.background = "#5900b3";
+      }
+
+      function installPWA() {
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          deferredPrompt.userChoice.then((choiceResult) => {
+            deferredPrompt = null;
+            hideInstallPromo();
+          });
+        }
+      }
+
+      function hideInstallPromo() {
+        installPopup.style.display = "none";
+        mainContent.style.display = "block";
+      }
+
+      window.addEventListener("beforeinstallprompt", (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        showInstallPromo();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+.attrlist{ margin:20px;}
+.attrlist{border:1px solid #ccc;}
+.attrlist .attr{ border-bottom:1px solid #ccc; line-height:20px; font-size:14px;}
+.attrlist .attr:last-child{ border-bottom:none;}
+.attrlist .attr span.name{ display:inline-block; width:40%; background:#eee;  padding:5px; box-sizing:border-box; }
+.attrlist .attr span.value{ display:inline-block; width:55%; padding:5px; box-sizing:border-box;}

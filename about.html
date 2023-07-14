@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" href="plugins/wxapp/app.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="plugins/wxapp/animate.min.css"
+      type="text/css"
+    />
+    <title>企业简介-南凤烟花</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="images/yunshangtong2021412131628/2021420162731.png"
+    />
+    <meta name="description" content="" />
+    <script type="text/javascript" src="plugins/jquery/jquery.js"></script>
+    <script type="text/javascript" src="plugins/hhSwipe.js"></script>
+    <script src="plugins/sdk/jquery.min.js"></script>
+    <script src="plugins/open/js/jweixin-1.0.0.js"></script>
+    <script src="plugins/sdk/main.js"></script>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: #f5f5f5;
+      }
+      page {
+        display: block;
+      }
+      .fast {
+        -webkit-animation-duration: 0.2s;
+        animation-duration: 0.2s;
+      }
+    </style>
+    <style>
+      .addWrap {
+        position: relative;
+        width: 100%;
+        background: #fff;
+        margin: 0;
+        padding: 0;
+      }
+      .addWrap .swipe {
+        overflow: hidden;
+        visibility: hidden;
+        position: relative;
+      }
+      .addWrap .swipe-wrap {
+        overflow: hidden;
+        position: relative;
+      }
+      .addWrap .swipe-wrap div {
+        float: left;
+        width: 100%;
+        position: relative;
+      }
+      .img-responsive {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    </style>
+    <link rel="stylesheet" type="text/css" href="plugins/themes/css/core.css" />
+    <link rel="stylesheet" type="text/css" href="plugins/themes/css/icon.css" />
+    <link rel="stylesheet" type="text/css" href="plugins/themes/css/home.css" />
+  </head>
+  <body>
+    <page>
+      <link rel="stylesheet" href="plugins/wxapp/intro.css" type="text/css" />
+      <link rel="stylesheet" href="plugins/wxapp/index.css" type="text/css" />
+      <style>
+        #enterprise_index .enterprise_index_intro .title::after {
+          background: 0abaec;
+        }
+        #enterprise_index .enterprise_index_intro {
+          position: absolute;
+          margin-top: -28px;
+          z-index: 999;
+          width: 100%;
+          margin-bottom: 70px;
+          z-index: 10;
+          background-color: #fff;
+          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+          border-radius: 20px;
+          padding: 0 16px;
+        }
+      </style>
+      <div id="enterprise_intro">
+        <link
+          rel="stylesheet"
+          href="plugins/wxapp/enterprise-header.css"
+          type="text/css"
+        />
+
+        <div class="enterprise-header" id="pgcontainer">
+          <div
+            class="header_title"
+            style="z-index: 9; height: 50px; padding-top: 6px"
+          >
+            <div id="navbar">
+              <div class="header-leftbtn">
+                <a
+                  href="javascript:history.back(-1)"
+                  class="aui-header-item"
+                  style="margin-top: 3px"
+                >
+                  <i class="aui-icon aui-icon-back"></i>
+                </a>
+              </div>
+            </div>
+            <div class="overlay"></div>
+            <img
+              class="title"
+              src="images/yunshangtong2021412131628/2021418171212.png"
+            />
+          </div>
+        </div>
+
+        <div style="height: 50px"></div>
+        <div class="enterprise_intro_details">
+          <div
+            class="aui-banner-content"
+            data-aui-slider=""
+            style="transform: translate3d(0, 0, 0)"
+          >
+            <div class="aui-banner-wrapper">
+              <div
+                class="aui-banner-wrapper-item"
+                style="transform: translate3d(0, 0, 0)"
+              >
+                <a href=""
+                  ><img src="images/yunshangtong2021412131628/202141985944.png"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <style>
+          .about_cd {
+            width: 100%;
+            height: 42px;
+            line-height: 40px;
+            position: fixed;
+            z-index: 1000;
+            top: 50px;
+            background: #999;
+            background-color: rgba(0, 0, 0, 0.55);
+          }
+          .about_cd a {
+            width: 20%;
+            height: 42px;
+            display: block;
+            line-height: 42px;
+            text-align: center;
+            color: #dfdede;
+            float: left;
+            margin-left: 4%;
+            font-size: 14px;
+          }
+          .about_cd .now {
+            background: #ff4361;
+            display: block;
+            height: 26px;
+            margin-top: 8px;
+            line-height: 26px;
+            color: #fff;
+            border-radius: 20px;
+          }
+        </style>
+        <div class="about_cd">
+          <a href="about6.html?qyid=1" class="now">企业简介</a>
+
+          <a href="about7.html?qyid=1">工厂风貌</a>
+
+          <a href="about8.html?qyid=1">企业文化</a>
+
+          <a href="about9.html?qyid=1">团队风采</a>
+        </div>
+
+        <div id="enterprise_index">
+          <style>
+            body,
+            page {
+              background: #f5f5f5;
+            }
+            .enterprise_index_intro img {
+              max-width: 100%;
+            }
+            .enterprise_index_intro .title {
+              font-size: 18px;
+              font-weight: 700;
+            }
+            #enterprise_index .enterprise_index_intro .txt p {
+              padding: 0 15px;
+              margin-bottom: 12px;
+            }
+            #enterprise_index .enterprise_index_intro .txt img {
+              margin-top: 15px;
+            }
+          </style>
+          <div
+            class="enterprise_index_intro"
+            style="padding: 0px; padding-bottom: 76px"
+          >
+            <div class="clearBoth title" style="margin-left: 15px">
+              企业简介
+              <text>About Us</text>
+            </div>
+            <div class="txt" style="overflow: hidden; padding: 0">
+              <p style="text-align: justify">
+                <span style="line-height: 2"
+                  >&nbsp; &nbsp; &nbsp;
+                  <span style="line-height: 2">&nbsp;</span></span
+                ><span style="line-height: 2"
+                  >湖南省南凤出口花炮厂创建于2006年，坐落于醴陵市李畋镇106国道旁。是一
+                  家集科、工、贸、燃放为一体的专业花炮生产厂家。经过几年的艰苦创业和产品开发以及全体职工的不懈努力，现已发展成为已获“中国花炮百强企业”和"质量信得过厂家"、"守合同重信用厂家”“先进私营厂家”
+                  、“品牌产品”、“著名商标” 等称号。</span
+                >
+              </p>
+              <p style="text-align: justify">
+                <span style="line-height: 2"
+                  >&nbsp; &nbsp; &nbsp;
+                  &nbsp;我司于2017年1月6日已被评为湖南省醴陵市烟花爆竹A类企业，2019年2月19日已取得湖南省安监局颁发的第五轮安全生产许可证。为企业发展壮大另收购原虎形烟花（现变更为百凤烟花）。现在主要生产组合烟花类产品,是一家注册资金500万的大型骨干厂家，经过多年发展现年上缴税收48万元，厂房占地面积达四十七万多平方米，厂房280幢，烟花爆竹安全生产标准化已达三级，现企业技术管理职工62名、职工320
+                  余人。近年来，我厂进一步加强企业管理，在生产中严格按照国家标准生产，确保了安全生产及产品质量。&nbsp;</span
+                >
+              </p>
+              <p style="text-align: justify">
+                <span style="line-height: 2"
+                  >&nbsp; &nbsp; &nbsp;
+                  &nbsp;我厂现已有一支强大的团队，即综合管理部、销售服务部、营业部、生产制造部、品控部、研发部、财务部、安全部。在安全生产方面，拥有一批训练有素，技术精湛，实践经验丰富，作风过硬的专业生产团队。南凤出口花炮厂在行业市场上，经营状况良好，主要以日景：彩烟漫舞、四色烟墙、我们结婚啦等系列产品，夜景：恭喜发财、凤凰传奇、雪景等系列产品常年领占市场，本企业拥有美好的发展前景，南凤人引领行业先驱，专业典范，以超前的市场意识，采用市场定价，定量，按计划供货，随时调节的销售方式，南凤产品以其过硬的质量，新颖的造型，独特的包装，合理的价格深受消费者欢迎。</span
+                >
+              </p>
+              <p style="text-align: justify">
+                <span style="line-height: 2"
+                  >&nbsp; &nbsp; &nbsp;
+                  &nbsp;我厂始终坚持“团结务实、开拓创新”的工作精神，始终秉承“质量第一、安全第一、诚信为本、顾客至上”的服务宗旨，始终恪守“不求最大、但求最好”的经营理念，愿南凤烟花能为千家万户带来吉祥欢乐，愿南凤烟花成为美好使者，铺设友谊与合作的桥梁，与您携手并进，共创辉煌。</span
+                >
+              </p>
+              <p>
+                <img
+                  src="images/yunshangtong2021412131628/20210701094176027602.JPG"
+                  alt=""
+                />
+              </p>
+              <p>
+                <br />
+              </p>
+              <p>
+                <br />
+              </p>
+            </div>
+          </div>
+        </div>
+        <div></div>
+      </div>
+
+      <style>
+        .footer {
+          width: 100%;
+          height: 64px;
+          padding-top: 10px;
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          z-index: 1000;
+          background: url(images/foot_bg.png) center;
+          background-size: auto 74px;
+          box-sizing: content-box;
+        }
+        .myfoot {
+          width: 100%;
+          height: 64px;
+          position: relative;
+        }
+        .fcaidan {
+          width: 20%;
+          height: 64px;
+          float: left;
+          position: relative;
+        }
+        .fcaidan img {
+          display: block;
+          margin: auto;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          position: absolute;
+          z-index: 999;
+          padding-bottom: 15px;
+          box-sizing: content-box;
+        }
+        .fcaidan p {
+          text-align: center;
+          font-size: 14px;
+          bottom: -8px;
+          margin: auto;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          position: absolute;
+          z-index: 999;
+          margin-top: 39px;
+        }
+        .fcaidan span {
+          width: 16px;
+          height: 16px;
+          padding-left: 2px;
+          padding-right: 2px;
+          display: block;
+          background: #ff4361;
+          border-radius: 100%;
+          margin: auto;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          position: absolute;
+          z-index: 99;
+          margin-bottom: 30px;
+          filter: alpha(opacity=70);
+          opacity: 0.7;
+        }
+      </style>
+      <div class="footer">
+        <div class="myfoot">
+          <div class="fcaidan">
+            <a href="product_fl.html?qyid=1"
+              ><img src="images/foot_fl.png" style="height: 24px" />
+              <p>分类</p></a
+            >
+          </div>
+          <div class="fcaidan">
+            <a href="video.html"
+              ><img src="images/foot_fx.png" style="height: 23px" />
+              <p>逛逛</p></a
+            >
+          </div>
+          <div class="fcaidan">
+            <a href="index.html?qyid=1"
+              ><img
+                src="images/yunshangtong2021412131628/2021424996.png"
+                style="
+                  width: 50px;
+                  height: auto;
+                  display: block;
+                  margin-top: -24px;
+                  padding-right: 3px;
+                "
+              />
+              <p>首页</p></a
+            >
+          </div>
+          <div class="fcaidan">
+            <a href="contact.html?qyid=1"
+              ><img src="images/foot_lx.png" style="height: 26px" />
+              <p>联系</p></a
+            >
+          </div>
+          <div class="fcaidan">
+            <a href="index.html"
+              ><img src="images/foot_my.png" style="height: 26px" />
+              <p>我的</p></a
+            >
+          </div>
+        </div>
+      </div>
+    </page>
+
+    <script type="text/javascript" src="plugins/themes/js/aui.js"></script>
+  </body>
+</html>
