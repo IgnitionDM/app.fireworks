@@ -60,17 +60,19 @@
     <script type="text/javascript" src="plugins/jquery/jquery.js"></script>
     <script src="plugins/jquery/jquery.min.js"></script>
     <script src="plugins/layer/layer.js"></script>
+    <script src="plugins/sweetalert2/sweetalert2.all.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="plugins/themes/css/core.css" />
     <link rel="stylesheet" type="text/css" href="plugins/themes/css/icon.css" />
     <link rel="stylesheet" type="text/css" href="plugins/themes/css/home.css" />
     <link rel="stylesheet" href="plugins/swiper4/css/swiper.min.css" />
     <link rel="stylesheet" href="plugins/swiper4/css/animate.min.css" />
+    <link rel="stylesheet" href="plugins/sweetalert2/sweetalert2.min.css" />
   </head>
   <body>
-    <div id="install-popup" style="display: none">
+    <!-- <div id="install-popup" style="display: none">
       <button id="install-btn">安装南凤烟花</button>
-    </div>
+    </div> -->
     <page id="main-content">
       <link rel="stylesheet" href="plugins/wxapp/index.css" type="text/css" />
       <link
@@ -591,39 +593,51 @@
 
       // PWA installation flow
       let deferredPrompt;
-      let installSource;
-      const installPopup = document.getElementById("install-popup");
-      const installButton = document.getElementById("install-btn");
-      const mainContent = document.getElementById("main-content");
-      installButton.addEventListener("click", installPWA);
+      // let installSource;
+      // const installPopup = document.getElementById("install-popup");
+      // const installButton = document.getElementById("install-btn");
+      // const mainContent = document.getElementById("main-content");
+      // installButton.addEventListener("click", installPWA);
 
-      function showInstallPromo() {
-        installPopup.style.display = "flex";
-        installPopup.style.justifyContent = "center";
-        installPopup.style.alignItems = "center";
-        installPopup.style.height = "100vh";
-        installPopup.style.background = "#5900b3";
-      }
+      // function showInstallPromo() {
+      //   installPopup.style.display = "flex";
+      //   installPopup.style.justifyContent = "center";
+      //   installPopup.style.alignItems = "center";
+      //   installPopup.style.height = "100vh";
+      //   installPopup.style.background = "#5900b3";
+      // }
 
       function installPWA() {
         if (deferredPrompt) {
           deferredPrompt.prompt();
           deferredPrompt.userChoice.then((choiceResult) => {
             deferredPrompt = null;
-            hideInstallPromo();
+            // hideInstallPromo();
           });
         }
       }
 
-      function hideInstallPromo() {
-        installPopup.style.display = "none";
-        mainContent.style.display = "block";
-      }
+      // function hideInstallPromo() {
+      //   installPopup.style.display = "none";
+      //   mainContent.style.display = "block";
+      // }
 
       window.addEventListener("beforeinstallprompt", (e) => {
         e.preventDefault();
         deferredPrompt = e;
-        showInstallPromo();
+        // showInstallPromo();
+        Swal.fire({
+          title: "安装移动应用程序?",
+          showDenyButton: true,
+          showCancelButton: false,
+          confirmButtonText: "安装南凤烟花",
+          denyButtonText: `取消`,
+        }).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire("Install in progess...", "", "success");
+            installPWA();
+          }
+        });
       });
     </script>
   </body>
