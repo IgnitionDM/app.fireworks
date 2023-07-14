@@ -61,6 +61,7 @@
     <script src="plugins/jquery/jquery.min.js"></script>
     <script src="plugins/layer/layer.js"></script>
     <script src="plugins/sweetalert2/js/sweetalert2.all.min.js"></script>
+    <script type="text/javascript" src="scripts/pwa.js"></script>
 
     <link rel="stylesheet" type="text/css" href="plugins/themes/css/core.css" />
     <link rel="stylesheet" type="text/css" href="plugins/themes/css/icon.css" />
@@ -589,33 +590,6 @@
 
       window.addEventListener("load", () => {
         registerSW();
-      });
-
-      // PWA installation flow
-      let deferredPrompt;
-      function installPWA() {
-        if (deferredPrompt) {
-          deferredPrompt.prompt();
-          deferredPrompt.userChoice.then((choiceResult) => {
-            deferredPrompt = null;
-          });
-        }
-      }
-
-      window.addEventListener("beforeinstallprompt", (e) => {
-        e.preventDefault();
-        deferredPrompt = e;
-        Swal.fire({
-          title: "安装移动应用程序?",
-          showDenyButton: true,
-          showCancelButton: false,
-          confirmButtonText: "安装",
-          denyButtonText: `取消`,
-        }).then((result) => {
-          if (result.isConfirmed) {
-            installPWA();
-          }
-        });
       });
     </script>
   </body>
