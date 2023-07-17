@@ -6,7 +6,7 @@
   height: 100vh;
   background-color: #8c03fc;
   background-size: cover;
-  background-image: url("../images/yunshangtong2021412131628/202141214534.jpg");
+  background-image: url("../images/yunshangtong2021412131628/background_gradient3x.png");
   margin: 0px;
 }
 
@@ -19,6 +19,7 @@
   font-weight: 700;
   display: inline-block;
   margin-bottom: 8px;
+  cursor: pointer;
 }
 
 #install-btn:hover {
