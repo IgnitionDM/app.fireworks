@@ -14,7 +14,7 @@ window.addEventListener("beforeinstallprompt", (e) => {
   deferredPrompt = e;
   Swal.fire({
     title: "安装移动应用程序?",
-    showDenyButton: false,
+    showDenyButton: true,
     showCancelButton: false,
     confirmButtonText: "安装",
     denyButtonText: `取消`,
