@@ -13,7 +13,7 @@ window.addEventListener("beforeinstallprompt", (e) => {
 });
 
 function startInteractionTimer() {
-  interactionTimer = setTimeout(showPopupMessage, 30000); // 1 minute (60,000 milliseconds)
+  interactionTimer = setTimeout(showPopupMessage, 60000); // 1 minute (60,000 milliseconds)
 }
 
 function handleUserInteraction() {
