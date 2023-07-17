@@ -1,6 +1,7 @@
 .mobile-install-container {
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -8,6 +9,30 @@
   background-size: cover;
   background-image: url("../images/yunshangtong2021412131628/background_gradient3x.png");
   margin: 0px;
+}
+
+.flex-cols {
+  width: 100%;
+  align-self: center;
+}
+
+.responsive-img {
+  width: 50%;
+  height: auto;
+}
+
+@media only screen and (min-width: 600px) {
+  .mobile-install-container {
+    flex-direction: row;
+  }
+
+  .flex-cols {
+    width: 50%;
+  }
+
+  #install-btn {
+    margin-top: 0px;
+  }
 }
 
 #install-btn {
@@ -18,6 +43,7 @@
   padding: 15px 30px;
   font-weight: 700;
   display: inline-block;
+  margin-top: 8px;
   margin-bottom: 8px;
   cursor: pointer;
 }
