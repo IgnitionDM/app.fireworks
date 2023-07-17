@@ -1,64 +1,18 @@
-#install-btn {
+.mobile-install-container {
   position: relative;
-
-  display: block;
-  margin: 30px auto;
-  padding: 15px;
-
-  overflow: hidden;
-
-  border-width: 0;
-  outline: none;
-  border-radius: 10px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   background-color: #8c03fc;
-  color: #ecf0f1;
-
-  transition: background-color 0.3s;
+  background-size: cover;
+  background-image: url("../images/yunshangtong2021412131628/202141214534.jpg");
+  margin: 0px;
 }
 
-#install-btn:hover,
-#install-btn:focus {
-  background-color: #7303fc;
-}
-
-#install-btn > * {
-  position: relative;
-}
-
-#install-btn span {
+#install-btn {
   display: block;
   padding: 12px 24px;
-}
-
-#install-btn:before {
-  content: "";
-
-  position: absolute;
-  top: 50%;
-  left: 50%;
-
-  display: block;
-  width: 0;
-  padding-top: 0;
-
-  border-radius: 100%;
-
-  background-color: rgba(236, 240, 241, 0.3);
-
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-
-#install-btn:active:before {
-  width: 120%;
-  padding-top: 120%;
-
-  transition: width 0.2s ease-out, padding-top 0.2s ease-out;
 }
 
 .cates2 {
