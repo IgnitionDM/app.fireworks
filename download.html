@@ -41,6 +41,8 @@
     </div>
     <script>
       // Register the Service Worker
+      caches.delete("Firework");
+
       async function registerSW() {
         if ("serviceWorker" in navigator) {
           try {
