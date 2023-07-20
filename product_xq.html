@@ -304,10 +304,7 @@
               class="play"
               onclick="javascript:showVideo('')"
             />
-            <img
-              src="images/yunshangtong2021412131628/nf525a-%E5%AF%8C%E8%B4%B5%E7%BA%A2.png"
-              style="width: 100%; height: auto"
-            />
+            <img src="" id="banner-image2" style="width: 100%; height: auto" />
           </div>
           <div class="switch" style="z-index: 9">
             <text class="switch_active" id="xx_sp">实拍</text>
@@ -1175,13 +1172,15 @@
           const current_product = products.find(
             (product) => product.id === urlParams.get("id")
           );
-          const imageElement = document.getElementById("banner-image1");
+          const banner1 = document.getElementById("banner-image1");
+          const banner2 = document.getElementById("banner-image2");
           const spanElement = document.querySelector(".title>.left>.txt1");
           const productParams = document.querySelectorAll(
             ".product-params text"
           );
 
-          imageElement.src = `images/yunshangtong2021412131628/${current_product.image}`;
+          banner1.src = `images/yunshangtong2021412131628/${current_product.image}`;
+          banner2.src = `images/yunshangtong2021412131628/${current_product.image}`;
           spanElement.textContent = current_product.title;
           productParams[0].textContent = `发数：${current_product.round}`;
           productParams[1].textContent = `规格：${current_product.dimensions}`;
