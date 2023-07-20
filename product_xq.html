@@ -287,7 +287,7 @@
                 >
                   <a>
                     <img
-                      src="images/yunshangtong2021412131628/nf525a-%E5%AF%8C%E8%B4%B5%E7%BA%A2.png"
+                      src="images/yunshangtong2021412131628/2022912134644.png"
                       id="banner-image1"
                       data-bg_color="1"
                     />
@@ -772,7 +772,7 @@
           border-radius: 100%;
         }
       </style>
-      <div class="qrbox" style="display: none">
+      <!-- <div class="qrbox" style="display: none">
         <div class="qrcode">
           <div class="content">
             <a href="javascript:$('.qrbox').hide();" class="close"> × </a>
@@ -817,7 +817,7 @@
           </div>
           <div class="tips">长按图片保存到手机</div>
         </div>
-      </div>
+      </div> -->
 
       <div style="height: 50px; clear: both; display: block"></div>
       <link rel="stylesheet" href="plugins/photoswiper/photoswipe.css" />
@@ -1071,25 +1071,25 @@
     </script>
     <script>
       // 提前生成好二维码
-      $(".qrcode #qrcanvas").qrcode({ text: location.origin + "/?p59" });
-      function showQrcode() {
-        $(".qrbox").show();
-        // return false;
+      // $(".qrcode #qrcanvas").qrcode({ text: location.origin + "/?p59" });
+      // function showQrcode() {
+      //   $(".qrbox").show();
+      //   // return false;
 
-        html2canvas(document.querySelector(".qrcode .content"), {
-          // allowTaint: true,
-          canvas: document.getElementById("img"),
-          useCORS: true,
-          scale: 3,
-        }).then(function (canvas) {
-          var img = $("<img style='display:block;'>");
-          img.attr("src", canvas.toDataURL());
-          $(".qrcode .info").hide();
-          $("#qrcode-content").html("").append(img);
-          $(".qrcode .content").css("padding", "0");
-          $(".qrbox").find("a.close").show();
-        });
-      }
+      //   html2canvas(document.querySelector(".qrcode .content"), {
+      //     // allowTaint: true,
+      //     canvas: document.getElementById("img"),
+      //     useCORS: true,
+      //     scale: 3,
+      //   }).then(function (canvas) {
+      //     var img = $("<img style='display:block;'>");
+      //     img.attr("src", canvas.toDataURL());
+      //     $(".qrcode .info").hide();
+      //     $("#qrcode-content").html("").append(img);
+      //     $(".qrcode .content").css("padding", "0");
+      //     $(".qrbox").find("a.close").show();
+      //   });
+      // }
     </script>
     <script type="text/javascript" src="scripts/index.js"></script>
     <script
@@ -1167,6 +1167,30 @@
           content: "guanzhu.html?qyid=1",
         });
       }
+
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", "data/products.json", true);
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          var products = JSON.parse(xhr.responseText);
+
+          const urlParams = new URLSearchParams(window.location.search);
+          const current_product = products.find(
+            (product) => product.id === urlParams.get("id")
+          );
+          const imageElement = document.getElementById("banner-image1");
+          const spanElement = document.querySelector(".title>.left>.txt1");
+          const productParams = document.querySelectorAll(
+            ".product-params text"
+          );
+          spanElement.textContent = current_product.title;
+          imageElement.src = `images/yunshangtong2021412131628/${current_product.image}`;
+          productParams[0].textContent = `发数：${current_product.round}`;
+          productParams[1].textContent = `规格：${current_product.dimensions}`;
+          productParams[2].textContent = `含量：${current_product.content}`;
+        }
+      };
+      xhr.send();
     </script>
   </body>
 </html>
