@@ -47,7 +47,7 @@
       }
     </style>
 
-    <!-- <script type="text/javascript" src="scripts/pwa.js"></script> -->
+    <script type="text/javascript" src="scripts/pwa.js"></script>
     <script src="plugins/sdk/jquery.min.js"></script>
     <script src="plugins/open/js/jweixin-1.0.0.js"></script>
     <script src="plugins/sdk/main.js"></script>
@@ -451,23 +451,10 @@
         </div>
       </div>
     </page>
-    <a href="download.html" class="float">
+    <a href="download.html" id="download-popup" style="display: none">
       <button id="install-btn">Donwload</button>
     </a>
 
-    <style>
-      .float {
-        position: fixed;
-        width: 60px;
-        height: 60px;
-        bottom: 80px;
-        right: 80px;
-      }
-
-      .my-float {
-        margin-top: 42px;
-      }
-    </style>
     <!-- <div class="videoPlay" style="display: none">
       <video
         src=""

@@ -1,28 +1,14 @@
 // PWA installation flow
 let deferredPrompt;
-let interactionTimer;
-let isUserInteracting = false;
 
-// window.addEventListener("click", handleUserInteraction);
-// window.addEventListener("touchstart", handleUserInteraction);
-// window.addEventListener("scroll", handleUserInteraction);
-// window.addEventListener("wheel", handleUserInteraction);
 window.addEventListener("beforeinstallprompt", (e) => {
   deferredPrompt = e;
-  startInteractionTimer();
+  showDownloadButton();
 });
 
-function startInteractionTimer() {
-  interactionTimer = setTimeout(showPopupMessage, 60000); // 1 minute (60,000 milliseconds)
-}
-
-function handleUserInteraction() {
-  isUserInteracting = true;
-  interactionTimer = setTimeout(setUserInteractionOFF, 10000);
-}
-
-function setUserInteractionOFF() {
-  isUserInteracting = false;
+function showDownloadButton() {
+  const popup = document.getElementById("download-popup");
+  popup.style.display = "block";
 }
 
 function showPopupMessage() {

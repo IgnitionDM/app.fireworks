@@ -1,3 +1,11 @@
+#download-popup {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 80px;
+  right: 80px;
+}
+
 .mobile-install-container {
   position: relative;
   display: flex;
