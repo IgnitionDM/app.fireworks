@@ -377,9 +377,7 @@
           <div class="ctn_introduce" style="padding-top: 15px">
             <div class="clearBoth title">
               <div class="left">
-                <text class="txt1" style="margin-right: 55px"
-                  >66发富贵红系列-富贵红</text
-                >
+                <text class="txt1" style="margin-right: 55px"></text>
               </div>
               <i
                 class="iconfont iconerweima2"
@@ -1182,8 +1180,9 @@
           const productParams = document.querySelectorAll(
             ".product-params text"
           );
-          spanElement.textContent = current_product.title;
+
           imageElement.src = `images/yunshangtong2021412131628/${current_product.image}`;
+          spanElement.textContent = current_product.title;
           productParams[0].textContent = `发数：${current_product.round}`;
           productParams[1].textContent = `规格：${current_product.dimensions}`;
           productParams[2].textContent = `含量：${current_product.content}`;
