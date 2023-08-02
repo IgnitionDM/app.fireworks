@@ -14,9 +14,12 @@
     <link
       rel="shortcut icon"
       type="image/x-icon"
-      href="images/pyrotechnics20230802/nf525a-%E5%AF%8C%E8%B4%B5%E7%BA%A2.png"
+      href="images/pyrotechnics20230802/brand-icon.png"
     />
-    <meta name="description" content="点击播放实拍燃放效果" />
+    <meta
+      name="description"
+      content="At Pyrotechnics Sdn Bhd, our core values form the foundation of everything we do."
+    />
 
     <link rel="stylesheet" href="styles/app.css" />
     <link rel="stylesheet" href="plugins/wxapp/app.css" />
@@ -234,7 +237,7 @@
             <div class="overlay"></div>
             <img
               class="title"
-              src="images/pyrotechnics20230802/2021418171212.png"
+              src="images/pyrotechnics20230802/Pyrotechnics-05.png"
             />
           </div>
         </div>
@@ -382,16 +385,11 @@
           </div>
         </div>
       </div>
-      <div
-        class="section-title"
-        style="height: 110px; margin-bottom: 0px"
-        onclick="window.location=''"
-      >
+      <div class="section-title" style="height: 110px; margin-bottom: 0px">
         <div class="tu_zuo" style="float: left">
-          <img
-            src="images/pyrotechnics20230802/2021412144748.jpg"
-            style="height: 90px"
-          />
+          <a onclick="sendMessageToWhatsApp()">
+            <img src="images/whatsapp-icon.png" style="height: 90px"
+          /></a>
         </div>
         <div class="tu_you" style="float: left; margin-top: 23px">
           <p>Pyrotechnics</p>
@@ -656,7 +654,7 @@
       <div class="xx_title">
         了解更多<span></span>
         <div class="xx_content">
-          <img src="images/pyrotechnics20230802/20214199290.png" alt="" />
+          <img src="images/pyrotechnics20230802/Pyrotechnics-01.png" alt="" />
         </div>
       </div>
 
@@ -748,53 +746,6 @@
           border-radius: 100%;
         }
       </style>
-      <!-- <div class="qrbox" style="display: none">
-        <div class="qrcode">
-          <div class="content">
-            <a href="javascript:$('.qrbox').hide();" class="close"> × </a>
-            <div id="qrcode-content">
-              <div style="padding: 10px">
-                <img
-                  src="images/pyrotechnics20230802/2021418171212.png"
-                  style="height: 30px"
-                />
-              </div>
-              <div>
-                <img
-                  src="images/pyrotechnics20230802/nf525a-%E5%AF%8C%E8%B4%B5%E7%BA%A2.png"
-                  style="width: 100%; margin-top: 30px"
-                />
-              </div>
-              <div class="info" style="padding-left: 0px">
-                <div class="title" style="color: #000; margin-top: 40px">
-                  66发富贵红系列-富贵红
-                </div>
-                <div
-                  class="product-params"
-                  style="padding-left: 0px; padding-top: 0px; margin-top: 5px"
-                >
-                  <text>发数：66发</text>
-
-                  <text>规格：603x328x293mm</text>
-                  <text>含量：1/1</text>
-                </div>
-                <span class="tag">内含视频效果</span>
-                <div id="qr">
-                  <div id="qrcanvas">
-                    <img
-                      src="../uploads/pyrotechnics20230802/ewm/31567282-1%E5%AF%B866%E5%8F%91%E5%AF%8C%E8%B4%B5%E7%BA%A2.png"
-                      style="height: 90px"
-                    />
-                  </div>
-                  <div>扫码看效果</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="tips">长按图片保存到手机</div>
-        </div>
-      </div> -->
-
       <div style="height: 50px; clear: both; display: block"></div>
       <link rel="stylesheet" href="plugins/photoswiper/photoswipe.css" />
       <link
@@ -1167,6 +1118,18 @@
         }
       };
       xhr.send();
+
+      function sendMessageToWhatsApp() {
+        const spanElement = document.querySelector(".title>.left>.txt1");
+        const productName = spanElement.textContent;
+        const productURL = window.location.href;
+        const message = encodeURIComponent(
+          `I'm interested in the product "${productName}". You can find it here: ${productURL}`
+        );
+        const phoneNumber = "6016000000";
+        const whatsappLink = `https://wa.me/${phoneNumber}?text=${message}`;
+        window.open(whatsappLink, "_blank");
+      }
     </script>
   </body>
 </html>
