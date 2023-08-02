@@ -3,8 +3,8 @@ function generateProductHTML(product) {
       <div class="item" style="margin-bottom: 12px; box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);">
         <div class="gd_li" id="product${product.id}">
           <a href="product_xq.html?id=${product.id}">
-            <div class="pro_bg" style="background: url('images/yunshangtong2021412131628/202291295458.png') no-repeat; background-size: 100%;">
-              <img class="img" mode="widthFix" src="images/yunshangtong2021412131628/${product.image}" />
+            <div class="pro_bg" style="background: url('images/pyrotechnics20230802/202291295458.png') no-repeat; background-size: 100%;">
+              <img class="img" mode="widthFix" src="images/pyrotechnics20230802/${product.image}" />
             </div>
           </a>
           <span class="dh_overpro gd_li_title">
