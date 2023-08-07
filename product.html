@@ -199,7 +199,7 @@
       }
       #container .menu1 {
         white-space: nowrap;
-        overflow: scroll;
+        /* overflow: scroll; */
         /* height: 46px; */
         border: none;
       }
@@ -387,11 +387,7 @@
             style="width: 20px; background-image: url(images/fanhui-h.png)"
           ></i>
         </a>
-        <div
-          class="aui-header-center aui-header-center-clear"
-          style="margin-left: 2.5%"
-          onclick="sss()"
-        >
+        <div class="aui-header-center aui-header-center-clear" onclick="sss()">
           <div
             class="aui-header-search-box"
             style="width: 80%; background-color: #eeecec"
@@ -418,10 +414,7 @@
       <div id="enterprise_allgoods">
         <div style="height: 60px"></div>
         <div id="container">
-          <div
-            class="menu1"
-            style="float: left; margin-top: 13px; margin-left: 10px"
-          >
+          <div class="menu1" style="margin-top: 13px; margin-left: 10px">
             <!-- <a href="product-1.html?qyid=1&tuij=1">
               <div style="float: left; margin-top: 13px; margin-left: 10px">
                 <img
@@ -445,18 +438,16 @@
                   color: transparent;
                 "
               >
-                全部
+                All Products
               </li>
 
-              <li onclick="aa('3')">日景烟花领舞者</li>
+              <li onclick="aa('3')">New Produtcs</li>
 
-              <li onclick="aa('4')">夜景烟花狂欢者</li>
+              <li onclick="aa('5')">Best Sellers</li>
 
-              <li onclick="aa('78')">模压类</li>
+              <li onclick="aa('7')">Adult</li>
 
-              <li onclick="window.location='product.html'">微焰火</li>
-
-              <li onclick="window.location='product.html'">城市烟花类</li>
+              <li onclick="aa('9')">Kids</li>
             </ul>
           </div>
 
@@ -707,45 +698,21 @@
       }
     </script>
     <script>
+      function getDialogArea() {
+        if (window.matchMedia("(min-width: 768px)").matches) {
+          return ["510px", "310px"];
+        } else {
+          return ["85%", "310px"];
+        }
+      }
       function aa(id) {
         layer.open({
           type: 2,
           title: "☰",
           maxmin: true,
-          shadeClose: true, //点击遮罩关闭层
-          area: ["85%", "510px;"],
+          shadeClose: true,
+          area: getDialogArea(),
           content: "fenlei.html",
-        });
-      }
-
-      function v_bo(id) {
-        layer.open({
-          type: 2,
-          title: "",
-          maxmin: true,
-          shadeClose: true, //点击遮罩关闭层
-          area: ["100%", "100%"],
-          content: "bo/bo.html",
-        });
-      }
-      function aa2(id) {
-        layer.open({
-          type: 2,
-          title: "申请认证会员",
-          maxmin: true,
-          shadeClose: true, //点击遮罩关闭层
-          area: ["85%", "260px;"],
-          content: "shouquan.html",
-        });
-      }
-      function vv(id) {
-        layer.open({
-          type: 2,
-          title: "产品视频",
-          maxmin: true,
-          shadeClose: true, //点击遮罩关闭层
-          area: ["100%", "100%"],
-          content: "video.asp",
         });
       }
 
