@@ -79,11 +79,12 @@
           box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.4);
           border-radius: 30px;
           padding: 0 16px;
-          /* margin-top: 200px; */
+          margin-top: 200px;
+          margin-bottom: 200px;
           background: #fff;
         }
       </style>
-      <!-- 商家-分类页面-头部 -->
+
       <link rel="stylesheet" href="plugins/wxapp/enterprise-header.css" />
 
       <header
@@ -117,7 +118,6 @@
           .lx_title a {
             display: block;
             float: left;
-            letter-spacing: 3px;
             margin-top: 5px;
             line-height: 16.5px;
             font-size: 16.5px;
@@ -151,16 +151,31 @@
           .txt li {
             width: 100%;
             height: auto;
-            display: block;
-            height: 66px;
+            display: flex;
+            justify-content: space-between;
             border-bottom: 1.5px #eaeaea solid;
-            margin-top: 16px;
+            padding-top: 16px;
+            padding-bottom: 16px;
           }
+
+          .txt li div:nth-of-type(2) {
+            flex-grow: 100;
+          }
+
+          .flex-cointainer-row-start {
+            display: flex;
+            justify-content: flex-start;
+          }
+
+          .flex-cointainer-column-center {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+          }
+
           .txt li .lx_tu {
             width: 26px;
-            float: left;
-            display: block;
-            margin-top: 10px;
+            height: 26px;
           }
           .txt li div {
             float: left;
@@ -181,224 +196,202 @@
           }
           .txt li .lx_r img {
             height: 20px;
-            margin-top: 11px;
+            /* margin-top: 11px; */
           }
           .social-icon {
             width: 50px;
           }
         </style>
 
-        <div
-          class="enterprise_index_intro"
-          style="width: 90%; margin-top: 200px"
-        >
+        <div class="enterprise_index_intro">
           <div class="lx_logo">
             <img src="images/pyrotechnics20230802/brand-icon.png" />
           </div>
           <div class="lx_title">
-            <a>Pyrotechnics (M) Sdn Bhd (1367546-K) (HQ)</a>
+            <a>PYROTECHNICS (M) SDN BHD (1367546-K)</a>
           </div>
           <div
             class="txt"
             style="overflow: hidden; padding-left: 14px; padding-right: 14px"
           >
-            <li onclick="window.location='tel: 0383251966'">
-              <img src="images/lx_tel.png" class="lx_tu" />
-              <div>
+            <li onclick="window.location='tel: 0166817996'">
+              <div class="flex-cointainer-column-center">
+                <img src="images/lx_tel.png" class="lx_tu" />
+              </div>
+
+              <div class="flex-cointainer-row-start">
                 <span
-                  >03-8325 1966<br />
-                  <font>Telephone</font></span
-                >
+                  ><font>Telephone</font><br />
+                  016-681 7996
+                  <br />
+                  Contact (Mr Vincent)
+                </span>
               </div>
-              <a class="lx_r"><img src="images/lx_r.png" /></a>
+
+              <div class="flex-cointainer-column-center">
+                <a class="lx_r"><img src="images/lx_r.png" /></a>
+              </div>
             </li>
 
-            <li>
-              <img src="images/lx_tel.png" class="lx_tu" />
-              <div>
+            <li onclick="window.location='tel: 0163366228'">
+              <div class="flex-cointainer-column-center">
+                <img src="images/lx_tel.png" class="lx_tu" />
+              </div>
+
+              <div class="flex-cointainer-row-start">
                 <span
-                  >TBC<br />
-                  <font>Mobile Phone</font></span
-                >
+                  ><font>Telephone</font><br />
+                  016-336 6228
+                  <br />
+                  Contact (Mr John)
+                </span>
               </div>
-              <a class="lx_r"><img src="images/lx_r.png" /></a>
+              <div class="flex-cointainer-column-center">
+                <a class="lx_r"><img src="images/lx_r.png" /></a>
+              </div>
             </li>
 
-            <li>
-              <img src="images/lx_mail.png" class="lx_tu" />
-              <div>
-                <span
-                  >pyrotechnics.info@gmail.com<br />
-                  <font>Email</font></span
-                >
-              </div>
-              <a class="lx_r"><img src="images/lx_r.png" /></a>
-            </li>
-
-            <li style="border: none">
-              <img src="images/lx_addr.png" class="lx_tu" />
-              <div>
-                <span style="max-width: 200px; display: inline-block"
-                  >No 61-2, Business Avenue 2, Lingkaran Cyber Point Barat, Neo
-                  Cyber, 63000 Cyberjaya, Selangor<br /><font
-                    >Address</font
-                  ></span
-                >
-              </div>
-              <a class="lx_r"><img src="images/lx_r.png" /></a>
-            </li>
-
-            <div
-              class="txt"
-              style="overflow: hidden; padding-left: 14px; padding-right: 14px"
+            <li
+              onclick="window.location.href = 'mailto:pyrotechnics.info@gmail.com'"
             >
-              <a
-                href="https://www.facebook.com/pyrotechnicsfireworks72"
-                target="_blank"
-              >
-                <img src="images/facebook-icon.png" class="social-icon" />
-              </a>
-              <a
-                href="https://www.youtube.com/@pyrotechnicsmsdnbhd3793/featured"
-                target="_blank"
-              >
-                <img src="images/youtube-icon.png" class="social-icon" />
-              </a>
-            </div>
-          </div>
-        </div>
+              <div class="flex-cointainer-column-center">
+                <img src="images/lx_mail.png" class="lx_tu" />
+              </div>
 
-        <div
-          class="enterprise_index_intro"
-          style="width: 90%; margin-top: 80px"
-        >
-          <div class="lx_logo">
-            <img src="images/pyrotechnics20230802/brand-icon.png" />
-          </div>
-          <div class="lx_title">
-            <a>Pyrotechnics (M) Sdn Bhd (NEGERI SEMBILAN)</a>
-          </div>
-          <div
-            class="txt"
-            style="overflow: hidden; padding-left: 14px; padding-right: 14px"
-          >
-            <li>
-              <img src="images/lx_tel.png" class="lx_tu" />
-              <div>
+              <div class="flex-cointainer-row-start">
                 <span
-                  >016-681 7996<br />
-                  <font>Mobile Phone</font></span
-                >
+                  ><font>Email</font><br />pyrotechnics.info@gmail.com
+                </span>
               </div>
-              <a class="lx_r"><img src="images/lx_r.png" /></a>
+              <div class="flex-cointainer-column-center">
+                <a class="lx_r"><img src="images/lx_r.png" /></a>
+              </div>
             </li>
 
-            <li>
-              <img src="images/lx_mail.png" class="lx_tu" />
-              <div>
-                <span
-                  >pyrotechnics.nilai@gmail.com <br />
-                  <font>Email</font></span
-                >
-              </div>
-              <a class="lx_r"><img src="images/lx_r.png" /></a>
-            </li>
-
-            <li style="border: none">
-              <img src="images/lx_addr.png" class="lx_tu" />
-              <div>
-                <span style="max-width: 200px; display: inline-block"
-                  >PT 11395, Jalan BBN 6/2B, Desa Cempaka, Putra Nilai, 71800
-                  Negeri Sembilan<br /><font>Address</font></span
-                >
-              </div>
-              <a class="lx_r"><img src="images/lx_r.png" /></a>
-            </li>
-
-            <div
-              class="txt"
-              style="overflow: hidden; padding-left: 14px; padding-right: 14px"
+            <li
+              onclick="window.open('https://www.facebook.com/people/Pyrotechnics-M-Sdn-Bhd/pfbid0Xza5oubDmBtmocFCG8bsHoyRxZSD9NMm1jS99mdemd5zgV6MUutc6mM5rrFMWonYl/', '_blank')"
             >
-              <a
-                href="https://www.facebook.com/pyrotechnicsfireworks72"
-                target="_blank"
-              >
-                <img src="images/facebook-icon.png" class="social-icon" />
-              </a>
-              <a
-                href="https://www.youtube.com/@pyrotechnicsmsdnbhd3793/featured"
-                target="_blank"
-              >
-                <img src="images/youtube-icon.png" class="social-icon" />
-              </a>
-            </div>
-          </div>
-        </div>
+              <div class="flex-cointainer-column-center">
+                <img src="images/lx_addr.png" class="lx_tu" />
+              </div>
 
-        <div
-          class="enterprise_index_intro"
-          style="width: 90%; margin-top: 80px; margin-bottom: 200px"
-        >
-          <div class="lx_logo">
-            <img src="images/pyrotechnics20230802/brand-icon.png" />
-          </div>
-          <div class="lx_title">
-            <a>Pyrotechnics (M) Sdn Bhd (SARAWAK)</a>
-          </div>
-          <div
-            class="txt"
-            style="overflow: hidden; padding-left: 14px; padding-right: 14px"
-          >
-            <li>
-              <img src="images/lx_tel.png" class="lx_tu" />
-              <div>
+              <div class="flex-cointainer-row-start">
                 <span
-                  >013-8850808<br />
-                  <font>Mobile Phone</font></span
-                >
+                  ><font>Address</font><br />
+                  No 61-2, Business Avenue 2, Lingkaran Cyber Point Barat, Neo
+                  Cyber, 63000 Cyberjaya, Selangor (HQ)
+                </span>
               </div>
-              <a class="lx_r"><img src="images/lx_r.png" /></a>
+
+              <div class="flex-cointainer-column-center">
+                <a class="lx_r"><img src="images/lx_r.png" /></a>
+              </div>
             </li>
 
-            <li>
-              <img src="images/lx_mail.png" class="lx_tu" />
-              <div>
-                <span
-                  >pyrotechnics.sarawak@gmail.com<br />
-                  <font>Email</font></span
-                >
-              </div>
-              <a class="lx_r"><img src="images/lx_r.png" /></a>
-            </li>
-
-            <li style="border: none">
-              <img src="images/lx_addr.png" class="lx_tu" />
-              <div>
-                <span style="max-width: 200px; display: inline-block"
-                  >Address: Lot 10560, Block 59, Muara Tuang Land District,
-                  93400 Kota Samarahan, Sarawak<br /><font>Address</font></span
-                >
-              </div>
-              <a class="lx_r"><img src="images/lx_r.png" /></a>
-            </li>
-
-            <div
-              class="txt"
-              style="overflow: hidden; padding-left: 14px; padding-right: 14px"
+            <li
+              onclick="window.open('https://www.facebook.com/pyrotechnicsfireworks72', '_blank')"
             >
-              <a
-                href="https://www.facebook.com/PyrotechnicsMSdnBhd"
-                target="_blank"
-              >
-                <img src="images/facebook-icon.png" class="social-icon" />
-              </a>
-              <a
-                href="https://www.youtube.com/@pyrotechnicsmsdnbhd3793/featured"
-                target="_blank"
-              >
-                <img src="images/youtube-icon.png" class="social-icon" />
-              </a>
-            </div>
+              <div class="flex-cointainer-column-center">
+                <img src="images/lx_addr.png" class="lx_tu" />
+              </div>
+
+              <div class="flex-cointainer-row-start">
+                <span
+                  ><font>Address</font><br />
+                  PT 11395, Jalan BBN 6/2B, Desa Cempaka, Putra Nilai, 71800
+                  Negeri Sembilan (Nilai)
+                </span>
+              </div>
+
+              <div class="flex-cointainer-column-center">
+                <a class="lx_r"><img src="images/lx_r.png" /></a>
+              </div>
+            </li>
+
+            <li
+              onclick="window.open('https://www.facebook.com/PyrotechnicsMSdnBhd', '_blank')"
+            >
+              <div class="flex-cointainer-column-center">
+                <img src="images/lx_addr.png" class="lx_tu" />
+              </div>
+
+              <div class="flex-cointainer-row-start">
+                <span
+                  ><font>Address</font><br />
+                  Lot 10560, Block 59, Muara Tuang Land District, 93400 Kota
+                  Samarahan (Sarawak)
+                </span>
+              </div>
+
+              <div class="flex-cointainer-column-center">
+                <a class="lx_r"><img src="images/lx_r.png" /></a>
+              </div>
+            </li>
+
+            <li
+              onclick="window.open('https://www.facebook.com/people/Pyrotechnics-M-Sdn-Bhd/pfbid0Xza5oubDmBtmocFCG8bsHoyRxZSD9NMm1jS99mdemd5zgV6MUutc6mM5rrFMWonYl/', '_blank')"
+            >
+              <div class="flex-cointainer-column-center">
+                <img src="images/facebook-icon.png" class="lx_tu" />
+              </div>
+
+              <div class="flex-cointainer-row-start">
+                <span><font>Facebook (HQ)</font> </span>
+              </div>
+
+              <div class="flex-cointainer-column-center">
+                <a class="lx_r"><img src="images/lx_r.png" /></a>
+              </div>
+            </li>
+
+            <li
+              onclick="window.open('https://www.facebook.com/pyrotechnicsfireworks72', '_blank')"
+            >
+              <div class="flex-cointainer-column-center">
+                <img src="images/facebook-icon.png" class="lx_tu" />
+              </div>
+
+              <div class="flex-cointainer-row-start">
+                <span><font>Facebook (Nilai)</font> </span>
+              </div>
+
+              <div class="flex-cointainer-column-center">
+                <a class="lx_r"><img src="images/lx_r.png" /></a>
+              </div>
+            </li>
+
+            <li
+              onclick="window.open('https://www.facebook.com/PyrotechnicsMSdnBhd', '_blank')"
+            >
+              <div class="flex-cointainer-column-center">
+                <img src="images/facebook-icon.png" class="lx_tu" />
+              </div>
+
+              <div class="flex-cointainer-row-start">
+                <span><font>Facebook (Sarawak)</font> </span>
+              </div>
+
+              <div class="flex-cointainer-column-center">
+                <a class="lx_r"><img src="images/lx_r.png" /></a>
+              </div>
+            </li>
+
+            <li
+              style="border: none"
+              onclick="window.open('https://www.youtube.com/@pyrotechnicsmsdnbhd3793/featured', '_blank')"
+            >
+              <div class="flex-cointainer-column-center">
+                <img src="images/youtube-icon.png" class="lx_tu" />
+              </div>
+
+              <div class="flex-cointainer-row-start">
+                <span><font>Youtube</font> </span>
+              </div>
+
+              <div class="flex-cointainer-column-center">
+                <a class="lx_r"><img src="images/lx_r.png" /></a>
+              </div>
+            </li>
           </div>
         </div>
 
