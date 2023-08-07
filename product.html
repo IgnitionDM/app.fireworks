@@ -200,7 +200,7 @@
       #container .menu1 {
         white-space: nowrap;
         overflow: scroll;
-        height: 46px;
+        /* height: 46px; */
         border: none;
       }
       #container .menu1 ul {
@@ -418,18 +418,21 @@
       <div id="enterprise_allgoods">
         <div style="height: 60px"></div>
         <div id="container">
-          <div class="menu1">
-            <a href="product-1.html?qyid=1&tuij=1">
+          <div
+            class="menu1"
+            style="float: left; margin-top: 13px; margin-left: 10px"
+          >
+            <!-- <a href="product-1.html?qyid=1&tuij=1">
               <div style="float: left; margin-top: 13px; margin-left: 10px">
                 <img
                   src="images/newpro.png"
                   style="height: 20px; display: inline-block"
                 />
               </div>
-            </a>
+            </a> -->
             <ul>
               <li
-                onclick="window.location='product_fl.html?qyid=1';"
+                onclick="window.location='product_fl.html';"
                 style="
                   background: linear-gradient(
                     to right,
