@@ -21,16 +21,57 @@
       content="At Pyrotechnics Sdn Bhd, our core values form the foundation of everything we do."
     />
 
+    <script src="plugins/sdk/jquery.min.js"></script>
+    <script src="plugins/open/js/jweixin-1.0.0.js"></script>
+    <script src="plugins/sdk/main.js"></script>
+    <script src="plugins/jquery/jquery.js"></script>
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="plugins/layer/layer.js"></script>
+    <script src="plugins/jquery/jquery.qrcode.min.js"></script>
+    <script src="scripts/cart.js"></script>
+    <script src="scripts/indexs.js"></script>
+    <script src="plugins/jquery/jquery-1.10.2.mins.js"></script>
+    <script src="plugins/photoswiper/photoswipe.min.js"></script>
+    <script src="plugins/photoswiper/photoswipe-ui-default.min.js"></script>
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="plugins/jquery/jquery.qrcode.min.js"></script>
+    <script src="plugins/html2canvas.min.js"></script>
+    <script src="plugins/doT.min.js"></script>
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="plugins/jquery/jquery.cookie.js"></script>
+    <script src="plugins/layer/layer.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="plugins/themes/js/jquery.min.js"></script>
+    <script src="plugins/themes/js/aui2.js"></script>
+    <script src="plugins/swiper4/js/swiper.min.js"></script>
+    <script src="plugins/swiper4/js/swiper.animate.min.js"></script>
+
     <link rel="stylesheet" href="styles/app.css" />
     <link rel="stylesheet" href="plugins/wxapp/app.css" />
     <link rel="stylesheet" href="styles/font/iconfont.css" />
+    <link rel="stylesheet" href="plugins/wxapp/enterprise-header.css" />
     <link rel="stylesheet" href="plugins/wxapp/animate.min.css" />
     <link rel="stylesheet" href="plugins/themes/css/core.css" />
     <link rel="stylesheet" href="plugins/themes/css/icon.css" />
     <link rel="stylesheet" href="plugins/themes/css/home.css" />
     <link rel="stylesheet" href="plugins/swiper4/css/swiper.min.css" />
     <link rel="stylesheet" href="plugins/swiper4/css/animate.min.css" />
+    <link rel="stylesheet" href="styles/yusat.css" />
+    <link rel="stylesheet" href="plugins/wxapp/product.css" />
+    <link rel="stylesheet" href="plugins/wxapp/animate.min.css" />
+    <link rel="stylesheet" href="styles/attr.css" />
+    <link rel="stylesheet" href="plugins/photoswiper/photoswipe.css" />
+    <link
+      rel="stylesheet"
+      href="plugins/photoswiper/default-skin/default-skin.css"
+    />
+
     <style>
+      .enterprise-header {
+        max-width: 600px;
+        left: auto;
+      }
+
       html,
       body {
         background: #f9f8f8;
@@ -39,6 +80,8 @@
       }
       page {
         display: block;
+        max-width: 600px;
+        margin: 0 auto;
       }
       .fast {
         -webkit-animation-duration: 0.2s;
@@ -57,167 +100,473 @@
         display: none;
       }
     </style>
-    <link rel="stylesheet" href="styles/yusat.css" />
+    <style>
+      #goods_details .gd_details,
+      #goods_details .gd_goods,
+      .product-params text::after,
+      #goods_details .gd_foot .right .gd_foot_btn {
+        background: 0abaec;
+      }
 
-    <script src="plugins/sdk/jquery.min.js"></script>
-    <script src="plugins/open/js/jweixin-1.0.0.js"></script>
-    <script src="plugins/sdk/main.js"></script>
-    <script src="plugins/jquery/jquery.js"></script>
-    <script src="plugins/jquery/jquery.min.js"></script>
-    <script src="plugins/layer/layer.js"></script>
-    <script src="plugins/jquery/jquery.qrcode.min.js"></script>
-    <script src="scripts/cart.js"></script>
-    <script src="scripts/indexs.js"></script>
+      #goods_details .goods_details_swiper .switch text {
+        border: 1px solid #ff4361;
+        color: #ff4361;
+        line-height: 30px;
+        display: inline-block;
+      }
+      #goods_details .goods_details_swiper .switch .switch_active {
+        background: #ff4361;
+      }
+      .play,
+      .gd_video .play {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        top: 50%;
+        left: 50%;
+        margin-top: -25px;
+        margin-left: -25px;
+      }
+      .tu_jc {
+        position: absolute;
+        width: 120px;
+        top: 20px;
+        left: 20px;
+      }
+      .swiper video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .section-title {
+        font-size: 14px;
+        line-height: 14px;
+        width: 96%;
+        margin: 10px auto;
+        margin-left: 2%;
+        margin-right: 2%;
+        border-radius: 20px;
+        padding: 10px;
+        background: #fff;
+        text-align: center;
+      }
+      .section-title .line {
+        display: inline-block;
+        width: 5px;
+        height: 14px;
+        background: 0abaec;
+      }
+      .body img {
+        max-width: 100%;
+      }
+      .product-params text::after {
+        background: #ff4361;
+      }
+      .iconfont {
+        color: #ff4361;
+      }
+      .ctn_introduce .title .iconfont {
+        position: absolute;
+        right: 0;
+        padding-right: 16px;
+        font-size: 30px;
+      }
+      .tu_you {
+        margin-top: 8px;
+        margin-left: 10px;
+      }
+      .tu_you p {
+        text-align: left;
+        font-size: 16px;
+      }
+      .tu_you span {
+        font-size: 13px;
+        color: #999999;
+      }
+    </style>
+    <style>
+      .myimg {
+        overflow: hidden;
+        width: 100%;
+        height: auto;
+      }
+      .swiper-slide img {
+        width: 100%;
+        height: auto;
+      }
+      .shipai {
+        overflow: hidden;
+        width: 100%;
+        height: auto;
+      }
+      .shipai .tupian img {
+        width: 100%;
+        height: auto;
+      }
+      .swiper-pagination {
+        width: 100%;
+        bottom: 13px;
+      }
+      .swiper-pagination-bullets .swiper-pagination-bullet {
+        margin: 0 5px;
+        border: 3px solid #fff;
+        background-color: #d5d5d5;
+        width: 10px;
+        height: 10px;
+        opacity: 1;
+      }
+      .swiper-pagination-bullets .swiper-pagination-bullet-active {
+        border: 3px solid #ff4361;
+        background-color: #fff;
+      }
+    </style>
+    <style>
+      .ck_jiage {
+        position: absolute;
+        right: 20px;
+        margin-top: 30px;
+        z-index: 99;
+      }
+      .ck_jiage p {
+        display: block;
+        font-size: 14px;
+        color: #828282;
+      }
+      .ck_jiage p span {
+        color: red;
+        font-size: 24px;
+        margin-right: 5px;
+      }
+      .ck_jiage .sq {
+        display: block;
+        width: 100px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        background: linear-gradient(
+          to right,
+          rgba(251, 201, 67, 1) 0%,
+          rgba(253, 43, 122, 1) 100%
+        );
+        color: #fff;
+        border-radius: 20px;
+        margin-left: 10px;
+        margin-top: 6px;
+      }
+      .hit_xx {
+        line-height: 20px;
+        height: 20px;
+        margin-left: 25px;
+        margin-top: 10px;
+        float: left;
+      }
+      .hit_xx span {
+        margin-left: 24px;
+        font-size: 13px;
+        color: #999;
+      }
+      .hit_xx img {
+        height: 18px;
+        position: absolute;
+      }
+      .ctn_introduce {
+        margin-left: 2%;
+        margin-right: 2%;
+        background: #fff;
+        border-radius: 20px;
+        margin-top: 42px;
+      }
+    </style>
+    <style>
+      .xx_title {
+        line-height: 20px;
+        color: #504d4d;
+        font-size: 14.5px;
+        text-align: center;
+        font-weight: bold;
+        letter-spacing: 3px;
+        margin-top: 10px;
+        width: 100%;
+        height: auto;
+        background: #fff;
+        padding-top: 20px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        clear: both;
+      }
+      .xx_title span {
+        display: block;
+        width: 20px;
+        height: 5px;
+        background: #ff4361;
+        margin: 0 auto;
+        margin-top: 5px;
+        border-radius: 10px;
+      }
+      .xx_content {
+        margin-top: 10px;
+      }
+      .xx_content img {
+        width: 100%;
+        height: auto;
+      }
+      .xx_content p {
+        font-size: 14px;
+        color: #616161;
+        line-height: 22px;
+        margin-left: 15px;
+        margin-right: 14px;
+      }
+
+      .section-title .tj_title {
+        display: block;
+        width: 20px;
+        height: 5px;
+        background: #ff4361;
+        margin: 0 auto;
+        margin-top: 5px;
+        border-radius: 10px;
+      }
+      .tj_wenzi {
+        line-height: 20px;
+        color: #504d4d;
+        font-size: 14.5px;
+        text-align: center;
+        font-weight: bold;
+        letter-spacing: 3px;
+        margin-top: 10px;
+        height: auto;
+        background: #fff;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+      }
+      .tj_list {
+        margin-top: 13px;
+        overflow: hidden;
+      }
+      .tj_list ul li {
+        float: left;
+        width: 30%;
+        margin-left: 2.5%;
+        height: auto;
+        margin-bottom: 8px;
+      }
+      .tj_list ul li img {
+        float: left;
+        width: 100%;
+        display: block;
+        border-radius: 10px;
+        margin-bottom: 8px;
+      }
+      .tj_list ul li p {
+        height: 32px;
+        display: inline-block;
+        line-height: 16px;
+        text-align: justify;
+        overflow: hidden;
+        margin: 0 auto;
+        width: 92%;
+        word-break: break-word;
+        white-space: normal;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+
+      .slider-pagination-item {
+        margin: 0 0.3rem;
+        width: 14px;
+        height: 3px;
+        display: inline-block;
+        background-color: #dbdbdb;
+      }
+
+      .slider-pagination-item.slider-pagination-item-active {
+        background: #ff4361;
+      }
+      .slider-pagination-item {
+        height: 4px;
+        border-radius: 2px;
+      }
+
+      .tj_list .swiper-pagination2 {
+        width: 100%;
+        bottom: 13px;
+      }
+      .tj_list .swiper-pagination-bullets .swiper-pagination-bullet {
+        margin: 0 0.3rem;
+        width: 16px;
+        height: 4px;
+        display: inline-block;
+        background-color: #dbdbdb;
+        border-radius: 2px;
+      }
+      .tj_list .swiper-pagination-bullets .swiper-pagination-bullet-active {
+        background-color: #ff4361;
+      }
+    </style>
+    <style>
+      .qrcode {
+        display: none;
+        position: fixed;
+        z-index: 100;
+        top: 0;
+        left: 0;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        align-items: center;
+        justify-content: center;
+      }
+      .qrcode .content {
+        padding: 15px;
+        width: 75%;
+        background: #fff;
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      .qrcode .content img {
+        max-width: 100%;
+      }
+      .qrcode .info {
+        font-size: 20px;
+        padding: 10px;
+        padding-right: 90px;
+        position: relative;
+      }
+      .qrcode .info #qr {
+        position: absolute;
+        top: 50px;
+        right: 0px;
+        width: 80px;
+        font-size: 12px;
+        color: #333;
+        text-align: center;
+      }
+      .qrcode .info #qr canvas {
+        width: 80px;
+        height: 80px;
+      }
+      .qrcode .title {
+        height: 25px;
+        line-height: 25px;
+        font-size: 16px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+      }
+      .qrcode .tag {
+        font-size: 14px;
+        background: #f30;
+        color: #fff;
+        padding: 3px 10px;
+        border-radius: 20px;
+      }
+      .qrcode .tips {
+        position: absolute;
+        bottom: 60px;
+        left: 0;
+        width: 100%;
+        line-height: 40px;
+        color: #fff;
+        text-align: center;
+        font-size: 16px;
+      }
+      .qrcode .close {
+        display: none;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        font-size: 40px;
+      }
+      .qrcode .close img {
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+      }
+      .footer {
+        max-width: 600px;
+        width: 100%;
+        height: 64px;
+        padding-top: 10px;
+        position: fixed;
+        bottom: 0;
+        /* left: 0; */
+        z-index: 1000;
+        background: url(images/foot_bg.png) center;
+        background-size: auto 74px;
+        box-sizing: content-box;
+      }
+      .myfoot {
+        width: 100%;
+        height: 64px;
+        position: relative;
+      }
+      .fcaidan {
+        width: 20%;
+        height: 64px;
+        float: left;
+        position: relative;
+      }
+      .fcaidan img {
+        display: block;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        position: absolute;
+        z-index: 999;
+        padding-bottom: 15px;
+        box-sizing: content-box;
+      }
+      .fcaidan p {
+        text-align: center;
+        font-size: 14px;
+        bottom: -8px;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        position: absolute;
+        z-index: 999;
+        margin-top: 39px;
+      }
+      .fcaidan span {
+        width: 16px;
+        height: 16px;
+        padding-left: 2px;
+        padding-right: 2px;
+        display: block;
+        background: #ff4361;
+        border-radius: 100%;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        position: absolute;
+        z-index: 99;
+        margin-bottom: 30px;
+        filter: alpha(opacity=70);
+        opacity: 0.7;
+      }
+    </style>
   </head>
   <body>
     <page style="background: #f9f8f8">
-      <link rel="stylesheet" href="plugins/wxapp/product.css" />
-      <link rel="stylesheet" href="plugins/wxapp/animate.min.css" />
-      <link rel="stylesheet" href="styles/attr.css" />
-      <style>
-        #goods_details .gd_details,
-        #goods_details .gd_goods,
-        .product-params text::after,
-        #goods_details .gd_foot .right .gd_foot_btn {
-          background: 0abaec;
-        }
-
-        #goods_details .goods_details_swiper .switch text {
-          border: 1px solid #ff4361;
-          color: #ff4361;
-          line-height: 30px;
-          display: inline-block;
-        }
-        #goods_details .goods_details_swiper .switch .switch_active {
-          background: #ff4361;
-        }
-        .play,
-        .gd_video .play {
-          position: absolute;
-          width: 50px;
-          height: 50px;
-          top: 50%;
-          left: 50%;
-          margin-top: -25px;
-          margin-left: -25px;
-        }
-        .tu_jc {
-          position: absolute;
-          width: 120px;
-          top: 20px;
-          left: 20px;
-        }
-        .swiper video {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-        }
-        .section-title {
-          font-size: 14px;
-          line-height: 14px;
-          width: 96%;
-          margin: 10px auto;
-          margin-left: 2%;
-          margin-right: 2%;
-          border-radius: 20px;
-          padding: 10px;
-          background: #fff;
-          text-align: center;
-        }
-        .section-title .line {
-          display: inline-block;
-          width: 5px;
-          height: 14px;
-          background: 0abaec;
-        }
-        .body img {
-          max-width: 100%;
-        }
-        .product-params text::after {
-          background: #ff4361;
-        }
-        .iconfont {
-          color: #ff4361;
-        }
-        .ctn_introduce .title .iconfont {
-          position: absolute;
-          right: 0;
-          padding-right: 16px;
-          font-size: 30px;
-        }
-        .tu_you {
-          margin-top: 8px;
-          margin-left: 10px;
-        }
-        .tu_you p {
-          text-align: left;
-          font-size: 16px;
-        }
-        .tu_you span {
-          font-size: 13px;
-          color: #999999;
-        }
-      </style>
-      <script src="plugins/jquery/jquery-1.10.2.mins.js"></script>
-      <script>
-        $(document).ready(function () {
-          $("#xx_sp").click(function () {
-            $("#sp_con").show();
-            $("#tu_con").hide();
-            $("#xx_sp").addClass("switch_active");
-            $("#xx_tu").removeClass("switch_active");
-          });
-
-          $("#xx_tu").click(function () {
-            $("#sp_con").hide();
-            $("#tu_con").show();
-            $("#xx_tu").addClass("switch_active");
-            $("#xx_sp").removeClass("switch_active");
-          });
-        });
-      </script>
-      <style>
-        .myimg {
-          overflow: hidden;
-          width: 100%;
-          height: auto;
-        }
-        .swiper-slide img {
-          width: 100%;
-          height: auto;
-        }
-        .shipai {
-          overflow: hidden;
-          width: 100%;
-          height: auto;
-        }
-        .shipai .tupian img {
-          width: 100%;
-          height: auto;
-        }
-        .swiper-pagination {
-          width: 100%;
-          bottom: 13px;
-        }
-        .swiper-pagination-bullets .swiper-pagination-bullet {
-          margin: 0 5px;
-          border: 3px solid #fff;
-          background-color: #d5d5d5;
-          width: 10px;
-          height: 10px;
-          opacity: 1;
-        }
-        .swiper-pagination-bullets .swiper-pagination-bullet-active {
-          border: 3px solid #ff4361;
-          background-color: #fff;
-        }
-      </style>
       <div id="goods_details">
-        <!-- 商家-分类页面-头部 -->
-        <link rel="stylesheet" href="plugins/wxapp/enterprise-header.css" />
-        <!-- �̼�-����ҳ��-ͷ�� -->
         <div class="enterprise-header" id="pgcontainer">
           <div
             class="header_title"
@@ -242,11 +591,7 @@
           </div>
         </div>
         <div style="height: 50px"></div>
-        <!-- 商家-商品页面-swiper -->
         <div class="goods_details_swiper">
-          <!--div class='clearBoth upside'>
-      <img src='//static.901009.com/201811/25/merchants_page.png'/>
-    </div-->
           <div class="myimg" id="sp_con">
             <div
               class="swiper-container"
@@ -297,77 +642,11 @@
           </div>
         </div>
         <div>
-          <style>
-            .ck_jiage {
-              position: absolute;
-              right: 20px;
-              margin-top: 30px;
-              z-index: 99;
-            }
-            .ck_jiage p {
-              display: block;
-              font-size: 14px;
-              color: #828282;
-            }
-            .ck_jiage p span {
-              color: red;
-              font-size: 24px;
-              margin-right: 5px;
-            }
-            .ck_jiage .sq {
-              display: block;
-              width: 100px;
-              height: 30px;
-              line-height: 30px;
-              text-align: center;
-              background: linear-gradient(
-                to right,
-                rgba(251, 201, 67, 1) 0%,
-                rgba(253, 43, 122, 1) 100%
-              );
-              color: #fff;
-              border-radius: 20px;
-              margin-left: 10px;
-              margin-top: 6px;
-            }
-            .hit_xx {
-              line-height: 20px;
-              height: 20px;
-              margin-left: 25px;
-              margin-top: 10px;
-              float: left;
-            }
-            .hit_xx span {
-              margin-left: 24px;
-              font-size: 13px;
-              color: #999;
-            }
-            .hit_xx img {
-              height: 18px;
-              position: absolute;
-            }
-            .ctn_introduce {
-              margin-left: 2%;
-              margin-right: 2%;
-              background: #fff;
-              border-radius: 20px;
-              margin-top: 42px;
-            }
-          </style>
-
-          <!-- 商家-商品页面-内容介绍-ctn_introd -->
           <div class="ctn_introduce" style="padding-top: 15px">
             <div class="clearBoth title">
               <div class="left">
                 <text class="txt1" style="margin-right: 55px"></text>
               </div>
-              <i
-                class="iconfont iconerweima2"
-                onclick="showQrcode()"
-                style="color: #ff4361; font-size: 40px"
-                ><img src="images/myewm.png"
-              /></i>
-              <!-- <span style="position:absolute; right:18px; margin-top:36px;color:#333; font-size:13px; ">+关注</span>-->
             </div>
             <div class="product-params">
               <text></text>
@@ -398,136 +677,6 @@
           >
         </div>
       </div>
-      <style>
-        .xx_title {
-          line-height: 20px;
-          color: #504d4d;
-          font-size: 14.5px;
-          text-align: center;
-          font-weight: bold;
-          letter-spacing: 3px;
-          margin-top: 10px;
-          width: 100%;
-          height: auto;
-          background: #fff;
-          padding-top: 20px;
-          border-top-left-radius: 20px;
-          border-top-right-radius: 20px;
-          clear: both;
-        }
-        .xx_title span {
-          display: block;
-          width: 20px;
-          height: 5px;
-          background: #ff4361;
-          margin: 0 auto;
-          margin-top: 5px;
-          border-radius: 10px;
-        }
-        .xx_content {
-          margin-top: 10px;
-        }
-        .xx_content img {
-          width: 100%;
-          height: auto;
-        }
-        .xx_content p {
-          font-size: 14px;
-          color: #616161;
-          line-height: 22px;
-          margin-left: 15px;
-          margin-right: 14px;
-        }
-
-        .section-title .tj_title {
-          display: block;
-          width: 20px;
-          height: 5px;
-          background: #ff4361;
-          margin: 0 auto;
-          margin-top: 5px;
-          border-radius: 10px;
-        }
-        .tj_wenzi {
-          line-height: 20px;
-          color: #504d4d;
-          font-size: 14.5px;
-          text-align: center;
-          font-weight: bold;
-          letter-spacing: 3px;
-          margin-top: 10px;
-          height: auto;
-          background: #fff;
-          border-top-left-radius: 20px;
-          border-top-right-radius: 20px;
-        }
-        .tj_list {
-          margin-top: 13px;
-          overflow: hidden;
-        }
-        .tj_list ul li {
-          float: left;
-          width: 30%;
-          margin-left: 2.5%;
-          height: auto;
-          margin-bottom: 8px;
-        }
-        .tj_list ul li img {
-          float: left;
-          width: 100%;
-          display: block;
-          border-radius: 10px;
-          margin-bottom: 8px;
-        }
-        .tj_list ul li p {
-          height: 32px;
-          display: inline-block;
-          line-height: 16px;
-          text-align: justify;
-          overflow: hidden;
-          margin: 0 auto;
-          width: 92%;
-          word-break: break-word;
-          white-space: normal;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          display: -webkit-box;
-          -webkit-line-clamp: 2;
-          -webkit-box-orient: vertical;
-        }
-
-        .slider-pagination-item {
-          margin: 0 0.3rem;
-          width: 14px;
-          height: 3px;
-          display: inline-block;
-          background-color: #dbdbdb;
-        }
-
-        .slider-pagination-item.slider-pagination-item-active {
-          background: #ff4361;
-        }
-        .slider-pagination-item {
-          height: 4px;
-          border-radius: 2px;
-        }
-
-        .tj_list .swiper-pagination2 {
-          width: 100%;
-          bottom: 13px;
-        }
-        .tj_list .swiper-pagination-bullets .swiper-pagination-bullet {
-          margin: 0 0.3rem;
-          width: 16px;
-          height: 4px;
-          display: inline-block;
-          background-color: #dbdbdb;
-          border-radius: 2px;
-        }
-        .tj_list .swiper-pagination-bullets .swiper-pagination-bullet-active {
-          background-color: #ff4361;
-        }
-      </style>
       <div
         class="section-title"
         style="min-height: 300px; padding: 0px; padding-top: 5px"
@@ -659,124 +808,21 @@
       </div>
 
       <div style="height: 12px"></div>
-      <!-- Core CSS file -->
-      <style>
-        .qrcode {
-          display: none;
-          position: fixed;
-          z-index: 100;
-          top: 0;
-          left: 0;
-          display: flex;
-          width: 100%;
-          height: 100%;
-          background: rgba(0, 0, 0, 0.5);
-          align-items: center;
-          justify-content: center;
-        }
-        .qrcode .content {
-          padding: 15px;
-          width: 75%;
-          background: #fff;
-          position: relative;
-          border-radius: 10px;
-          overflow: hidden;
-        }
-        .qrcode .content img {
-          max-width: 100%;
-        }
-        .qrcode .info {
-          font-size: 20px;
-          padding: 10px;
-          padding-right: 90px;
-          position: relative;
-        }
-        .qrcode .info #qr {
-          position: absolute;
-          top: 50px;
-          right: 0px;
-          width: 80px;
-          font-size: 12px;
-          color: #333;
-          text-align: center;
-        }
-        .qrcode .info #qr canvas {
-          width: 80px;
-          height: 80px;
-        }
-        .qrcode .title {
-          height: 25px;
-          line-height: 25px;
-          font-size: 16px;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          display: box;
-          -webkit-line-clamp: 1;
-          -webkit-box-orient: vertical;
-        }
-        .qrcode .tag {
-          font-size: 14px;
-          background: #f30;
-          color: #fff;
-          padding: 3px 10px;
-          border-radius: 20px;
-        }
-        .qrcode .tips {
-          position: absolute;
-          bottom: 60px;
-          left: 0;
-          width: 100%;
-          line-height: 40px;
-          color: #fff;
-          text-align: center;
-          font-size: 16px;
-        }
-        .qrcode .close {
-          display: none;
-          width: 40px;
-          height: 40px;
-          position: absolute;
-          top: 5px;
-          right: 5px;
-          font-size: 40px;
-        }
-        .qrcode .close img {
-          width: 100%;
-          height: 100%;
-          border-radius: 100%;
-        }
-      </style>
+
       <div style="height: 50px; clear: both; display: block"></div>
-      <link rel="stylesheet" href="plugins/photoswiper/photoswipe.css" />
-      <link
-        rel="stylesheet"
-        href="plugins/photoswiper/default-skin/default-skin.css"
-      />
-      <script src="plugins/photoswiper/photoswipe.min.js"></script>
-      <script src="plugins/photoswiper/photoswipe-ui-default.min.js"></script>
-      <script src="plugins/jquery/jquery.min.js"></script>
-      <script src="plugins/jquery/jquery.qrcode.min.js"></script>
-      <script src="plugins/html2canvas.min.js"></script>
-      <script src="plugins/doT.min.js"></script>
-      <!-- Root element of PhotoSwipe. Must have class pswp. -->
+
       <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-        <!-- Background of PhotoSwipe. 
-         It's a separate element as animating opacity is faster than rgba(). -->
         <div class="pswp__bg"></div>
-        <!-- Slides wrapper with overflow:hidden. -->
+
         <div class="pswp__scroll-wrap">
-          <!-- Container that holds slides. 
-            PhotoSwipe keeps only 3 of them in the DOM to save memory.
-            Don't modify these 3 pswp__item elements, data is added later on. -->
           <div class="pswp__container">
             <div class="pswp__item"></div>
             <div class="pswp__item"></div>
             <div class="pswp__item"></div>
           </div>
-          <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+
           <div class="pswp__ui pswp__ui--hidden">
             <div class="pswp__top-bar">
-              <!--  Controls are self-explanatory. Order can be changed. -->
               <div class="pswp__counter"></div>
               <button
                 class="pswp__button pswp__button--close"
@@ -794,8 +840,7 @@
                 class="pswp__button pswp__button--zoom"
                 title="Zoom in/out"
               ></button>
-              <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
-              <!-- element will get class pswp__preloader--active when preloader is running -->
+
               <div class="pswp__preloader">
                 <div class="pswp__preloader__icn">
                   <div class="pswp__preloader__cut">
@@ -823,38 +868,49 @@
           </div>
         </div>
       </div>
-      <footer class="aui-footer-product">
-        <div class="aui-footer-product-fixed">
-          <div class="aui-footer-product-concern-cart">
-            <a href="tel:手机|18473358357">
-              <span class="aui-f-p-icon"
-                ><img src="images/icon-kf.png" alt=""
-              /></span>
-              <span class="aui-f-p-focus-info">客服</span>
-            </a>
-            <a onclick="showQrcode()">
-              <span class="aui-f-p-icon"
-                ><img src="images/icon-sc.png" alt=""
-              /></span>
-              <span class="aui-f-p-focus-info">分享</span>
-            </a>
-            <a href="../index.html?qyid=1">
-              <span class="aui-f-p-icon"
-                ><img src="images/icon-kin.png" alt=""
-              /></span>
-              <span class="aui-f-p-focus-info">首页</span>
-            </a>
+      <div class="footer">
+        <div class="myfoot">
+          <div class="fcaidan">
+            <a href="product_fl.html"
+              ><img src="images/foot_fl.png" style="height: 24px" />
+              <p>Categories</p></a
+            >
           </div>
-
-          <div
-            class="aui-footer-product-action-list"
-            style="padding-bottom: 0px"
-          >
-            <a href="product_fl.html" class="yellow-color">产品中心</a>
-            <a href="index.html" class="red-color">个人中心</a>
+          <div class="fcaidan">
+            <a href="video.html"
+              ><img src="images/foot_fx.png" style="height: 23px" />
+              <p>Video</p></a
+            >
+          </div>
+          <div class="fcaidan">
+            <a href="index.html"
+              ><img
+                src="images/pyrotechnics20230802/brand-icon.png"
+                style="
+                  width: 50px;
+                  height: auto;
+                  display: block;
+                  margin-top: -24px;
+                  padding-right: 3px;
+                "
+              />
+              <p>Home</p></a
+            >
+          </div>
+          <div class="fcaidan">
+            <a href="contact.html"
+              ><img src="images/foot_lx.png" style="height: 26px" />
+              <p>Contacts</p></a
+            >
+          </div>
+          <div class="fcaidan">
+            <a href="login.html"
+              ><img src="images/foot_my.png" style="height: 26px" />
+              <p>Account</p></a
+            >
           </div>
         </div>
-      </footer>
+      </div>
       <div style="padding: 5px"></div>
     </page>
     <div
@@ -936,6 +992,23 @@
       </div>
     </div>
     <script>
+      $(document).ready(function () {
+        $("#xx_sp").click(function () {
+          $("#sp_con").show();
+          $("#tu_con").hide();
+          $("#xx_sp").addClass("switch_active");
+          $("#xx_tu").removeClass("switch_active");
+        });
+
+        $("#xx_tu").click(function () {
+          $("#sp_con").hide();
+          $("#tu_con").show();
+          $("#xx_tu").addClass("switch_active");
+          $("#xx_sp").removeClass("switch_active");
+        });
+      });
+    </script>
+    <script>
       function showVideo(url) {
         $(".videoPlay video").attr("src", url);
         $(".videoPlay").show();
@@ -971,9 +1044,7 @@
         $(".videoPlay").attr("src", "").hide();
       }
     </script>
-    <script src="plugins/jquery/jquery.min.js"></script>
-    <script src="plugins/jquery/jquery.cookie.js"></script>
-    <script src="plugins/layer/layer.js"></script>
+
     <script>
       function json2query(json) {
         if (!json) return "";
@@ -996,33 +1067,6 @@
       }
       window.readyCall && window.readyCall();
     </script>
-    <script>
-      // 提前生成好二维码
-      // $(".qrcode #qrcanvas").qrcode({ text: location.origin + "/?p59" });
-      // function showQrcode() {
-      //   $(".qrbox").show();
-      //   // return false;
-
-      //   html2canvas(document.querySelector(".qrcode .content"), {
-      //     // allowTaint: true,
-      //     canvas: document.getElementById("img"),
-      //     useCORS: true,
-      //     scale: 3,
-      //   }).then(function (canvas) {
-      //     var img = $("<img style='display:block;'>");
-      //     img.attr("src", canvas.toDataURL());
-      //     $(".qrcode .info").hide();
-      //     $("#qrcode-content").html("").append(img);
-      //     $(".qrcode .content").css("padding", "0");
-      //     $(".qrbox").find("a.close").show();
-      //   });
-      // }
-    </script>
-    <script src="scripts/index.js"></script>
-    <script src="plugins/themes/js/jquery.min.js"></script>
-    <script src="plugins/themes/js/aui2.js"></script>
-    <script src="plugins/swiper4/js/swiper.min.js"></script>
-    <script src="plugins/swiper4/js/swiper.animate.min.js"></script>
     <script>
       var mySwiper = new Swiper(".swiper-container", {
         pagination: {

@@ -33,7 +33,8 @@
 
       body,
       html {
-        margin: 0;
+        max-width: 600px;
+        margin: 0 auto;
         padding: 0;
         /* height: 100%; */
         /* overflow: hidden; */
@@ -46,20 +47,6 @@
         background: rgba(0, 0, 0, 0.5);
       }
 
-      /* .play-icon {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 1;
-        cursor: pointer;
-      }
-
-      .play-icon img {
-        width: 100px;
-        height: 100px;
-      } */
-
       video {
         width: 100%;
         height: 100%;
@@ -68,7 +55,7 @@
     </style>
   </head>
   <body>
-    <div style="position: absolute; left: 20px; top: 20px; z-index: 9999">
+    <div style="position: relative; left: 20px; top: 20px; z-index: 9999">
       <i class="aui-icon aui-icon-back" onclick="history.back();"></i>
     </div>
     <div class="header">
@@ -78,49 +65,8 @@
       <video id="video" controls playsinline>
         <source src=".." type="video/mp4" />
       </video>
-      <!-- <div id="play-icon" class="play-icon">
-        <img src="images/bo.png" alt="Play Icon" />
-      </div> -->
     </div>
 
-    <!-- <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        var video = document.getElementById("video");
-        var playpauseBtn = document.getElementById("playpause-btn");
-        var playIcon = document.getElementById("play-icon");
-
-        playIcon.addEventListener("click", function () {
-          video.play();
-          playIcon.style.display = "none";
-        });
-
-        video.addEventListener("click", function () {
-          if (video.paused) {
-            video.play();
-            playIcon.style.display = "none";
-          } else {
-            video.pause();
-            playIcon.style.display = "block";
-          }
-        });
-
-        // video.addEventListener("play", function () {
-        //   enterFullscreen(video);
-        // });
-
-        function enterFullscreen(element) {
-          if (element.requestFullscreen) {
-            element.requestFullscreen();
-          } else if (element.mozRequestFullScreen) {
-            element.mozRequestFullScreen();
-          } else if (element.webkitRequestFullscreen) {
-            element.webkitRequestFullscreen();
-          } else if (element.msRequestFullscreen) {
-            element.msRequestFullscreen();
-          }
-        }
-      });
-    </script> -->
     <script>
       const videoElement = document.getElementById("video");
       const q = window.location.search;
