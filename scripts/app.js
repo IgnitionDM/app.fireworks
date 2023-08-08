@@ -35,11 +35,18 @@ function generateProductHTML(product) {
                 "
                 >新品</span> 
             ${product.english}</span>
-          <div class="params" style="overflow: hidden">            
+          <div class="params" style="overflow: hidden">    
+                  
             <span class="gd_li_txt">
-            <span class="dot" style="background: #ff4361"></span>
-            Spec / Packaging：${product.packaging}
+              <span class="dot" style="background: #ff4361"></span>
+                SKU：${product.sku}
             </span>
+
+            <span class="gd_li_txt">
+              <span class="dot" style="background: #ff4361"></span>
+                Spec / Packaging：${product.packaging}
+            </span>
+
           </div>
           <div class="goods_an">
             <a href="video.html?url=${videoUrl}" class="goods_anzuo" style="background: ">

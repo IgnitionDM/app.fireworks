@@ -657,6 +657,7 @@
             </div>
             <div class="product-params">
               <text></text>
+              <text></text>
             </div>
 
             <div style="height: 15px; clear: both"></div>
@@ -1107,7 +1108,8 @@
         banner1.src = imageUrl;
         banner2.src = imageUrl;
         spanElement.textContent = currentProduct.english;
-        productParams[0].textContent = `Spec / Packaging：${currentProduct.packaging}`;
+        productParams[0].textContent = `SKU：${currentProduct.sku}`;
+        productParams[1].textContent = `Spec / Packaging：${currentProduct.packaging}`;
 
         const bofangImage = document.getElementById("bofang");
         if (bofangImage) {

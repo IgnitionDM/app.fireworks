@@ -210,6 +210,12 @@
   </head>
   <body>
     <page id="main-content">
+      <!-- <label for="languageSelect">Select Language:</label>
+      <select id="languageSelect" onchange="handleOnChange()">
+        <option value="english">English</option>
+        <option value="chinese">Chinese</option>
+        <option value="malay">Malay</option>
+      </select> -->
       <div id="enterprise_index">
         <div
           class="nheader"
@@ -493,6 +499,24 @@
           content: "bo/bo.html?qyid=1&id=" + id,
         });
       }
+
+      function handleOnChange() {
+        const languageSelect = document.getElementById("languageSelect");
+        const selectedLanguage = languageSelect.value;
+        localStorage.setItem("selectedLanguage", selectedLanguage);
+      }
+
+      // Check if there's a saved language in local storage and set the select box accordingly
+      // document.addEventListener("DOMContentLoaded", function () {
+      //   const languageSelect = document.getElementById("languageSelect");
+      //   const savedLanguage = localStorage.getItem("selectedLanguage");
+      //   if (savedLanguage) {
+      //     languageSelect.value = savedLanguage;
+      //   } else {
+      //     languageSelect.value = "english";
+      //     localStorage.setItem("selectedLanguage", "english");
+      //   }
+      // });
 
       // Register the Service Worker
       caches.delete("Firework");
