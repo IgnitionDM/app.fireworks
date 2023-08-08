@@ -76,6 +76,18 @@ function generateSearchTagHTML(title) {
   return newElement;
 }
 
+function searchProducts(products, query) {
+  query = query.toLowerCase();
+  return products.filter((product) => {
+    const englishMatch = product.english.toLowerCase().includes(query);
+    const chineseMatch = product.chinese.toLowerCase().includes(query);
+    const tagsMatch = product.tags.some((tag) =>
+      tag.toLowerCase().includes(query)
+    );
+    return englishMatch || chineseMatch || tagsMatch;
+  });
+}
+
 function renderProductList(products) {
   const productContainer = document.getElementById("productContainer");
   const productCountElement = document.getElementById("productCount");
@@ -83,51 +95,52 @@ function renderProductList(products) {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const query = urlParams.get("k");
-  let filteredProducts;
+  let listProducts;
 
   if (query !== null) {
-    filteredProducts = products.filter((product) =>
-      product.english.toLowerCase().includes(query.toLowerCase())
-    );
-    productCountElement.innerHTML = filteredProducts.length;
+    listProducts = searchProducts(products, query);
+    productCountElement.innerHTML = listProducts.length;
 
     var tagHTML = generateSearchTagHTML(query);
     productHeader.prepend(tagHTML);
   } else {
-    filteredProducts = products;
-    productCountElement.innerHTML = filteredProducts.length;
+    listProducts = products;
+    productCountElement.innerHTML = listProducts.length;
   }
 
-  filteredProducts.forEach(function (product) {
+  listProducts.forEach(function (product) {
     var productHTML = generateProductHTML(product);
     productContainer.innerHTML += productHTML;
   });
 }
 
-function fetchAllProducts() {
+function fetchProductsFromJsonFile(jsonFileUrl) {
   return new Promise((resolve, reject) => {
-    const xhr1 = new XMLHttpRequest();
-    const xhr2 = new XMLHttpRequest();
-
-    xhr1.open("GET", "data/adult-inv.json", true);
-    xhr2.open("GET", "data/kid-inv.json", true);
-
-    xhr1.onreadystatechange = function () {
-      if (xhr1.readyState === 4 && xhr1.status === 200) {
-        const adultProducts = JSON.parse(xhr1.responseText);
-
-        xhr2.onreadystatechange = function () {
-          if (xhr2.readyState === 4 && xhr2.status === 200) {
-            const kidProducts = JSON.parse(xhr2.responseText);
-            const allProducts = [...adultProducts, ...kidProducts];
-            resolve(allProducts);
-          }
-        };
-
-        xhr2.send();
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", jsonFileUrl, true);
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          const products = JSON.parse(xhr.responseText);
+          resolve(products);
+        } else {
+          reject(new Error("Error fetching products: " + xhr.status));
+        }
       }
     };
+    xhr.send();
+  });
+}
 
-    xhr1.send();
+function fetchAllProducts() {
+  const adultProductsUrl = "data/adult-inv.json";
+  const kidProductsUrl = "data/kid-inv.json";
+
+  return Promise.all([
+    fetchProductsFromJsonFile(adultProductsUrl),
+    fetchProductsFromJsonFile(kidProductsUrl),
+  ]).then(([adultProducts, kidProducts]) => {
+    const allProducts = [...adultProducts, ...kidProducts];
+    return allProducts;
   });
 }

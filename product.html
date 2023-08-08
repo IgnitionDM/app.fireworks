@@ -333,6 +333,18 @@
         object-fit: cover;
         padding: 50px 25px;
       }
+
+      .selected {
+        background: linear-gradient(
+          to right,
+          rgba(255, 0, 62, 1) 0%,
+          rgba(253, 15, 111, 1) 0%,
+          rgba(255, 0, 62, 1) 100%
+        ) !important;
+        -webkit-background-clip: text !important;
+        background-clip: text !important;
+        color: transparent !important;
+      }
     </style>
   </head>
   <body>
@@ -421,39 +433,53 @@
         <div style="height: 60px"></div>
         <div id="container">
           <div class="menu1" style="margin-top: 13px; margin-left: 10px">
-            <!-- <a href="product-1.html?qyid=1&tuij=1">
-              <div style="float: left; margin-top: 13px; margin-left: 10px">
-                <img
-                  src="images/newpro.png"
-                  style="height: 20px; display: inline-block"
-                />
-              </div>
-            </a> -->
             <ul>
-              <li
-                onclick="window.location='product_fl.html';"
-                style="
-                  background: linear-gradient(
-                    to right,
-                    rgba(255, 0, 62, 1) 0%,
-                    rgba(253, 15, 111, 1) 0%,
-                    rgba(255, 0, 62, 1) 100%
-                  );
-                  -webkit-background-clip: text;
-                  background-clip: text;
-                  color: transparent;
-                "
-              >
+              <!-- <li id="allProducts" onclick="window.location='product_fl.html';">
                 All Products
               </li>
 
-              <li onclick="aa('3')">New Produtcs</li>
+              <li id="newProducts" onclick="window.location='product.html'">
+                New Produtcs
+              </li>
 
-              <li onclick="aa('5')">Best Sellers</li>
+              <li id="bestSellers" onclick="window.location='product.html'">
+                Best Sellers
+              </li>
 
-              <li onclick="aa('7')">Adult</li>
+              <li id="adult" onclick="window.location='product.html?k=adult'">
+                Adult
+              </li>
 
-              <li onclick="aa('9')">Kids</li>
+              <li id="kid" onclick="window.location='product.html?k=kid'">
+                Kids
+              </li> -->
+              <li
+                id="allProducts"
+                onclick="goToSelection('allProducts', 'product_fl.html')"
+              >
+                All Products
+              </li>
+              <li
+                id="newProducts"
+                onclick="goToSelection('newProducts', 'product.html')"
+              >
+                New Products
+              </li>
+              <li
+                id="bestSellers"
+                onclick="goToSelection('bestSellers', 'product.html')"
+              >
+                Best Sellers
+              </li>
+              <li
+                id="adult"
+                onclick="goToSelection('adult', 'product.html?k=adult')"
+              >
+                Adult
+              </li>
+              <li id="kid" onclick="goToSelection('kid', 'product.html?k=kid')">
+                Kids
+              </li>
             </ul>
           </div>
 
@@ -607,27 +633,27 @@
           </div>
         </div>
       </div>
-      <script>
-        var u = navigator.userAgent;
-        var isAndroid = u.indexOf("Android") > -1 || u.indexOf("Adr") > -1; //android终端
-        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
-        if (isiOS) {
-          $("#myideo").show();
-          $(".myideop").hide();
-        }
-        $(function () {
-          $(".form_edit .num").click(function () {
-            var oDiv = document.getElementById("gwshu");
-            oDiv.innerHTML += this.innerHTML;
-          });
-          $("#remove").click(function () {
-            var oDiv = document.getElementById("gwshu");
-            var oDivHtml = oDiv.innerHTML;
-            oDiv.innerHTML = oDivHtml.substring(0, oDivHtml.length - 1);
-          });
-        });
-      </script>
     </page>
+    <script>
+      var u = navigator.userAgent;
+      var isAndroid = u.indexOf("Android") > -1 || u.indexOf("Adr") > -1; //android终端
+      var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+      if (isiOS) {
+        $("#myideo").show();
+        $(".myideop").hide();
+      }
+      $(function () {
+        $(".form_edit .num").click(function () {
+          var oDiv = document.getElementById("gwshu");
+          oDiv.innerHTML += this.innerHTML;
+        });
+        $("#remove").click(function () {
+          var oDiv = document.getElementById("gwshu");
+          var oDivHtml = oDiv.innerHTML;
+          oDiv.innerHTML = oDivHtml.substring(0, oDivHtml.length - 1);
+        });
+      });
+    </script>
     <script>
       $(function () {
         //绑定滚动条事件
@@ -724,6 +750,29 @@
 
       fetchAllProducts().then((products) => {
         renderProductList(products);
+      });
+
+      function goToSelection(clickedId, location) {
+        const liElements = document.querySelectorAll(".menu1 ul li");
+        liElements.forEach((li) => {
+          li.classList.remove("selected");
+        });
+        const clickedLi = document.getElementById(clickedId);
+        // clickedLi.classList.add("selected");
+
+        // Store the selected ID in localStorage
+        localStorage.setItem("selectedLi", clickedId);
+
+        window.location = location;
+      }
+
+      // Check if there is a selected ID in localStorage on page load
+      document.addEventListener("DOMContentLoaded", () => {
+        const selectedLiId = localStorage.getItem("selectedLi");
+        if (selectedLiId) {
+          const selectedLi = document.getElementById(selectedLiId);
+          selectedLi.classList.add("selected");
+        }
       });
     </script>
   </body>
