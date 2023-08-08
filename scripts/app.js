@@ -139,15 +139,20 @@ function fetchProductsFromJsonFile(jsonFileUrl) {
   });
 }
 
-function fetchAllProducts() {
-  const adultProductsUrl = "data/adult-inv.json";
-  const kidProductsUrl = "data/kid-inv.json";
+// function fetchAllProducts() {
+//   const adultProductsUrl = "data/adult-inv.json";
+//   const kidProductsUrl = "data/kid-inv.json";
 
-  return Promise.all([
-    fetchProductsFromJsonFile(adultProductsUrl),
-    fetchProductsFromJsonFile(kidProductsUrl),
-  ]).then(([adultProducts, kidProducts]) => {
-    const allProducts = [...adultProducts, ...kidProducts];
-    return allProducts;
-  });
+//   return Promise.all([
+//     fetchProductsFromJsonFile(adultProductsUrl),
+//     fetchProductsFromJsonFile(kidProductsUrl),
+//   ]).then(([adultProducts, kidProducts]) => {
+//     const allProducts = [...adultProducts, ...kidProducts];
+//     return allProducts;
+//   });
+// }
+
+function fetchAllProducts() {
+  const inventoryProductsUrl = "data/inventory.json";
+  return fetchProductsFromJsonFile(inventoryProductsUrl);
 }
