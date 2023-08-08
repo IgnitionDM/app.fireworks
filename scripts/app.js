@@ -1,10 +1,21 @@
 function generateProductHTML(product) {
+  const defaultImage = "images/pyrotechnics20230802/product-placeholder.png";
+  const defaultVideo =
+    "https://github.com/IgnitionDM/app.fireworks/raw/main/videos/firework_00.mp4";
+
+  const imageUrl =
+    product.image && product.image.trim() !== ""
+      ? `images/pyrotechnics20230802/${product.tags[0]}/${product.image}`
+      : defaultImage;
+  const videoUrl =
+    product.video && product.video.trim() !== "" ? product.video : defaultVideo;
+
   var html = `
       <div class="item" style="margin-bottom: 12px; box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);">
         <div class="gd_li" id="product${product.id}">
           <a href="product_xq.html?id=${product.id}">
             <div class="pro_bg" style="background: url('images/pyrotechnics20230802/202291295458.png') no-repeat; background-size: 100%;">
-              <img class="img" mode="widthFix" src="images/pyrotechnics20230802/${product.image}" />
+                <img class="img" mode="widthFix" src="${imageUrl}" />
             </div>
           </a>
           <span class="dh_overpro gd_li_title">
@@ -23,23 +34,19 @@ function generateProductHTML(product) {
                     background: #cc0;
                 "
                 >新品</span> 
-            ${product.title}</span>
+            ${product.english}</span>
           <div class="params" style="overflow: hidden">            
             <span class="gd_li_txt">
             <span class="dot" style="background: #ff4361"></span>
-
-            规格：${product.dimensions}</span
-            ><span class="gd_li_txt">
-            <span class="dot" style="background: #ff4361"></span>
-            含量：${product.content}
+            Spec / Packaging：${product.packaging}
             </span>
           </div>
           <div class="goods_an">
-            <a href="video.html?url=${product.video}" class="goods_anzuo" style="background: ">
-              <img src="images/pro_bo.png" />视频
+            <a href="video.html?url=${videoUrl}" class="goods_anzuo" style="background: ">
+              <img src="images/pro_bo.png" />Video
             </a>
             <a href="product_xq.html?id=${product.id}" class="goods_anyou">
-              <img src="images/pro_xx.png" />详情
+              <img src="images/pro_xx.png" />Details
             </a>
           </div>
         </div>
@@ -80,7 +87,7 @@ function renderProductList(products) {
 
   if (query !== null) {
     filteredProducts = products.filter((product) =>
-      product.title.includes(query)
+      product.english.toLowerCase().includes(query.toLowerCase())
     );
     productCountElement.innerHTML = filteredProducts.length;
 
@@ -94,5 +101,33 @@ function renderProductList(products) {
   filteredProducts.forEach(function (product) {
     var productHTML = generateProductHTML(product);
     productContainer.innerHTML += productHTML;
+  });
+}
+
+function fetchAllProducts() {
+  return new Promise((resolve, reject) => {
+    const xhr1 = new XMLHttpRequest();
+    const xhr2 = new XMLHttpRequest();
+
+    xhr1.open("GET", "data/adult-inv.json", true);
+    xhr2.open("GET", "data/kid-inv.json", true);
+
+    xhr1.onreadystatechange = function () {
+      if (xhr1.readyState === 4 && xhr1.status === 200) {
+        const adultProducts = JSON.parse(xhr1.responseText);
+
+        xhr2.onreadystatechange = function () {
+          if (xhr2.readyState === 4 && xhr2.status === 200) {
+            const kidProducts = JSON.parse(xhr2.responseText);
+            const allProducts = [...adultProducts, ...kidProducts];
+            resolve(allProducts);
+          }
+        };
+
+        xhr2.send();
+      }
+    };
+
+    xhr1.send();
   });
 }

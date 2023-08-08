@@ -327,6 +327,12 @@
         filter: alpha(opacity=70);
         opacity: 0.7;
       }
+
+      .gd_li .img {
+        height: 300px;
+        object-fit: cover;
+        padding: 50px 25px;
+      }
     </style>
   </head>
   <body>
@@ -460,7 +466,7 @@
           style="clear: both; padding-bottom: 60px"
         >
           <div class="ttitle_r">
-            Total<span id="productCount"></span>related products
+            Total<span id="productCount"></span>products
           </div>
 
           <div class="clearBoth gd_list" style="clear: both">
@@ -716,15 +722,9 @@
         });
       }
 
-      var xhr = new XMLHttpRequest();
-      xhr.open("GET", "data/products.json", true);
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-          var products = JSON.parse(xhr.responseText);
-          renderProductList(products);
-        }
-      };
-      xhr.send();
+      fetchAllProducts().then((products) => {
+        renderProductList(products);
+      });
     </script>
   </body>
 </html>

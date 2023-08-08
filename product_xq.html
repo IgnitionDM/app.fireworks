@@ -45,6 +45,7 @@
     <script src="plugins/themes/js/aui2.js"></script>
     <script src="plugins/swiper4/js/swiper.min.js"></script>
     <script src="plugins/swiper4/js/swiper.animate.min.js"></script>
+    <script src="scripts/app.js"></script>
 
     <link rel="stylesheet" href="styles/app.css" />
     <link rel="stylesheet" href="plugins/wxapp/app.css" />
@@ -196,6 +197,16 @@
         width: 100%;
         height: auto;
       }
+
+      #banner-image1,
+      #banner-image2 {
+        width: auto;
+        height: 600px;
+        max-width: 600px;
+        object-fit: cover;
+        padding: 105px 25px 35px;
+      }
+
       .shipai {
         overflow: hidden;
         width: 100%;
@@ -613,6 +624,7 @@
                     background: url('images/pyrotechnics20230802/2022912134644.png')
                       no-repeat;
                     background-size: 100%;
+                    text-align: center;
                   "
                 >
                   <a>
@@ -625,7 +637,6 @@
                 </div>
               </div>
             </div>
-            <div class="swiper-pagination"></div>
           </div>
           <div class="shipai" style="display: none" id="tu_con">
             <img src="images/tu_jc.png" class="tu_jc" />
@@ -645,8 +656,6 @@
               </div>
             </div>
             <div class="product-params">
-              <text></text>
-              <text></text>
               <text></text>
             </div>
 
@@ -981,7 +990,7 @@
         </div>
       </div>
     </div>
-    <script>
+    <!-- <script>
       $(document).ready(function () {
         $("#xx_sp").click(function () {
           $("#sp_con").show();
@@ -997,7 +1006,7 @@
           $("#xx_sp").removeClass("switch_active");
         });
       });
-    </script>
+    </script> -->
     <script>
       function showVideo(url) {
         $(".videoPlay video").attr("src", url);
@@ -1035,29 +1044,7 @@
       }
     </script>
 
-    <script>
-      function json2query(json) {
-        if (!json) return "";
-        var queryArr = [];
-        for (var x in json) {
-          queryArr.push(x + "=" + json[x]);
-        }
-        return queryArr.join("&");
-      }
-
-      // 更改地址中的参数
-      function changeUrlArg(url, arg, val) {
-        var pattern = arg + "=([^&]*)";
-        var replaceText = arg + "=" + val;
-        return url.match(pattern)
-          ? url.replace(eval("/(" + arg + "=)([^&]*)/gi"), replaceText)
-          : url.match("[\?]")
-          ? url + "&" + replaceText
-          : url + "?" + replaceText;
-      }
-      window.readyCall && window.readyCall();
-    </script>
-    <script>
+    <!-- <script>
       var mySwiper = new Swiper(".swiper-container", {
         pagination: {
           el: ".swiper-pagination",
@@ -1070,7 +1057,7 @@
           el: ".swiper-pagination2",
         },
       });
-    </script>
+    </script> -->
     <script>
       var u = navigator.userAgent;
       var isAndroid = u.indexOf("Android") > -1 || u.indexOf("Adr") > -1; //android终端
@@ -1093,65 +1080,45 @@
     </script>
 
     <script>
-      function v_bo(id) {
-        layer.open({
-          type: 2,
-          title: "",
-          maxmin: true,
-          shadeClose: true, //点击遮罩关闭层
-          area: ["100%", "100%"],
-          content: "bo/bo.html?qyid=1&id=" + id,
-        });
-      }
+      fetchAllProducts().then((products) => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const currentProduct = products.find(
+          (product) => product.id === urlParams.get("id")
+        );
+        const banner1 = document.getElementById("banner-image1");
+        const banner2 = document.getElementById("banner-image2");
+        const spanElement = document.querySelector(".title>.left>.txt1");
+        const productParams = document.querySelectorAll(".product-params text");
 
-      function aa(id) {
-        layer.open({
-          type: 2,
-          title: "申请认证会员",
-          maxmin: true,
-          shadeClose: true, //点击遮罩关闭层
-          area: ["85%", "260px;"],
-          content: "shouquan.html?qyid=1",
-        });
-      }
+        const defaultImage =
+          "images/pyrotechnics20230802/product-placeholder.png";
+        const defaultVideo =
+          "https://github.com/IgnitionDM/app.fireworks/raw/main/videos/firework_00.mp4";
 
-      function cc(id) {
-        layer.open({
-          type: 2,
-          title: "关注微信公众平台",
-          maxmin: true,
-          shadeClose: true, //点击遮罩关闭层
-          area: ["75%", "360px;"],
-          content: "guanzhu.html?qyid=1",
-        });
-      }
+        const imageUrl =
+          currentProduct.image && currentProduct.image.trim() !== ""
+            ? `images/pyrotechnics20230802/${currentProduct.tags[0]}/${currentProduct.image}`
+            : defaultImage;
+        const videoUrl =
+          currentProduct.video && currentProduct.video.trim() !== ""
+            ? currentProduct.video
+            : defaultVideo;
 
-      var xhr = new XMLHttpRequest();
-      xhr.open("GET", "data/products.json", true);
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-          var products = JSON.parse(xhr.responseText);
+        banner1.src = imageUrl;
+        banner2.src = imageUrl;
+        spanElement.textContent = currentProduct.english;
+        productParams[0].textContent = `Spec / Packaging：${currentProduct.packaging}`;
 
-          const urlParams = new URLSearchParams(window.location.search);
-          const current_product = products.find(
-            (product) => product.id === urlParams.get("id")
+        const bofangImage = document.getElementById("bofang");
+        if (bofangImage) {
+          const encodedVideoUrl = encodeURIComponent(videoUrl);
+          const videoPageUrl = `video.html?video=${encodedVideoUrl}`;
+          bofangImage.setAttribute(
+            "onclick",
+            `window.location='${videoPageUrl}'`
           );
-          const banner1 = document.getElementById("banner-image1");
-          const banner2 = document.getElementById("banner-image2");
-          const spanElement = document.querySelector(".title>.left>.txt1");
-          const productParams = document.querySelectorAll(
-            ".product-params text"
-          );
-
-          banner1.src = `images/pyrotechnics20230802/${current_product.image}`;
-          banner2.src = `images/pyrotechnics20230802/${current_product.image}`;
-          spanElement.textContent = current_product.title;
-          productParams[0].textContent = `发数：${current_product.round}`;
-          productParams[1].textContent = `规格：${current_product.dimensions}`;
-          productParams[2].textContent = `含量：${current_product.content}`;
         }
-      };
-      xhr.send();
+      });
 
       function sendMessageToWhatsApp() {
         const spanElement = document.querySelector(".title>.left>.txt1");

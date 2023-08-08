@@ -1,0 +1,192 @@
+﻿[
+  {
+    "id": "1",
+    "sku": "P001",
+    "tags": ["kid"],
+    "image": "P001.png",
+    "video": "",
+    "english": "Happy Boom Pop-Pop",
+    "chinese": "彩色砂炮",
+    "packaging": "12/50/50"
+  },
+  {
+    "id": "2",
+    "sku": "P001-02",
+    "tags": ["kid"],
+    "image": "",
+    "video": "",
+    "english": "Happy Boom Pop-Pop",
+    "chinese": "彩色特大砂炮",
+    "packaging": "12/40/20"
+  },
+  {
+    "id": "3",
+    "sku": "P002",
+    "tags": ["kid"],
+    "image": "P002.png",
+    "video": "",
+    "english": "Happy Boom Glow Of Sunset",
+    "chinese": "小号霞光",
+    "packaging": "60/4/25"
+  },
+  {
+    "id": "4",
+    "sku": "P002-01",
+    "tags": ["kid"],
+    "image": "",
+    "video": "https://drive.google.com/file/d/1akKH8EE72-b6wD4FDCtshU7tTgycamEk/view?usp=drive_link ",
+    "english": "Happy Boom Glow Of Sunset",
+    "chinese": "小号舞龙棒",
+    "packaging": "48/1"
+  },
+  {
+    "id": "5",
+    "sku": "P007",
+    "tags": ["kid"],
+    "image": "P007.png",
+    "video": "",
+    "english": "Happy Boom Dush 20 (Roman Candle)",
+    "chinese": "20发魔术蛋",
+    "packaging": "48/12"
+  },
+  {
+    "id": "6",
+    "sku": "P008",
+    "tags": ["kid"],
+    "image": "P008.png",
+    "video": "",
+    "english": "Happy Boom Dush 30 (Roman Candle) ",
+    "chinese": "30波魔术棒",
+    "packaging": "36/12"
+  },
+  {
+    "id": "7",
+    "sku": "P009",
+    "tags": ["kid"],
+    "image": "P009.png",
+    "video": "",
+    "english": "Happy Boom Dush 10 (Roman Candle) ",
+    "chinese": "10波魔术棒",
+    "packaging": "80/12"
+  },
+  {
+    "id": "8",
+    "sku": "P014-02",
+    "tags": ["kid"],
+    "image": "",
+    "video": "",
+    "english": "Happy Boom Fountain (11 Ice Cream)",
+    "chinese": "跳跃花筒",
+    "packaging": "32/1 (16*20*145/20*2)"
+  },
+  {
+    "id": "9",
+    "sku": "P017",
+    "tags": ["kid"],
+    "image": "",
+    "video": "",
+    "english": "Happy Boom Fountain (Mini Ice Cream)",
+    "chinese": "MINI 圆形花筒",
+    "packaging": "6/2"
+  },
+  {
+    "id": "10",
+    "sku": "P018-01",
+    "tags": ["kid"],
+    "image": "",
+    "video": "",
+    "english": "Happy Boom Peacock Fountain",
+    "chinese": "孔雀开屏 (中号)",
+    "packaging": "24/1"
+  },
+  {
+    "id": "11",
+    "sku": "P018-02",
+    "tags": ["kid"],
+    "image": "P018-02.png",
+    "video": "",
+    "english": "Happy Boom Extteme Peacock Fountain",
+    "chinese": "孔雀开屏",
+    "packaging": "24/1"
+  },
+  {
+    "id": "12",
+    "sku": "P019",
+    "tags": ["kid"],
+    "image": "P019.png",
+    "video": "",
+    "english": "Happy Boom Happiness Fountain",
+    "chinese": "春花怒放",
+    "packaging": "72/6"
+  },
+  {
+    "id": "13",
+    "sku": "P020",
+    "tags": ["kid"],
+    "image": "P020.png",
+    "video": "",
+    "english": "Happy Boom Ground Bloom Flowers",
+    "chinese": "炸珠大地花开",
+    "packaging": "50/50"
+  },
+  {
+    "id": "14",
+    "sku": "P021-01",
+    "tags": ["kid"],
+    "image": "",
+    "video": "https://drive.google.com/file/d/1YY0vWDIdOApeLZoPo2FrzMChW5wS39k7/view?usp=drive_link ",
+    "english": "Happy Boom Flower Camelia Flower",
+    "chinese": " 风火轮",
+    "packaging": "4/30/2 (7.1*35)"
+  },
+  {
+    "id": "15",
+    "sku": "P022",
+    "tags": ["kid"],
+    "image": "P022.png",
+    "video": "",
+    "english": "Happy Boom Fireworks",
+    "chinese": "发财树",
+    "packaging": "72/6"
+  },
+  {
+    "id": "16",
+    "sku": "P023",
+    "tags": ["kid"],
+    "image": "P023.png",
+    "video": "",
+    "english": "Happy Boom Pili Crackers",
+    "chinese": "龙蛋",
+    "packaging": "72/12/12"
+  },
+  {
+    "id": "17",
+    "sku": "P024",
+    "tags": ["kid"],
+    "image": "P024.png",
+    "video": "",
+    "english": "Happy Boom Pili Crackers (3 Minutes)",
+    "chinese": "金玉满堂 （龙蛋3min）",
+    "packaging": "60/6"
+  },
+  {
+    "id": "18",
+    "sku": "P030",
+    "tags": ["kid"],
+    "image": "P030.png",
+    "video": "",
+    "english": "Happy Boom 14 Besi",
+    "chinese": "14寸电光花 金色",
+    "packaging": "20/20/8"
+  },
+  {
+    "id": "19",
+    "sku": "P032",
+    "tags": ["kid"],
+    "image": "P032.png",
+    "video": "",
+    "english": "Happy Boom Mancis",
+    "chinese": "火柴炮",
+    "packaging": "320/10/26"
+  }
+]
