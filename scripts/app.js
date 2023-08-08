@@ -83,14 +83,24 @@ function generateSearchTagHTML(title) {
   return newElement;
 }
 
+function cleanString(query) {
+  return query.toLowerCase().replace(/[^a-zA-Z0-9\s]/g, " ");
+}
+
+function hasMatch(text, cleanedQuery) {
+  return text.replace(/[^a-zA-Z0-9\s]/g, " ").includes(cleanedQuery);
+}
+
 function searchProducts(products, query) {
-  query = query.toLowerCase();
+  const cleanedQuery = cleanString(query);
+
   return products.filter((product) => {
-    const englishMatch = product.english.toLowerCase().includes(query);
-    const chineseMatch = product.chinese.toLowerCase().includes(query);
+    const englishMatch = hasMatch(cleanString(product.english), cleanedQuery);
+    const chineseMatch = hasMatch(product.chinese, cleanedQuery);
     const tagsMatch = product.tags.some((tag) =>
-      tag.toLowerCase().includes(query)
+      tag.toLowerCase().includes(cleanedQuery)
     );
+
     return englishMatch || chineseMatch || tagsMatch;
   });
 }
@@ -155,4 +165,16 @@ function fetchProductsFromJsonFile(jsonFileUrl) {
 function fetchAllProducts() {
   const inventoryProductsUrl = "data/inventory.json";
   return fetchProductsFromJsonFile(inventoryProductsUrl);
+}
+
+function getRandomProducts(productList, numberOfProducts) {
+  const shuffledProducts = [...productList];
+  for (let i = shuffledProducts.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledProducts[i], shuffledProducts[j]] = [
+      shuffledProducts[j],
+      shuffledProducts[i],
+    ];
+  }
+  return shuffledProducts.slice(0, numberOfProducts);
 }

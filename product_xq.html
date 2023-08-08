@@ -671,10 +671,8 @@
           /></a>
         </div>
         <div class="tu_you" style="float: left; margin-top: 23px">
-          <p>Pyrotechnics</p>
-          <span style="margin-top: 10px; display: block"
-            >Contact us to learn more about the product</span
-          >
+          <span>Contact us to learn more about the product</span>
+          <p style="margin-top: 10px; display: block">Pyrotechnics</p>
         </div>
       </div>
       <div
@@ -687,106 +685,7 @@
           <div class="swiper-container2">
             <div class="swiper-wrapper">
               <div class="swiper-slide blue-slide">
-                <ul>
-                  <li onclick="window.location='products_32166690.html?qyid=1'">
-                    <img
-                      src="images/pyrotechnics20230802/20216191829.png"
-                      style="width: 100%"
-                    />
-                    <p>88发荣耀 富贵</p>
-                  </li>
-
-                  <li onclick="window.location='products_49729556.html?qyid=1'">
-                    <img
-                      src="images/pyrotechnics20230802/202161918152.png"
-                      style="width: 100%"
-                    />
-                    <p>88发荣耀 富贵</p>
-                  </li>
-
-                  <li onclick="window.location='products_36272830.html?qyid=1'">
-                    <img
-                      src="images/pyrotechnics20230802/202161716717.png"
-                      style="width: 100%"
-                    />
-                    <p>640发八件套-凤凰之夜</p>
-                  </li>
-
-                  <li onclick="window.location='products_58666629.html?qyid=1'">
-                    <img
-                      src="images/pyrotechnics20230802/2021619134139.png"
-                      style="width: 100%"
-                    />
-                    <p>100发金典 盛典</p>
-                  </li>
-
-                  <li onclick="window.location='products_89455813.html?qyid=1'">
-                    <img
-                      src="images/pyrotechnics20230802/2021612101910.png"
-                      style="width: 100%"
-                    />
-                    <p>66发烟花舞 烟花情 烟花绘 烟花说</p>
-                  </li>
-
-                  <li onclick="window.location='products_95599001.html?qyid=1'">
-                    <img
-                      src="images/pyrotechnics20230802/2021619134236.png"
-                      style="width: 100%"
-                    />
-                    <p>16 25 30 36 49 100发魅力今宵系列</p>
-                  </li>
-                </ul>
-              </div>
-              <div class="swiper-slide blue-slide">
-                <ul>
-                  <li onclick="window.location='products_31670863.html?qyid=1'">
-                    <img
-                      src="images/pyrotechnics20230802/nf123-48%E5%8F%91%E5%BD%A9%E4%BA%91%E4%B9%8B%E5%8D%97.png"
-                      style="width: 100%"
-                    />
-                    <p>48发彩云之南</p>
-                  </li>
-
-                  <li onclick="window.location='products_1276625.html?qyid=1'">
-                    <img
-                      src="images/pyrotechnics20230802/nf124-60%E5%8F%91%E5%BD%A9%E4%BA%91%E4%B9%8B%E5%8D%97.png"
-                      style="width: 100%"
-                    />
-                    <p>60发彩云之南</p>
-                  </li>
-
-                  <li onclick="window.location='products_26547808.html?qyid=1'">
-                    <img
-                      src="images/pyrotechnics20230802/nf125-80%E5%8F%91%E5%BD%A9%E4%BA%91%E4%B9%8B%E5%8D%97.png"
-                      style="width: 100%"
-                    />
-                    <p>80发彩云之南</p>
-                  </li>
-
-                  <li onclick="window.location='products_82081103.html?qyid=1'">
-                    <img
-                      src="images/pyrotechnics20230802/nf255-100%E5%8F%91%E5%86%B0%E9%9B%AA%E5%A5%87%E7%BC%98.png"
-                      style="width: 100%"
-                    />
-                    <p>100发冰雪奇缘</p>
-                  </li>
-
-                  <li onclick="window.location='products_31567282.html?qyid=1'">
-                    <img
-                      src="images/pyrotechnics20230802/nf525a-%E5%AF%8C%E8%B4%B5%E7%BA%A2.png"
-                      style="width: 100%"
-                    />
-                    <p>66发富贵红系列-富贵红</p>
-                  </li>
-
-                  <li onclick="window.location='products_57888430.html?qyid=1'">
-                    <img
-                      src="images/pyrotechnics20230802/2021612102330.png"
-                      style="width: 100%"
-                    />
-                    <p>80发烟花神韵 烟花风情 烟花如画 烟花之魁</p>
-                  </li>
-                </ul>
+                <ul></ul>
               </div>
             </div>
             <div style="height: 20px; clear: both">
@@ -904,9 +803,9 @@
             >
           </div>
           <div class="fcaidan">
-            <a href="login.html"
+            <a href="about.html"
               ><img src="images/foot_my.png" style="height: 26px" />
-              <p>Account</p></a
+              <p>About</p></a
             >
           </div>
         </div>
@@ -1120,6 +1019,31 @@
             `window.location='${videoPageUrl}'`
           );
         }
+
+        // Generate product recommendation
+        const recommendedProducts = getRandomProducts(products, 6);
+        const ulElement = document.querySelector(".blue-slide ul");
+
+        recommendedProducts.forEach((product) => {
+          const imageUrl =
+            product.image && product.image.trim() !== ""
+              ? `images/pyrotechnics20230802/${product.tags[0]}/${product.image}`
+              : defaultImage;
+          const liElement = document.createElement("li");
+          liElement.onclick = () => {
+            window.location = `product_xq.html?id=${product.id}`;
+          };
+
+          const imgElement = document.createElement("img");
+          imgElement.src = imageUrl;
+          imgElement.style.width = "100%";
+
+          const pElement = document.createElement("p");
+          pElement.textContent = product.english;
+          liElement.appendChild(imgElement);
+          liElement.appendChild(pElement);
+          ulElement.appendChild(liElement);
+        });
       });
 
       function sendMessageToWhatsApp() {

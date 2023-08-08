@@ -61,6 +61,7 @@
         display: block;
         max-width: 600px;
         margin: 0 auto;
+        position: relative;
       }
       .fast {
         -webkit-animation-duration: 0.2s;
@@ -206,16 +207,58 @@
         width: 100%;
         height: auto;
       }
+      select {
+        appearance: none;
+        border: 0;
+        outline: 0;
+        font: inherit;
+        height: 2em;
+        padding: 0 4em 0 1em;
+        background: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg)
+            no-repeat right 0.8em center / 1.4em,
+          linear-gradient(
+            to left,
+            rgba(255, 255, 255, 0.3) 3em,
+            rgba(255, 255, 255, 0.2) 3em
+          );
+        color: white;
+        border-radius: 0.25em;
+        box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+      }
+
+      select option {
+        color: inherit;
+        background-color: #320a28;
+      }
+
+      select:focus {
+        outline: none;
+      }
+
+      select::-ms-expand {
+        display: none;
+      }
     </style>
   </head>
   <body>
     <page id="main-content">
-      <!-- <label for="languageSelect">Select Language:</label>
-      <select id="languageSelect" onchange="handleOnChange()">
-        <option value="english">English</option>
-        <option value="chinese">Chinese</option>
-        <option value="malay">Malay</option>
-      </select> -->
+      <div
+        style="
+          position: absolute;
+          top: 0;
+          right: 0;
+          z-index: 999;
+          background: linear-gradient(35deg, red, purple);
+        "
+      >
+        <select id="languageSelect" onchange="handleOnChange()">
+          <option value="english">English</option>
+          <option value="chinese">Chinese</option>
+          <option value="malay">Malay</option>
+        </select>
+      </div>
+
       <div id="enterprise_index">
         <div
           class="nheader"
@@ -408,9 +451,9 @@
                 >
               </div>
               <div class="fcaidan">
-                <a href="login.html"
+                <a href="about.html"
                   ><img src="images/foot_my.png" style="height: 26px" />
-                  <p>Account</p></a
+                  <p>About</p></a
                 >
               </div>
             </div>
@@ -507,16 +550,16 @@
       }
 
       // Check if there's a saved language in local storage and set the select box accordingly
-      // document.addEventListener("DOMContentLoaded", function () {
-      //   const languageSelect = document.getElementById("languageSelect");
-      //   const savedLanguage = localStorage.getItem("selectedLanguage");
-      //   if (savedLanguage) {
-      //     languageSelect.value = savedLanguage;
-      //   } else {
-      //     languageSelect.value = "english";
-      //     localStorage.setItem("selectedLanguage", "english");
-      //   }
-      // });
+      document.addEventListener("DOMContentLoaded", function () {
+        const languageSelect = document.getElementById("languageSelect");
+        const savedLanguage = localStorage.getItem("selectedLanguage");
+        if (savedLanguage) {
+          languageSelect.value = savedLanguage;
+        } else {
+          languageSelect.value = "english";
+          localStorage.setItem("selectedLanguage", "english");
+        }
+      });
 
       // Register the Service Worker
       caches.delete("Firework");
