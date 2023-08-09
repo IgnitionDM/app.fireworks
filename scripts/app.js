@@ -10,6 +10,17 @@ function generateProductHTML(product) {
   const videoUrl =
     product.video && product.video.trim() !== "" ? product.video : defaultVideo;
 
+  let productName;
+  const savedLanguage = localStorage.getItem("selectedLanguage");
+  switch (savedLanguage) {
+    case "ch":
+      productName = product.chinese;
+      break;
+    default:
+      productName = product.english;
+      break;
+  }
+
   var html = `
       <div class="item" style="margin-bottom: 12px; box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);">
         <div class="gd_li" id="product${product.id}">
@@ -34,7 +45,7 @@ function generateProductHTML(product) {
                     background: #cc0;
                 "
                 >新品</span> 
-            ${product.english}</span>
+            ${productName}</span>
           <div class="params" style="overflow: hidden">    
                   
             <span class="gd_li_txt">
@@ -50,10 +61,10 @@ function generateProductHTML(product) {
           </div>
           <div class="goods_an">
             <a href="video.html?url=${videoUrl}" class="goods_anzuo" style="background: ">
-              <img src="images/pro_bo.png" />Video
+              <img src="images/pro_bo.png" /><span data-translate="productDetail.video">Video</span>
             </a>
             <a href="product_xq.html?id=${product.id}" class="goods_anyou">
-              <img src="images/pro_xx.png" />Details
+              <img src="images/pro_xx.png" /><span data-translate="productDetail.details">Details</span>
             </a>
           </div>
         </div>

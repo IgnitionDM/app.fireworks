@@ -671,7 +671,9 @@
           /></a>
         </div>
         <div class="tu_you" style="float: left; margin-top: 23px">
-          <span>Contact us to learn more about the product</span>
+          <span data-translate="productDetail.contactUs"
+            >Contact us to learn more about the product</span
+          >
           <p style="margin-top: 10px; display: block">Pyrotechnics</p>
         </div>
       </div>
@@ -679,7 +681,9 @@
         class="section-title"
         style="min-height: 300px; padding: 0px; padding-top: 5px"
       >
-        <div class="tj_wenzi">Recommended For You</div>
+        <div class="tj_wenzi" data-translate="productDetail.recommend">
+          Recommended For You
+        </div>
         <span class="tj_title"></span>
         <div class="tj_list">
           <div class="swiper-container2">
@@ -772,13 +776,13 @@
           <div class="fcaidan">
             <a href="product_fl.html"
               ><img src="images/foot_fl.png" style="height: 24px" />
-              <p>Categories</p></a
+              <p data-translate="footerNavbar.categories">Categories</p></a
             >
           </div>
           <div class="fcaidan">
             <a href="video.html"
               ><img src="images/foot_fx.png" style="height: 23px" />
-              <p>Video</p></a
+              <p data-translate="footerNavbar.video">Video</p></a
             >
           </div>
           <div class="fcaidan">
@@ -793,19 +797,19 @@
                   padding-right: 3px;
                 "
               />
-              <p>Home</p></a
+              <p data-translate="footerNavbar.home">Home</p></a
             >
           </div>
           <div class="fcaidan">
             <a href="contact.html"
               ><img src="images/foot_lx.png" style="height: 26px" />
-              <p>Contacts</p></a
+              <p data-translate="footerNavbar.contacts">Contacts</p></a
             >
           </div>
           <div class="fcaidan">
             <a href="about.html"
               ><img src="images/foot_my.png" style="height: 26px" />
-              <p>About</p></a
+              <p data-translate="footerNavbar.about">About</p></a
             >
           </div>
         </div>
@@ -1004,9 +1008,18 @@
             ? currentProduct.video
             : defaultVideo;
 
+        const savedLanguage = localStorage.getItem("selectedLanguage");
+        switch (savedLanguage) {
+          case "ch":
+            spanElement.textContent = currentProduct.chinese;
+            break;
+          default:
+            spanElement.textContent = currentProduct.english;
+            break;
+        }
+
         banner1.src = imageUrl;
         banner2.src = imageUrl;
-        spanElement.textContent = currentProduct.english;
         productParams[0].textContent = `SKU：${currentProduct.sku}`;
         productParams[1].textContent = `Spec / Packaging：${currentProduct.packaging}`;
 
@@ -1039,7 +1052,16 @@
           imgElement.style.width = "100%";
 
           const pElement = document.createElement("p");
-          pElement.textContent = product.english;
+
+          switch (savedLanguage) {
+            case "ch":
+              pElement.textContent = product.chinese;
+              break;
+            default:
+              pElement.textContent = product.english;
+              break;
+          }
+
           liElement.appendChild(imgElement);
           liElement.appendChild(pElement);
           ulElement.appendChild(liElement);
@@ -1058,5 +1080,6 @@
         window.open(whatsappLink, "_blank");
       }
     </script>
+    <script src="scripts/i18n.js"></script>
   </body>
 </html>

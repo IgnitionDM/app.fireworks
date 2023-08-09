@@ -418,6 +418,7 @@
                   id="sousuojieg"
                   type="text"
                   placeholder="Search Product"
+                  data-translate="search.placeholder"
                   class="aui-header-search"
                   onchange="javascript:searchs();"
                   style="width: 67%"
@@ -434,50 +435,39 @@
         <div id="container">
           <div class="menu1" style="margin-top: 13px; margin-left: 10px">
             <ul>
-              <!-- <li id="allProducts" onclick="window.location='product_fl.html';">
-                All Products
-              </li>
-
-              <li id="newProducts" onclick="window.location='product.html'">
-                New Produtcs
-              </li>
-
-              <li id="bestSellers" onclick="window.location='product.html'">
-                Best Sellers
-              </li>
-
-              <li id="adult" onclick="window.location='product.html?k=adult'">
-                Adult
-              </li>
-
-              <li id="kid" onclick="window.location='product.html?k=kid'">
-                Kids
-              </li> -->
               <li
                 id="allProducts"
                 onclick="goToSelection('allProducts', 'product_fl.html')"
+                data-translate="topNavbar.allProduct"
               >
                 All Products
               </li>
               <li
                 id="newProducts"
                 onclick="goToSelection('newProducts', 'product.html')"
+                data-translate="topNavbar.newProduct"
               >
                 New Products
               </li>
               <li
                 id="bestSellers"
                 onclick="goToSelection('bestSellers', 'product.html')"
+                data-translate="topNavbar.bestSellers"
               >
                 Best Sellers
               </li>
               <li
                 id="adult"
                 onclick="goToSelection('adult', 'product.html?k=adult')"
+                data-translate="topNavbar.adult"
               >
                 Adult
               </li>
-              <li id="kid" onclick="goToSelection('kid', 'product.html?k=kid')">
+              <li
+                id="kid"
+                onclick="goToSelection('kid', 'product.html?k=kid')"
+                data-translate="topNavbar.kids"
+              >
                 Kids
               </li>
             </ul>
@@ -532,13 +522,13 @@
               <span></span
               ><a href="product_fl.html"
                 ><img src="images/foot_fl.png" style="height: 24px" />
-                <p>Categories</p></a
+                <p data-translate="footerNavbar.categories">Categories</p></a
               >
             </div>
             <div class="fcaidan">
               <a href="video.html"
                 ><img src="images/foot_fx.png" style="height: 23px" />
-                <p>Video</p></a
+                <p data-translate="footerNavbar.video">Video</p></a
               >
             </div>
             <div class="fcaidan">
@@ -553,19 +543,19 @@
                     padding-right: 3px;
                   "
                 />
-                <p>Home</p></a
+                <p data-translate="footerNavbar.home">Home</p></a
               >
             </div>
             <div class="fcaidan">
               <a href="contact.html"
                 ><img src="images/foot_lx.png" style="height: 26px" />
-                <p>Contacts</p></a
+                <p data-translate="footerNavbar.contacts">Contacts</p></a
               >
             </div>
             <div class="fcaidan">
               <a href="about.html"
                 ><img src="images/foot_my.png" style="height: 26px" />
-                <p>About</p></a
+                <p data-translate="footerNavbar.about">About</p></a
               >
             </div>
           </div>
@@ -775,5 +765,6 @@
         }
       });
     </script>
+    <script src="scripts/i18n.js"></script>
   </body>
 </html>

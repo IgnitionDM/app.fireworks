@@ -32,10 +32,13 @@
     "allProduct": "All Products"
   },
   "productDetail": {
+    "video": "Video",
+    "details": "Details",
     "content": "Spec / Packaging",
     "contactUs": "Contact us to learn more about the product",
     "contactMessage1": "I'm interested in the product",
-    "contactMessage2": "You can find it here"
+    "contactMessage2": "You can find it here",
+    "recommend": "Recommended For You"
   },
   "aboutUs": {
     "title": "About Us",
