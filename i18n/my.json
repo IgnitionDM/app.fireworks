@@ -1,0 +1,53 @@
+{
+  "search": {
+    "placeholder": "Search Product"
+  },
+  "navButton": {
+    "categories": "Categories",
+    "newProduct": "New Products",
+    "about": "About Us",
+    "video": "Video"
+  },
+  "footerNavbar": {
+    "categories": "Categories",
+    "video": "Video",
+    "home": "Home",
+    "contacts": "Contacts",
+    "about": "About"
+  },
+  "topNavbar": {
+    "allProduct": "All Products",
+    "newProduct": "New Products",
+    "bestSellers": "Best Sellers",
+    "adult": "Adult",
+    "kids": "Kids"
+  },
+  "downloadButton": "Download",
+  "installButton": "Install Now",
+  "categories": {
+    "adult": "Adult",
+    "kids": "Kids",
+    "fireworks": "Fireworks",
+    "firecracker": "Firecracker",
+    "allProduct": "All Products"
+  },
+  "productDetail": {
+    "content": "Spec / Packaging",
+    "contactUs": "Contact us to learn more about the product",
+    "contactMessage1": "I'm interested in the product",
+    "contactMessage2": "You can find it here"
+  },
+  "aboutUs": {
+    "title": "About Us",
+    "paragraph1": "At Pyrotechnics Sdn Bhd, our core values form the foundation of everything we do. We firmly believe in these guiding principles that define our company's culture and drive our success:",
+    "paragraph2": "Fun: We consider fun to be a fundamental human right and a gateway to happiness. At the heart of our decision-making process lies a crucial question: Will this bring fun, joy, and happiness to our customers? Fun is not just an afterthought; it's our most important Key Performance Indicator (KPI) that influences every aspect of our business.",
+    "paragraph3": "Diversity: Embracing diversity is ingrained in our product range, the people we serve, and the end-user experience. We recognize the inherent value of diversity and view it as a central tenet that requires as much attention as our bottom line. Our commitment to diversity is evident in the wide range of products we offer and the inclusive environment we foster within our company.",
+    "paragraph4": "Safety: Safety is paramount to us, and we understand that it is a prerequisite for fun. We strive to be a brand that stands out from its competitors not only through the diversity of our products and the unforgettable moments we create but also through our unwavering commitment to ensuring that all parties touched by our products can do so without compromising their safety. We take every precaution to prioritize the well-being of our customers and stakeholders.",
+    "paragraph5": "These core values guide us on our journey to bring joy and excitement to our customers while upholding a strong sense of responsibility towards diversity and safety. As we continue to grow and innovate, we remain dedicated to delivering exceptional experiences that align with our principles and create lasting memories for all.",
+    "paragraph6": "Understanding Pyrotechnics Regulations in Malaysia: Permitted Ignition Scenarios and Approval Process.",
+    "paragraph7": "The Malaysian Government does not allow any form of igniting explosive firecrackers or fireworks except from the brand Happy Boom and Pop-pop.",
+    "paragraph8": "However, there is allowance for ignition of pyrotechnics during the formal government events and concerts as well as events specially approved by the Minister of Home Affairs and Internal Security.",
+    "paragraph9": "The approval from the Ministry is a policy decision and application is under the orders of other agencies like the Police (security), Fire Department (safety) and Public Aviation Department (air traffic) during ignition.",
+    "source": "Source"
+  }
+}

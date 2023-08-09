@@ -28,6 +28,8 @@
     <script src="plugins/layer/layer.js"></script>
     <script src="plugins/jquery/jquery-1.10.2.mins.js"></script>
     <script src="plugins/themes/js/aui.js"></script>
+    <script src="scripts/i18n.js"></script>
+
     <link rel="stylesheet" href="plugins/wxapp/app.css" />
     <link rel="stylesheet" href="plugins/wxapp/animate.min.css" />
     <link rel="stylesheet" href="plugins/themes/css/core.css" />
@@ -200,6 +202,7 @@
                     id="sousuojieg"
                     type="text"
                     placeholder="Search Product"
+                    data-translate="search.placeholder"
                     class="aui-header-search"
                     onchange="javascript:searchs();"
                     style="width: 67%"
@@ -279,10 +282,16 @@
                   -webkit-background-clip: text;
                   color: transparent;
                 "
+                data-translate="categories.adult"
               >
                 Adult</text
               >
-              <text class="dh_over introduce">ADULT</text>
+              <text
+                style="text-transform: uppercase"
+                class="dh_over introduce"
+                data-translate="categories.adult"
+                >ADULT</text
+              >
             </div>
             <div
               class="picture"
@@ -337,10 +346,16 @@
                   -webkit-background-clip: text;
                   color: transparent;
                 "
+                data-translate="categories.kids"
               >
                 Kid</text
               >
-              <text class="dh_over introduce">KID</text>
+              <text
+                style="text-transform: uppercase"
+                class="dh_over introduce"
+                data-translate="categories.kids"
+                >KID</text
+              >
             </div>
             <div
               class="picture"
@@ -394,9 +409,15 @@
                   -webkit-background-clip: text;
                   color: transparent;
                 "
+                data-translate="categories.allProduct"
                 >All Products</text
               >
-              <text class="dh_over introduce">ALL PRODUCTS</text>
+              <text
+                style="text-transform: uppercase"
+                class="dh_over introduce"
+                data-translate="categories.allProduct"
+                >ALL PRODUCTS</text
+              >
             </div>
             <div
               class="picture"
@@ -423,13 +444,13 @@
                 <span></span
                 ><a href="product_fl.html"
                   ><img src="images/foot_fl.png" style="height: 24px" />
-                  <p>Categories</p></a
+                  <p data-translate="footerNavbar.categories">Categories</p></a
                 >
               </div>
               <div class="fcaidan">
                 <a href="video.html"
                   ><img src="images/foot_fx.png" style="height: 23px" />
-                  <p>Video</p></a
+                  <p data-translate="footerNavbar.video">Video</p></a
                 >
               </div>
               <div class="fcaidan">
@@ -444,19 +465,19 @@
                       padding-right: 3px;
                     "
                   />
-                  <p>Home</p></a
+                  <p data-translate="footerNavbar.home">Home</p></a
                 >
               </div>
               <div class="fcaidan">
                 <a href="contact.html"
                   ><img src="images/foot_lx.png" style="height: 26px" />
-                  <p>Contacts</p></a
+                  <p data-translate="footerNavbar.contacts">Contacts</p></a
                 >
               </div>
               <div class="fcaidan">
                 <a href="about.html"
                   ><img src="images/foot_my.png" style="height: 26px" />
-                  <p>About</p></a
+                  <p data-translate="footerNavbar.about">About</p></a
                 >
               </div>
             </div>
