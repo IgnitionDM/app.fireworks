@@ -364,6 +364,11 @@
         height: auto;
         margin-bottom: 8px;
       }
+
+      .tj_list ul li:hover {
+        cursor: grab;
+      }
+
       .tj_list ul li img {
         float: left;
         width: 100%;
@@ -1004,10 +1009,13 @@
           currentProduct.image && currentProduct.image.trim() !== ""
             ? `images/pyrotechnics20230802/${currentProduct.tags[0]}/${currentProduct.image}`
             : defaultImage;
-        const videoUrl =
-          currentProduct.video && currentProduct.video.trim() !== ""
-            ? currentProduct.video
-            : defaultVideo;
+
+        const playImage = document.querySelector(".play");
+        if (!currentProduct.video || currentProduct.video.trim() === "") {
+          if (playImage) {
+            playImage.remove();
+          }
+        }
 
         const savedLanguage = localStorage.getItem("selectedLanguage");
         switch (savedLanguage) {
@@ -1026,7 +1034,7 @@
 
         const bofangImage = document.getElementById("bofang");
         if (bofangImage) {
-          const encodedVideoUrl = encodeURIComponent(videoUrl);
+          const encodedVideoUrl = encodeURIComponent(currentProduct.video);
           const videoPageUrl = `video.html?video=${encodedVideoUrl}`;
           bofangImage.setAttribute(
             "onclick",

@@ -1,14 +1,9 @@
 function generateProductHTML(product) {
   const defaultImage = "images/pyrotechnics20230802/product-placeholder.png";
-  const defaultVideo =
-    "https://github.com/IgnitionDM/app.fireworks/raw/main/videos/firework_00.mp4";
-
   const imageUrl =
     product.image && product.image.trim() !== ""
       ? `images/pyrotechnics20230802/${product.tags[0]}/${product.image}`
       : defaultImage;
-  const videoUrl =
-    product.video && product.video.trim() !== "" ? product.video : defaultVideo;
 
   let productName;
   const savedLanguage = localStorage.getItem("selectedLanguage");
@@ -30,22 +25,8 @@ function generateProductHTML(product) {
             </div>
           </a>
           <span class="dh_overpro gd_li_title">
-            <span
-                style="
-                    width: 30px;
-                    height: 20px;
-                    display: block;
-                    float: left;
-                    font-size: 11px;
-                    text-align: center;
-                    line-height: 20px;
-                    border-radius: 5px;
-                    margin-right: 4px;
-                    color: #fff;
-                    background: #cc0;
-                "
-                >新品</span> 
-            ${productName}</span>
+            ${productName}
+          </span>
           <div class="params" style="overflow: hidden">    
                   
             <span class="gd_li_txt">
@@ -60,9 +41,15 @@ function generateProductHTML(product) {
 
           </div>
           <div class="goods_an">
-            <a href="video.html?url=${videoUrl}" class="goods_anzuo" style="background: ">
-              <img src="images/pro_bo.png" /><span data-translate="productDetail.video">Video</span>
-            </a>
+          ${
+            product.video && product.video.trim() !== ""
+              ? `
+          <a href="video.html?url=${product.video}" class="goods_anzuo" style="background: ">
+            <img src="images/pro_bo.png" /><span data-translate="productDetail.video">Video</span>
+          </a>
+        `
+              : ""
+          }
             <a href="product_xq.html?id=${product.id}" class="goods_anyou">
               <img src="images/pro_xx.png" /><span data-translate="productDetail.details">Details</span>
             </a>
@@ -83,6 +70,7 @@ function generateSearchTagHTML(title) {
     "linear-gradient(to right, rgba(255, 0, 62, 1) 0%, rgba(253, 15, 111, 1) 0%, rgba(255, 0, 62, 1) 100%)";
 
   const anchorElement = document.createElement("a");
+  anchorElement.style.cursor = "pointer";
   anchorElement.textContent = title;
 
   const closeButton = document.createElement("span");

@@ -442,7 +442,7 @@
               >
                 All Products
               </li>
-              <li
+              <!-- <li
                 id="newProducts"
                 onclick="goToSelection('newProducts', 'product.html')"
                 data-translate="topNavbar.newProduct"
@@ -455,7 +455,7 @@
                 data-translate="topNavbar.bestSellers"
               >
                 Best Sellers
-              </li>
+              </li> -->
               <li
                 id="adult"
                 onclick="goToSelection('adult', 'product.html?k=adult')"
@@ -493,7 +493,6 @@
 
             <div id="productContainer"></div>
 
-            <!--播放视频-->
             <div class="videoPlay" style="display: none">
               <video
                 src=""
@@ -646,8 +645,6 @@
     </script>
     <script>
       $(function () {
-        //绑定滚动条事件
-        //绑定滚动条事件
         $(window).bind("scroll", function () {
           var sTop = $(window).scrollTop();
           var sTop = parseInt(sTop);
