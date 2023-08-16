@@ -44,7 +44,9 @@ function generateProductHTML(product) {
           ${
             product.video && product.video.trim() !== ""
               ? `
-          <a href="video.html?url=${product.video}" class="goods_anzuo" style="background: ">
+          <a href="video.html?video=${encodeURIComponent(
+            product.video
+          )}" class="goods_anzuo" style="background: ">
             <img src="images/pro_bo.png" /><span data-translate="productDetail.video">Video</span>
           </a>
         `

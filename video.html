@@ -33,7 +33,7 @@
 
       body,
       html {
-        max-width: 600px;
+        /* max-width: 600px; */
         margin: 0 auto;
         padding: 0;
         /* height: 100%; */
@@ -75,8 +75,7 @@
         const urlParams = new URLSearchParams(q);
         videoElement.src = urlParams.get("video");
       } else {
-        videoElement.src =
-          "https://github.com/IgnitionDM/app.fireworks/raw/main/videos/firework_00.mp4";
+        videoElement.src = "";
       }
     </script>
   </body>
