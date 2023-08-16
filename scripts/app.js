@@ -21,7 +21,7 @@ function generateProductHTML(product) {
         <div class="gd_li" id="product${product.id}">
           <a href="product_xq.html?id=${product.id}">
             <div class="pro_bg" style="background: url('images/pyrotechnics20230802/product-bg.png') no-repeat; background-size: 100%;">
-                <img class="img" mode="widthFix" src="${imageUrl}" />
+                <img style="opacity: 0.7" class="img" mode="widthFix" src="${imageUrl}" />
             </div>
           </a>
           <span class="dh_overpro gd_li_title">
