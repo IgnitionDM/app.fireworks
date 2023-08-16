@@ -20,7 +20,7 @@ function generateProductHTML(product) {
       <div class="item" style="margin-bottom: 12px; box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);">
         <div class="gd_li" id="product${product.id}">
           <a href="product_xq.html?id=${product.id}">
-            <div class="pro_bg" style="background: url('images/pyrotechnics20230802/202291295458.png') no-repeat; background-size: 100%;">
+            <div class="pro_bg" style="background: url('images/pyrotechnics20230802/product-bg.png') no-repeat; background-size: 100%;">
                 <img class="img" mode="widthFix" src="${imageUrl}" />
             </div>
           </a>
