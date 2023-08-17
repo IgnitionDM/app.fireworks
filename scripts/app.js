@@ -31,11 +31,6 @@ function generateProductHTML(product) {
                   
             <span class="gd_li_txt">
               <span class="dot" style="background: #ff4361"></span>
-                SKU：${product.sku}
-            </span>
-
-            <span class="gd_li_txt">
-              <span class="dot" style="background: #ff4361"></span>
                 Spec / Packaging：${product.packaging}
             </span>
 

@@ -662,7 +662,6 @@
             </div>
             <div class="product-params">
               <text></text>
-              <text></text>
             </div>
 
             <div style="height: 15px; clear: both"></div>
@@ -965,8 +964,8 @@
 
         banner1.src = imageUrl;
         banner2.src = imageUrl;
-        productParams[0].textContent = `SKU：${currentProduct.sku}`;
-        productParams[1].textContent = `Spec / Packaging：${currentProduct.packaging}`;
+        // productParams[0].textContent = `SKU：${currentProduct.sku}`;
+        productParams[0].textContent = `Spec / Packaging：${currentProduct.packaging}`;
 
         const bofangImage = document.getElementById("bofang");
         if (bofangImage) {
@@ -1019,9 +1018,7 @@
         const productSKU = document.querySelectorAll(".product-params text")[0]
           .textContent;
         const productURL = window.location.href;
-        const message = encodeURIComponent(
-          `${productSKU} - ${productName} - ${productURL}"`
-        );
+        const message = encodeURIComponent(`${productName} - ${productURL}"`);
         const phoneNumber = "60166817996";
         const whatsappLink = `https://wa.me/${phoneNumber}?text=${message}`;
         window.open(whatsappLink, "_blank");
