@@ -36,21 +36,23 @@
         /* max-width: 600px; */
         margin: 0 auto;
         padding: 0;
-        height: auto;
+        height: 100%;
         /* overflow: hidden; */
         background: rgba(0, 0, 0);
       }
 
       .video-container {
-        position: relative;
-        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
         background: rgba(0, 0, 0);
       }
 
       video {
-        width: 100%;
+        width: auto;
         height: 100%;
-        object-fit: cover;
+        /* object-fit: cover; */
       }
     </style>
   </head>
@@ -58,11 +60,11 @@
     <div style="position: relative; left: 20px; top: 20px; z-index: 9999">
       <i class="aui-icon aui-icon-back" onclick="history.back();"></i>
     </div>
-    <!-- <div class="header">
+    <div class="header">
       <img src="images/pyrotechnics20230802/Pyrotechnics-05.png" />
-    </div> -->
+    </div>
     <div class="video-container">
-      <video id="video" controls playsinline>
+      <video id="video" controls autoplay muted>
         <source src=".." type="video/mp4" />
       </video>
     </div>
