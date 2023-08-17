@@ -676,9 +676,7 @@
           /></a>
         </div>
         <div class="tu_you" style="float: left; margin-top: 23px">
-          <span data-translate="productDetail.contactUs"
-            >Contact us to learn more about the product</span
-          >
+          <span data-translate="productDetail.contactUs"></span>
           <p style="margin-top: 10px; display: block">Pyrotechnics</p>
         </div>
       </div>
@@ -840,66 +838,7 @@
         style="left: 80%; top: 20px; margin-left: 0"
       />
     </div>
-    <div class="layer-content" style="z-index: 9999">
-      <div class="m-actionsheet actionsheet-toggle" id="actionSheet">
-        <div style="position: relative">
-          <div class="aui-spec-menu-top">
-            <div class="aui-spec-first-pic">
-              <img src="" alt="" id="simg" />
-            </div>
-            <div class="aui-spec-first-sif">
-              <h2><span id="jiage"></span>元/箱</h2>
-              <p>规格：<span id="sguige"></span></p>
-              <p>含量：<span id="shl"></span></p>
-            </div>
-          </div>
-          <a href="javascript:gb();">
-            <div id="gb">
-              <i class="iconfont icon-guanbi" style="font-size: 24px"></i>
-            </div>
-          </a>
-          <div class="aui-product-text-content">
-            <div class="aui-product-text-content-list">
-              <div class="aui-product-text-content-list-bd">
-                <span>已选</span>
-              </div>
-              <div class="aui-product-text-content-list-ft">
-                <div class="tj">
-                  <div class="tmt" id="pnamesa"></div>
-                </div>
-              </div>
-            </div>
-            <style>
-              .needsclick {
-                content: attr(placeholder);
-              }
-            </style>
-            <div class="aui-product-text-content-list">
-              <div class="aui-product-text-content-list-bd">
-                <span>数量</span>
-              </div>
-              <div class="aui-car-box-list-text-price">
-                <div
-                  class="aui-car-box-list-text-arithmetic tj"
-                  style="position: inherit; width: 65px; text-align: center"
-                >
-                  <div
-                    id="gwshu"
-                    class="num needsclick"
-                    contenteditable="plaintext-only"
-                  ></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="aui-product-function">
-            <a href="" id="qrtjs" class="yellow-color" style="width: 100%">
-              <div id="qrtj">确认加入购物车</div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+
     <!-- <script>
       $(document).ready(function () {
         $("#xx_sp").click(function () {
@@ -933,7 +872,6 @@
         el.addEventListener(
           "ended",
           function () {
-            //播放完毕，退出全屏
             closeVideo();
             el.webkitExitFullScreen()();
             this.webkitExitFullScreen();
@@ -1076,11 +1014,13 @@
       });
 
       function sendMessageToWhatsApp() {
-        const spanElement = document.querySelector(".title>.left>.txt1");
-        const productName = spanElement.textContent;
+        const productName =
+          document.querySelector(".title>.left>.txt1").textContent;
+        const productSKU = document.querySelectorAll(".product-params text")[0]
+          .textContent;
         const productURL = window.location.href;
         const message = encodeURIComponent(
-          `I'm interested in the product "${productName}". You can find it here: ${productURL}`
+          `${productSKU} - ${productName} - ${productURL}"`
         );
         const phoneNumber = "60166817996";
         const whatsappLink = `https://wa.me/${phoneNumber}?text=${message}`;
