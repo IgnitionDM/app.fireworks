@@ -1018,7 +1018,7 @@
         const productSKU = document.querySelectorAll(".product-params text")[0]
           .textContent;
         const productURL = window.location.href;
-        const message = encodeURIComponent(`${productName} - ${productURL}"`);
+        const message = encodeURIComponent(`${productName} - ${productURL}`);
         const phoneNumber = "60166817996";
         const whatsappLink = `https://wa.me/${phoneNumber}?text=${message}`;
         window.open(whatsappLink, "_blank");
