@@ -1,4 +1,5 @@
 function fetchTranslation(language) {
+  updateImageSource(language);
   fetch(`i18n/${language}.json`)
     .then((response) => response.json())
     .then((translation) => {
@@ -19,6 +20,30 @@ function applyTranslation(translation) {
       }
     }
   });
+}
+
+function updateImageSource(language) {
+  const img1 = document.getElementById("banner-body-translate");
+  const img2 = document.getElementById("banner-header1-translate");
+  const img3 = document.getElementById("banner-header2-translate");
+
+  if (img1) {
+    const img1Name =
+      language === "ch" ? "Pyrotechnics-01-ch.png" : "Pyrotechnics-01.png";
+    img1.src = `images/pyrotechnics20230802/${img1Name}`;
+  }
+
+  if (img2) {
+    const img2Name =
+      language === "ch" ? "Pyrotechnics-03-ch.png" : "Pyrotechnics-03.png";
+    img2.src = imagePath = `images/pyrotechnics20230802/${img2Name}`;
+  }
+
+  if (img3) {
+    const img3Name =
+      language === "ch" ? "Pyrotechnics-08-ch.png" : "Pyrotechnics-08.png";
+    img3.src = `images/pyrotechnics20230802/${img3Name}`;
+  }
 }
 
 function getTranslationValue(key, translationData) {
