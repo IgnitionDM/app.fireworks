@@ -946,7 +946,7 @@
 
         const imageUrl =
           currentProduct.image && currentProduct.image.trim() !== ""
-            ? `images/products/${currentProduct.image}`
+            ? `${currentProduct.image}`
             : defaultImage;
 
         const playImage = document.querySelector(".play");
@@ -988,7 +988,7 @@
         recommendedProducts.forEach((product) => {
           const imageUrl =
             product.image && product.image.trim() !== ""
-              ? `images/products/${product.image}`
+              ? `${product.image}`
               : defaultImage;
           const liElement = document.createElement("li");
           liElement.onclick = () => {

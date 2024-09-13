@@ -2,7 +2,7 @@ function generateProductHTML(product) {
   const defaultImage = "images/pyrotechnics20230802/product-placeholder.png";
   const imageUrl =
     product.image && product.image.trim() !== ""
-      ? `images/products/${product.image}`
+      ? `${product.image}`
       : defaultImage;
 
   let productName;
